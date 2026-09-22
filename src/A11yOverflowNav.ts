@@ -591,19 +591,6 @@ export class A11yOverflowNav implements A11yOverflowNavInstance {
     const previousControl = this.overflowControl;
     const previousMenuRoot = this.menuRoot;
     const previousOverflowList = this.overflowList;
-    const active =
-      document.activeElement instanceof HTMLElement
-        ? document.activeElement
-        : null;
-
-    this.restoreCanonicalItemsToPrimary();
-
-    if (this.menuButton.isOpen()) {
-      this.menuButton.close({
-        returnFocus: false,
-        reason: 'programmatic',
-      });
-    }
 
     this.queryStructure(false);
 
@@ -622,15 +609,44 @@ export class A11yOverflowNav implements A11yOverflowNavInstance {
       );
     }
 
-    if (
-      this.overflowList.querySelector(SELECTORS.item) instanceof HTMLElement
-    ) {
+    const unexpectedOverflowItem = this.getDirectItems(
+      this.overflowList,
+    ).find((item) => !this.canonicalItems.includes(item));
+
+    if (unexpectedOverflowItem) {
       throw new Error(
         'A11yOverflowNav: add new managed items to the primary list before calling refresh()',
       );
     }
 
-    this.canonicalItems = this.getDirectItems(this.list);
+    const active =
+      document.activeElement instanceof HTMLElement
+        ? document.activeElement
+        : null;
+
+    const primaryItems = this.getDirectItems(this.list);
+    const primarySet = new Set(primaryItems);
+    const retainedOverflowItems = this.canonicalItems.filter(
+      (item) =>
+        item.isConnected &&
+        item.parentElement === this.overflowList &&
+        !primarySet.has(item),
+    );
+
+    this.canonicalItems = [
+      ...primaryItems,
+      ...retainedOverflowItems,
+    ];
+
+    this.restoreCanonicalItemsToPrimary();
+
+    if (this.menuButton.isOpen()) {
+      this.menuButton.close({
+        returnFocus: false,
+        reason: 'programmatic',
+      });
+    }
+
     this.overflowControl.hidden = true;
     this.observeLayout();
     this.reflow('refresh');
