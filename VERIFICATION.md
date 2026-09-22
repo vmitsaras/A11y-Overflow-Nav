@@ -2,7 +2,8 @@
 
 Date: 2026-09-22  
 Manual verification target: `62fdf29f0b86d02dd86a0afa4c650bd19fa22376`  
-Latest automated run for that target: `35749073102`
+Latest v0.3 implementation head: `c471e26ad96f75fc62940547ae32da8ee4bbf0e0`  
+Latest automated run: `35751176276`
 
 ## Summary
 
@@ -14,15 +15,29 @@ This record intentionally distinguishes that manual evidence from checks that we
 
 ## Automated package gates
 
-For implementation head `62fdf29f0b86d02dd86a0afa4c650bd19fa22376`, GitHub Actions run `35749073102` completed successfully.
+For v0.3 implementation head `c471e26ad96f75fc62940547ae32da8ee4bbf0e0`, GitHub Actions run `35751176276` completed successfully.
 
 | Check | Status | Evidence |
 | --- | --- | --- |
-| Dependency installation | Pass | GitHub Actions run 35749073102 |
+| Dependency installation | Pass | GitHub Actions run 35751176276 |
 | Unit/lifecycle tests | Pass | CI |
 | TypeScript integrity | Pass | CI |
 | Package build | Pass | CI |
 | Package contents | Pass | CI |
+
+## v0.3 performance-hardening evidence
+
+The current hardening slice added:
+
+- a developer-only 24-item real-browser stress fixture;
+- ResizeObserver/requestAnimationFrame coalescing regression coverage;
+- pending-frame cancellation coverage for `destroy()`;
+- a source-level performance review;
+- an in-progress release-audit checklist.
+
+The new automated tests passed in GitHub Actions run `35751176276`. No runtime diagnostics, polling, persistence, or new runtime dependency were added.
+
+Actual stress-fixture timing measurements remain manual and are intentionally not inferred from CI.
 
 ## Manual real-browser evidence
 
@@ -64,13 +79,13 @@ Not yet claimed as verified:
 - browser text-only resize;
 - forced-colors behavior;
 - NVDA/browser combinations;
-- performance stress measurements.
+- performance stress measurements from the new fixture.
 
 ## Next verification slice
 
 v0.3 release hardening:
 
-1. performance stress fixture and reflow-cost review;
+1. run and record the new performance stress fixture in a real browser;
 2. zoom/text-size checks;
 3. forced-colors checks;
 4. NVDA/browser coverage if in the supported release matrix;

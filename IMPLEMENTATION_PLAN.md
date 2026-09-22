@@ -82,7 +82,7 @@ This is manual acceptance evidence. It does not claim that the optional Playwrig
 
 ## Slice 7 — Release hardening
 
-Status: in progress.
+Status: in progress; implementation hardening is CI verified.
 
 Implemented in the current slice:
 
@@ -122,5 +122,15 @@ Latest repository implementation inspected before this update:
 - pack check: pass
 - manual real-browser test: pass
 - VoiceOver test: pass
+
+Latest v0.3 hardening CI:
+
+- implementation head: `c471e26ad96f75fc62940547ae32da8ee4bbf0e0`
+- GitHub Actions run: `35751176276`
+- install: pass
+- tests: pass
+- typecheck: pass
+- build: pass
+- pack check: pass
 
 See `VERIFICATION.md` for evidence boundaries and remaining release-hardening work.

@@ -1,7 +1,8 @@
 # Release audit — v0.3
 
 Status: In progress  
-Date: 2026-09-22
+Date: 2026-09-22  
+Latest v0.3 CI: `35751176276` — pass
 
 ## Current evidence
 
@@ -13,6 +14,7 @@ Date: 2026-09-22
 - Progressive-enhancement fallback is documented.
 - No runtime stylesheet is shipped by A11y Overflow Nav.
 - Performance stress fixture and scheduling regression tests are now part of the repository.
+- The v0.3 performance-hardening commit passed install, tests, typecheck, build, and package dry-run in GitHub Actions run `35751176276`.
 
 ## Package contract review
 
