@@ -3,7 +3,78 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>A11y Overflow Nav — Scenario Lab</title>
+  <title>Priority+ Navigation Scenario Lab | A11y Overflow Nav</title>
+  <meta name="description" content="Test accessible Priority+ navigation across widths, layouts, directions, languages, text scales, focus states, and lifecycle events.">
+  <meta name="robots" content="index,follow">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="A11y Overflow Nav">
+  <meta property="og:title" content="Priority+ Navigation Scenario Lab | A11y Overflow Nav">
+  <meta property="og:description" content="Test accessible Priority+ navigation across widths, layouts, directions, languages, text scales, focus states, and lifecycle events.">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Priority+ Navigation Scenario Lab | A11y Overflow Nav">
+  <meta name="twitter:description" content="Test accessible Priority+ navigation across widths, layouts, directions, languages, text scales, focus states, and lifecycle events.">
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "WebPage",
+          "name": "Priority+ Navigation Scenario Lab | A11y Overflow Nav",
+          "description": "Test accessible Priority+ navigation across widths, layouts, directions, languages, text scales, focus states, and lifecycle events.",
+          "mainEntity": {
+            "@id": "https://github.com/vmitsaras/A11y-Overflow-Nav#software"
+          },
+          "about": "Accessible Priority+ navigation behavior",
+          "featureList": [
+            "Adjustable container width",
+            "Flexbox and Grid layout scenarios",
+            "Left-to-right and right-to-left directions",
+            "English, German, and Greek navigation labels",
+            "Text scaling and lifecycle event inspection"
+          ]
+        },
+        {
+          "@type": "SoftwareSourceCode",
+          "@id": "https://github.com/vmitsaras/A11y-Overflow-Nav#software",
+          "name": "A11y Overflow Nav",
+          "description": "Accessible Priority+ overflow navigation that moves source-ordered items into an A11y Menu Button disclosure when space runs out.",
+          "codeRepository": "https://github.com/vmitsaras/A11y-Overflow-Nav",
+          "programmingLanguage": "TypeScript",
+          "runtimePlatform": "Browser",
+          "version": "0.1.0",
+          "license": "https://github.com/vmitsaras/A11y-Overflow-Nav/blob/main/LICENSE",
+          "keywords": [
+            "accessibility",
+            "navigation",
+            "overflow",
+            "priority-plus",
+            "typescript"
+          ],
+          "author": {
+            "@type": "Person",
+            "name": "Vasileios Mitsaras",
+            "url": "https://github.com/vmitsaras/",
+            "sameAs": [
+              "https://github.com/vmitsaras/",
+              "https://linkedin.com/in/vasilis-mitsaras"
+            ]
+          },
+          "targetProduct": {
+            "@type": "SoftwareApplication",
+            "name": "A11y Overflow Nav",
+            "applicationCategory": "DeveloperApplication",
+            "operatingSystem": "Any",
+            "runtimePlatform": "Browser",
+            "softwareVersion": "0.1.0"
+          },
+          "sameAs": [
+            "https://github.com/vmitsaras/A11y-Overflow-Nav",
+            "https://www.npmjs.com/package/a11y-overflow-nav"
+          ]
+        }
+      ]
+    }
+  </script>
   <link rel="stylesheet" href="./demo.css">
   <script type="importmap">
     {
@@ -23,7 +94,69 @@
         direction, label length, and text scale while inspecting the exact
         visible/overflow distribution and lifecycle events.
       </p>
+      <p class="demo__actions">
+        <a class="demo__cta" href="https://github.com/vmitsaras/A11y-Overflow-Nav">View GitHub repository</a>
+      </p>
     </header>
+
+    <section class="demo__guide" aria-labelledby="guide-title">
+      <h2 id="guide-title">Initialization and lifecycle</h2>
+      <p>
+        Author every destination in the primary list and keep the final More
+        control hidden. Register lifecycle listeners before initialization so
+        the synchronous initial events are captured.
+      </p>
+      <div class="demo__code-grid">
+        <div>
+          <h3>Semantic structure</h3>
+          <pre class="demo__code"><code>&lt;nav data-a11y-overflow-nav aria-label="Primary"&gt;
+  &lt;ul data-overflow-nav-list&gt;
+    &lt;li data-overflow-nav-item&gt;&lt;a href="/articles"&gt;Articles&lt;/a&gt;&lt;/li&gt;
+    &lt;li data-overflow-nav-control hidden&gt;
+      &lt;div data-overflow-nav-menu&gt;
+        &lt;button aria-controls="overflow-panel"&gt;More&lt;/button&gt;
+        &lt;div id="overflow-panel" hidden&gt;
+          &lt;ul data-overflow-nav-overflow-list&gt;&lt;/ul&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/nav&gt;</code></pre>
+        </div>
+        <div>
+          <h3>Initialize and observe</h3>
+          <pre class="demo__code"><code>import {
+  createOverflowNav,
+  OVERFLOW_NAV_EVENTS,
+} from 'a11y-overflow-nav';
+
+const root = document.querySelector('[data-a11y-overflow-nav]');
+
+if (root instanceof HTMLElement) {
+  for (const name of Object.values(OVERFLOW_NAV_EVENTS)) {
+    root.addEventListener(name, (event) =&gt; {
+      console.log(event.type, event.detail.reason, event.detail.overflowCount);
+    });
+  }
+
+  const instance = createOverflowNav(root, {
+    observeResize: true,
+    fitTolerance: 1,
+    menuButtonOptions: {},
+  });
+
+  instance.refresh(); // After application-driven content changes.
+  // instance.destroy(); // During application teardown.
+}</code></pre>
+        </div>
+      </div>
+      <p>
+        An initial redistribution can emit <code>overflow-nav:change</code>
+        before <code>overflow-nav:init</code>. A refresh can likewise emit a
+        change before its refresh event. Destroy emits its snapshot before the
+        authored DOM and state are restored.
+      </p>
+    </section>
 
     <section class="lab" aria-labelledby="lab-title">
       <h2 id="lab-title">Scenario controls</h2>
@@ -119,12 +252,48 @@
           <dt>Focus</dt><dd data-focus>—</dd>
           <dt>Last event</dt><dd data-event>—</dd>
         </dl>
+        <div class="lab__event-heading">
+          <h3 id="event-history-title">Event history</h3>
+          <button type="button" data-clear-events>Clear history</button>
+        </div>
+        <ol class="lab__event-log" aria-labelledby="event-history-title" data-event-log>
+          <li data-event-empty>No events recorded.</li>
+        </ol>
       </aside>
     </section>
   </main>
 
+  <footer class="demo-footer" data-demo-footer>
+    <div class="demo-footer__inner">
+      <div class="demo-footer__brand">
+        <p class="demo-footer__eyebrow">Accessibility plugin demo</p>
+        <p class="demo-footer__credit">
+          <span class="demo-footer__plugin">A11y Overflow Nav</span>
+          <span class="demo-footer__separator" aria-hidden="true">&middot;</span>
+          Built by <a class="demo-footer__link" href="https://github.com/vmitsaras/">Vasileios Mitsaras</a>
+          <span class="demo-footer__separator" aria-hidden="true">&middot;</span>
+          <a class="demo-footer__link" href="https://linkedin.com/in/vasilis-mitsaras">LinkedIn profile</a>
+        </p>
+        <p class="demo-footer__meta">
+          <span>a11y-overflow-nav</span>
+          <span class="demo-footer__separator" aria-hidden="true">&middot;</span>
+          <span>MIT License</span>
+        </p>
+      </div>
+      <nav class="demo-footer__nav" aria-label="Project links">
+        <ul class="demo-footer__links">
+          <li class="demo-footer__item"><a class="demo-footer__link" href="https://github.com/vmitsaras/A11y-Overflow-Nav">GitHub repository</a></li>
+          <li class="demo-footer__item"><a class="demo-footer__link" href="https://www.npmjs.com/package/a11y-overflow-nav">npm package</a></li>
+        </ul>
+      </nav>
+    </div>
+  </footer>
+
   <script type="module">
-    import { createOverflowNav } from './dist/index.js';
+    import {
+      createOverflowNav,
+      OVERFLOW_NAV_EVENTS
+    } from './dist/index.js';
 
     const root = document.querySelector('[data-a11y-overflow-nav]');
     const frame = document.querySelector('[data-frame]');
@@ -135,6 +304,9 @@
     const labels = document.querySelector('[data-labels]');
     const scale = document.querySelector('[data-scale]');
     const scaleOutput = document.querySelector('[data-scale-output]');
+    const eventOutput = document.querySelector('[data-event]');
+    const eventLog = document.querySelector('[data-event-log]');
+    const clearEvents = document.querySelector('[data-clear-events]');
 
     const labelSets = {
       short: {
@@ -176,6 +348,7 @@
     };
 
     let instance = null;
+    let eventSequence = 0;
 
     function textFor(items) {
       return items
@@ -183,7 +356,7 @@
         .join(' · ') || 'None';
     }
 
-    function updateInspector(lastEvent = null) {
+    function updateInspector() {
       document.querySelector('[data-status]').textContent =
         instance ? root.getAttribute('data-overflow-state') || 'ready' : 'Destroyed';
       document.querySelector('[data-visible]').textContent =
@@ -194,32 +367,69 @@
         instance ? String(instance.overflowCount) : '0';
       const active = document.activeElement;
       document.querySelector('[data-focus]').textContent =
-        active instanceof HTMLElement
+        active instanceof HTMLElement &&
+        active !== document.body &&
+        active !== document.documentElement
           ? active.textContent?.trim() || active.tagName
-          : '—';
-      if (lastEvent) {
-        document.querySelector('[data-event]').textContent = lastEvent;
+          : 'None';
+    }
+
+    function appendEvent(label, details) {
+      eventSequence += 1;
+      eventOutput.textContent = label;
+      eventLog.querySelector('[data-event-empty]')?.remove();
+
+      const item = document.createElement('li');
+      item.textContent = `${eventSequence}. ${label} — ${details}`;
+      eventLog.prepend(item);
+
+      while (eventLog.children.length > 20) {
+        eventLog.lastElementChild?.remove();
       }
     }
 
-    function initialize() {
-      instance = createOverflowNav(root);
-      updateInspector('overflow-nav:init');
+    function recordOverflowEvent(event) {
+      const detail = event.detail;
+      appendEvent(
+        `${event.type} (${detail.reason})`,
+        `count ${detail.overflowCount}; visible: ${textFor(detail.visibleItems)}; overflow: ${textFor(detail.overflowItems)}`
+      );
+      updateInspector();
     }
 
-    root.addEventListener('overflow-nav:change', (event) => {
-      updateInspector(event.type + ' (' + event.detail.reason + ')');
-    });
-    root.addEventListener('overflow-nav:refresh', (event) => {
-      updateInspector(event.type);
-    });
+    for (const eventName of Object.values(OVERFLOW_NAV_EVENTS)) {
+      root.addEventListener(eventName, recordOverflowEvent);
+    }
+
     root.addEventListener('menu-button:open', (event) => {
-      updateInspector(event.type);
+      appendEvent(
+        `Menu Button event: ${event.type}`,
+        `reason: ${event.detail?.reason ?? 'not provided'}`
+      );
+      updateInspector();
     });
     root.addEventListener('menu-button:close', (event) => {
-      updateInspector(event.type);
+      appendEvent(
+        `Menu Button event: ${event.type}`,
+        `reason: ${event.detail?.reason ?? 'not provided'}`
+      );
+      updateInspector();
     });
     document.addEventListener('focusin', () => updateInspector());
+
+    clearEvents.addEventListener('click', () => {
+      eventLog.replaceChildren();
+      const empty = document.createElement('li');
+      empty.setAttribute('data-event-empty', '');
+      empty.textContent = 'No events recorded.';
+      eventLog.append(empty);
+      eventOutput.textContent = '—';
+    });
+
+    function initialize() {
+      instance = createOverflowNav(root);
+      updateInspector();
+    }
 
     width.addEventListener('input', () => {
       frame.style.setProperty('--lab-width', width.value + 'px');
@@ -260,7 +470,7 @@
     document.querySelector('[data-destroy]').addEventListener('click', () => {
       instance?.destroy();
       instance = null;
-      updateInspector('overflow-nav:destroy');
+      updateInspector();
     });
 
     document.querySelector('[data-reinitialize]').addEventListener('click', () => {
