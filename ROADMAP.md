@@ -62,7 +62,7 @@ In progress.
 - [x] OVN-1010 Add ResizeObserver/requestAnimationFrame coalescing regression coverage (CI verified)
 - [x] OVN-1020 Complete source-level observer/reflow cost review
 - [x] v0.3 automated package gates after performance-hardening changes
-- [ ] OVN-1030 Record manual stress-fixture measurements in a real browser
+- [x] OVN-1030 Record manual stress-fixture measurements in a real browser
 - [ ] 200–400% zoom checks
 - [ ] browser text-size checks
 - [ ] forced-colors checks

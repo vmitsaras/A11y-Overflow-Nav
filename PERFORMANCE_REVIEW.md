@@ -46,12 +46,23 @@ If the stress fixture exposes a material regression, the first optimization cand
 
 The fixture deliberately has no pass/fail timing threshold because hardware, browser, zoom, and font metrics vary.
 
+Manual fixture run recorded on 2026-09-22:
+
+- environment: `examples/stress/index.html` served locally in HeadlessChrome 153.0.0.0 on macOS (`MacIntel`);
+- viewport: 756 x 469, device pixel ratio 1;
+- elapsed: 674.2 ms across 21 width steps;
+- `overflow-nav:change` events: 8;
+- mirrored `ResizeObserver` callbacks / entries: 16 / 20;
+- estimated item moves: 8;
+- maximum overflow: 22;
+- final overflow: 18.
+
 ## Review result
 
 - No hidden polling, timers, network work, or persistence were introduced.
 - Resize work is frame-coalesced.
 - Pending frame work is cancelled on destroy.
 - No new runtime dependency is required for performance diagnostics.
-- No source optimization is justified without measured evidence.
+- No source optimization is justified by the recorded fixture result.
 
-Status: **implementation hardening complete; manual stress measurements pending.**
+Status: **implementation hardening complete; manual stress measurements recorded; no source optimization justified by the recorded fixture result.**

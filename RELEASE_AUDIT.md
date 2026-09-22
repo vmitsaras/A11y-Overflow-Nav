@@ -14,6 +14,7 @@ Latest v0.3 CI: `35751176276` — pass
 - Progressive-enhancement fallback is documented.
 - No runtime stylesheet is shipped by A11y Overflow Nav.
 - Performance stress fixture and scheduling regression tests are now part of the repository.
+- Manual stress-fixture measurements were recorded in a real browser; see `VERIFICATION.md` for environment and values.
 - The v0.3 performance-hardening commit passed install, tests, typecheck, build, and package dry-run in GitHub Actions run `35751176276`.
 
 ## Package contract review
@@ -34,7 +35,6 @@ The v0.3 performance work adds no runtime API and no runtime dependency.
 
 The following remain open and must not be inferred as passing:
 
-- manual stress-fixture measurements;
 - 200–400% zoom;
 - browser text-size checks;
 - forced-colors checks;

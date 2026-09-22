@@ -82,7 +82,7 @@ This is manual acceptance evidence. It does not claim that the optional Playwrig
 
 ## Slice 7 — Release hardening
 
-Status: in progress; implementation hardening is CI verified.
+Status: in progress; implementation hardening is CI verified and manual stress-fixture measurements are recorded.
 
 Implemented in the current slice:
 
@@ -95,15 +95,25 @@ Implemented in the current slice:
 
 No runtime diagnostics or new runtime dependencies were added.
 
+Manual stress-fixture measurement recorded on 2026-09-22:
+
+- environment: `examples/stress/index.html` served locally in HeadlessChrome 153.0.0.0 on macOS (`MacIntel`);
+- viewport: 756 x 469, device pixel ratio 1;
+- elapsed: 674.2 ms across 21 width steps;
+- change events: 8;
+- observer callbacks / entries: 16 / 20;
+- estimated item moves: 8;
+- maximum overflow: 22;
+- final overflow: 18.
+
 Still required:
 
-1. run and record the stress fixture in a real browser;
-2. optimize only if those measurements expose a material bottleneck;
-3. run 200–400% zoom and browser text-size checks;
-4. run forced-colors checks;
-5. run NVDA/browser validation if Windows AT support is part of the release target;
-6. finish the package/release audit;
-7. synchronize final verification and release documentation.
+1. optimize only if future repeated measurements expose a material bottleneck;
+2. run 200–400% zoom and browser text-size checks;
+3. run forced-colors checks;
+4. run NVDA/browser validation if Windows AT support is part of the release target;
+5. finish the package/release audit;
+6. synchronize final verification and release documentation.
 
 ### Optional regression automation
 

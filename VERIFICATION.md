@@ -37,7 +37,23 @@ The current hardening slice added:
 
 The new automated tests passed in GitHub Actions run `35751176276`. No runtime diagnostics, polling, persistence, or new runtime dependency were added.
 
-Actual stress-fixture timing measurements remain manual and are intentionally not inferred from CI.
+Manual stress-fixture measurements were recorded from the developer fixture in a real browser on 2026-09-22. These values are environment-specific and are useful for before/after comparison on the same browser/device; they are not a universal performance threshold.
+
+| Check | Status | Evidence |
+| --- | --- | --- |
+| Stress fixture real-browser measurement | Pass / Recorded | `examples/stress/index.html` served locally and run in HeadlessChrome 153.0.0.0 on macOS (`MacIntel`) |
+
+Recorded fixture values:
+
+- viewport: 756 x 469, device pixel ratio 1;
+- elapsed: 674.2 ms;
+- steps: 21;
+- change events: 8;
+- observer callbacks: 16;
+- observer entries: 20;
+- estimated item moves: 8;
+- maximum overflow: 22;
+- final overflow: 18.
 
 ## Manual real-browser evidence
 
@@ -68,6 +84,7 @@ Verified now:
 - package install/test/typecheck/build/pack checks;
 - current implementation in a real browser;
 - VoiceOver manual interaction pass;
+- stress-fixture measurements in a real browser;
 - no reported blocking regression in that manual pass.
 
 Not yet claimed as verified:
@@ -79,18 +96,16 @@ Not yet claimed as verified:
 - browser text-only resize;
 - forced-colors behavior;
 - NVDA/browser combinations;
-- performance stress measurements from the new fixture.
 
 ## Next verification slice
 
 v0.3 release hardening:
 
-1. run and record the new performance stress fixture in a real browser;
-2. zoom/text-size checks;
-3. forced-colors checks;
-4. NVDA/browser coverage if in the supported release matrix;
-5. package release audit;
-6. final documentation synchronization.
+1. zoom/text-size checks;
+2. forced-colors checks;
+3. NVDA/browser coverage if in the supported release matrix;
+4. package release audit;
+5. final documentation synchronization.
 
 ## Final status
 
