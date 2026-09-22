@@ -1,0 +1,295 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>A11y Overflow Nav — Scenario Lab</title>
+  <link rel="stylesheet" href="./demo.css">
+  <script type="importmap">
+    {
+      "imports": {
+        "a11y-menu-button/core": "./node_modules/a11y-menu-button/dist/core.js"
+      }
+    }
+  </script>
+</head>
+<body>
+  <main class="demo">
+    <header class="demo__header">
+      <p class="demo__eyebrow">Interactive scenario lab</p>
+      <h1>A11y Overflow Nav</h1>
+      <p class="demo__intro">
+        Resize the component rather than the browser. Switch layout mode,
+        direction, label length, and text scale while inspecting the exact
+        visible/overflow distribution and lifecycle events.
+      </p>
+    </header>
+
+    <section class="lab" aria-labelledby="lab-title">
+      <h2 id="lab-title">Scenario controls</h2>
+
+      <div class="lab__presets" aria-label="Scenario presets">
+        <button type="button" data-preset="wide">Wide</button>
+        <button type="button" data-preset="one">One overflow</button>
+        <button type="button" data-preset="many">Many overflow</button>
+        <button type="button" data-preset="long">Long labels</button>
+        <button type="button" data-preset="grid">Grid</button>
+        <button type="button" data-preset="rtl">RTL</button>
+      </div>
+
+      <div class="lab__controls">
+        <label>
+          Container width
+          <input data-width type="range" min="260" max="1000" step="1" value="760">
+          <output data-width-output>760px</output>
+        </label>
+
+        <label>
+          Layout
+          <select data-layout-select>
+            <option value="flex-nowrap">Flex nowrap</option>
+            <option value="flex-wrap">Flex wrap</option>
+            <option value="grid">Grid</option>
+          </select>
+        </label>
+
+        <label>
+          Direction
+          <select data-direction>
+            <option value="ltr">LTR</option>
+            <option value="rtl">RTL</option>
+          </select>
+        </label>
+
+        <label>
+          Labels
+          <select data-labels>
+            <option value="short">Short English</option>
+            <option value="long">Long English</option>
+            <option value="de">German</option>
+            <option value="el">Greek</option>
+          </select>
+        </label>
+
+        <label>
+          Text scale
+          <input data-scale type="range" min="100" max="200" step="10" value="100">
+          <output data-scale-output>100%</output>
+        </label>
+      </div>
+
+      <div class="lab__actions">
+        <button type="button" data-refresh>Refresh</button>
+        <button type="button" data-destroy>Destroy</button>
+        <button type="button" data-reinitialize>Reinitialize</button>
+      </div>
+
+      <div class="lab__frame" data-frame data-layout="flex-nowrap">
+        <nav data-a11y-overflow-nav aria-label="Demo primary navigation">
+          <ul class="lab__nav-list" data-overflow-nav-list>
+            <li data-overflow-nav-item><a href="#articles" data-key="articles">Articles</a></li>
+            <li data-overflow-nav-item><a href="#books" data-key="books">Books</a></li>
+            <li data-overflow-nav-item><a href="#events" data-key="events">Events</a></li>
+            <li data-overflow-nav-item><a href="#membership" data-key="membership">Membership</a></li>
+            <li data-overflow-nav-item><a href="#newsletter" data-key="newsletter">Newsletter</a></li>
+            <li data-overflow-nav-item><a href="#about" data-key="about">About</a></li>
+            <li data-overflow-nav-item><a href="#careers" data-key="careers">Careers</a></li>
+
+            <li data-overflow-nav-control hidden>
+              <div data-overflow-nav-menu>
+                <button class="lab__more" type="button" aria-controls="demo-overflow-panel">
+                  More
+                </button>
+                <div class="lab__panel" id="demo-overflow-panel" hidden>
+                  <ul class="lab__overflow-list" data-overflow-nav-overflow-list></ul>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </nav>
+      </div>
+
+      <aside class="lab__inspector" aria-labelledby="inspector-title">
+        <h2 id="inspector-title">State inspector</h2>
+        <dl>
+          <dt>Status</dt><dd data-status>Not initialized</dd>
+          <dt>Visible</dt><dd data-visible>—</dd>
+          <dt>Overflow</dt><dd data-overflow>—</dd>
+          <dt>Count</dt><dd data-count>0</dd>
+          <dt>Focus</dt><dd data-focus>—</dd>
+          <dt>Last event</dt><dd data-event>—</dd>
+        </dl>
+      </aside>
+    </section>
+  </main>
+
+  <script type="module">
+    import { createOverflowNav } from './dist/index.js';
+
+    const root = document.querySelector('[data-a11y-overflow-nav]');
+    const frame = document.querySelector('[data-frame]');
+    const width = document.querySelector('[data-width]');
+    const widthOutput = document.querySelector('[data-width-output]');
+    const layout = document.querySelector('[data-layout-select]');
+    const direction = document.querySelector('[data-direction]');
+    const labels = document.querySelector('[data-labels]');
+    const scale = document.querySelector('[data-scale]');
+    const scaleOutput = document.querySelector('[data-scale-output]');
+
+    const labelSets = {
+      short: {
+        articles: 'Articles',
+        books: 'Books',
+        events: 'Events',
+        membership: 'Membership',
+        newsletter: 'Newsletter',
+        about: 'About',
+        careers: 'Careers'
+      },
+      long: {
+        articles: 'Latest articles',
+        books: 'Recommended books',
+        events: 'Upcoming events',
+        membership: 'Membership options',
+        newsletter: 'Email newsletter',
+        about: 'About this project',
+        careers: 'Career opportunities'
+      },
+      de: {
+        articles: 'Artikel',
+        books: 'Buchempfehlungen',
+        events: 'Veranstaltungen',
+        membership: 'Mitgliedschaft',
+        newsletter: 'Newsletter',
+        about: 'Über uns',
+        careers: 'Karrieremöglichkeiten'
+      },
+      el: {
+        articles: 'Άρθρα',
+        books: 'Βιβλία',
+        events: 'Εκδηλώσεις',
+        membership: 'Συνδρομή',
+        newsletter: 'Ενημερωτικό δελτίο',
+        about: 'Σχετικά',
+        careers: 'Ευκαιρίες καριέρας'
+      }
+    };
+
+    let instance = null;
+
+    function textFor(items) {
+      return items
+        .map((item) => item.querySelector('a')?.textContent?.trim() || '?')
+        .join(' · ') || 'None';
+    }
+
+    function updateInspector(lastEvent = null) {
+      document.querySelector('[data-status]').textContent =
+        instance ? root.getAttribute('data-overflow-state') || 'ready' : 'Destroyed';
+      document.querySelector('[data-visible]').textContent =
+        instance ? textFor(instance.visibleItems) : '—';
+      document.querySelector('[data-overflow]').textContent =
+        instance ? textFor(instance.overflowItems) : '—';
+      document.querySelector('[data-count]').textContent =
+        instance ? String(instance.overflowCount) : '0';
+      const active = document.activeElement;
+      document.querySelector('[data-focus]').textContent =
+        active instanceof HTMLElement
+          ? active.textContent?.trim() || active.tagName
+          : '—';
+      if (lastEvent) {
+        document.querySelector('[data-event]').textContent = lastEvent;
+      }
+    }
+
+    function initialize() {
+      instance = createOverflowNav(root);
+      updateInspector('overflow-nav:init');
+    }
+
+    root.addEventListener('overflow-nav:change', (event) => {
+      updateInspector(event.type + ' (' + event.detail.reason + ')');
+    });
+    root.addEventListener('overflow-nav:refresh', (event) => {
+      updateInspector(event.type);
+    });
+    root.addEventListener('menu-button:open', (event) => {
+      updateInspector(event.type);
+    });
+    root.addEventListener('menu-button:close', (event) => {
+      updateInspector(event.type);
+    });
+    document.addEventListener('focusin', () => updateInspector());
+
+    width.addEventListener('input', () => {
+      frame.style.setProperty('--lab-width', width.value + 'px');
+      widthOutput.value = width.value + 'px';
+    });
+
+    layout.addEventListener('change', () => {
+      frame.dataset.layout = layout.value;
+      instance?.refresh();
+    });
+
+    direction.addEventListener('change', () => {
+      frame.dir = direction.value;
+      instance?.refresh();
+    });
+
+    labels.addEventListener('change', () => {
+      const set = labelSets[labels.value];
+      root.querySelectorAll('[data-key]').forEach((link) => {
+        link.textContent = set[link.dataset.key];
+      });
+      instance?.refresh();
+    });
+
+    scale.addEventListener('input', () => {
+      frame.style.setProperty(
+        '--lab-scale',
+        String(Number(scale.value) / 100) + 'rem'
+      );
+      scaleOutput.value = scale.value + '%';
+      instance?.refresh();
+    });
+
+    document.querySelector('[data-refresh]').addEventListener('click', () => {
+      instance?.refresh();
+    });
+
+    document.querySelector('[data-destroy]').addEventListener('click', () => {
+      instance?.destroy();
+      instance = null;
+      updateInspector('overflow-nav:destroy');
+    });
+
+    document.querySelector('[data-reinitialize]').addEventListener('click', () => {
+      if (!instance) initialize();
+    });
+
+    document.querySelectorAll('[data-preset]').forEach((button) => {
+      button.addEventListener('click', () => {
+        const values = {
+          wide: ['980', 'flex-nowrap', 'ltr', 'short', '100'],
+          one: ['640', 'flex-nowrap', 'ltr', 'short', '100'],
+          many: ['360', 'flex-nowrap', 'ltr', 'short', '100'],
+          long: ['620', 'flex-nowrap', 'ltr', 'long', '120'],
+          grid: ['620', 'grid', 'ltr', 'short', '100'],
+          rtl: ['620', 'flex-nowrap', 'rtl', 'short', '100']
+        }[button.dataset.preset];
+
+        if (!values) return;
+
+        [width.value, layout.value, direction.value, labels.value, scale.value] = values;
+        width.dispatchEvent(new Event('input'));
+        layout.dispatchEvent(new Event('change'));
+        direction.dispatchEvent(new Event('change'));
+        labels.dispatchEvent(new Event('change'));
+        scale.dispatchEvent(new Event('input'));
+      });
+    });
+
+    initialize();
+  </script>
+</body>
+</html>
