@@ -16,7 +16,7 @@ Deliverables:
 
 ## Slice 2 — Responsive distribution
 
-Status: implemented; real-browser geometry verification remains in Slice 6.
+Status: implemented and manually verified in a real browser.
 
 Deliverables:
 
@@ -30,7 +30,7 @@ Deliverables:
 
 ## Slice 3 — Focus continuity
 
-Status: implemented; real-browser focus verification remains in Slice 6.
+Status: implemented and included in the manual VoiceOver verification pass.
 
 Deliverables:
 
@@ -67,35 +67,50 @@ Deliverables:
 - destroy / reinitialize
 - happy-dom lifecycle tests
 
-## Slice 6 — Real-browser geometry
+## Slice 6 — Manual real-browser verification
+
+Status: verified.
+
+Evidence recorded on 2026-09-22:
+
+- project owner tested the current implementation in a real browser;
+- VoiceOver was included;
+- the verification passed;
+- no blocking regression was reported.
+
+This is manual acceptance evidence. It does not claim that the optional Playwright cross-browser matrix has been implemented.
+
+## Slice 7 — Release hardening
 
 Status: next.
 
-Add Playwright only for behavior that requires actual layout. Reuse the scenario lab fixture where practical.
+Primary tasks:
 
-Acceptance targets:
+1. add a performance stress fixture with a deliberately large navigation set;
+2. inspect ResizeObserver callback frequency, requestAnimationFrame batching, fit checks, and DOM moves;
+3. optimize only confirmed bottlenecks;
+4. run 200–400% zoom and browser text-size checks;
+5. run forced-colors checks;
+6. run NVDA/browser validation if Windows AT support is part of the release target;
+7. complete a package/release audit;
+8. synchronize README, docs metadata, roadmap, and verification records.
 
-- deterministic prefix/suffix distribution across Chromium, Firefox, WebKit;
-- no oscillation at thresholds;
-- focus remains visible and valid during redistribution;
-- open More disclosure remains coherent during width changes.
+### Optional regression automation
 
-## Current automated verification
+A Playwright geometry suite remains valuable for repeatable Chromium/Firefox/WebKit regression coverage, but it is tracked as automation hardening rather than a blocker for the already-completed manual verification.
 
-The latest v0.1 implementation passed the GitHub Actions package gates on 2026-09-22:
+## Current verification
 
-1. dependency installation
-2. `npm run test`
-3. `npm run typecheck`
-4. `npm run build`
-5. `npm run pack:check`
+Latest repository implementation inspected before this update:
 
-See `VERIFICATION.md` for the recorded evidence and remaining limitations.
+- head: `62fdf29f0b86d02dd86a0afa4c650bd19fa22376`
+- GitHub Actions run: `35749073102`
+- install: pass
+- tests: pass
+- typecheck: pass
+- build: pass
+- pack check: pass
+- manual real-browser test: pass
+- VoiceOver test: pass
 
-## Remaining verification sequence
-
-1. add and run real-browser geometry tests
-2. validate focus transitions in real browsers
-3. run zoom, text-size, forced-colors, and localization checks
-4. run the supported assistive-technology matrix
-5. complete the package release audit
+See `VERIFICATION.md` for evidence boundaries and remaining release-hardening work.

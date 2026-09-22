@@ -1,65 +1,82 @@
-# Verification — v0.1 Core Priority+ Engine
+# Verification — A11y Overflow Nav
 
 Date: 2026-09-22  
-Implementation head: `2e731035d35977abd6daadd8fe8419d3a2eb9fbd`  
-GitHub Actions run: `35741120544`
+Manual verification target: `62fdf29f0b86d02dd86a0afa4c650bd19fa22376`  
+Latest automated run for that target: `35749073102`
 
 ## Summary
 
-The v0.1 implementation passed its package-level automated gates after one implementation regression was found and fixed.
+The current implementation has both package-level automated evidence and project-owner manual real-browser accessibility evidence.
 
-The earlier automated run exposed an ordering defect in `refresh()`: a newly inserted primary item could be reordered behind the previous canonical items. The refresh reconciliation was changed to capture current primary DOM order before restoring the canonical sequence. The regression test then passed.
+The project owner reported testing the current implementation in a real browser with VoiceOver and reported the result as **verified / passed**.
 
-This verification does **not** claim real-browser Flex/Grid geometry, zoom, or assistive-technology compatibility. Those checks remain scheduled in the roadmap.
+This record intentionally distinguishes that manual evidence from checks that were not explicitly reported, such as a full Chromium/Firefox/WebKit automation matrix, forced-colors testing, or NVDA coverage.
 
-## Automated gates
+## Automated package gates
+
+For implementation head `62fdf29f0b86d02dd86a0afa4c650bd19fa22376`, GitHub Actions run `35749073102` completed successfully.
 
 | Check | Status | Evidence |
 | --- | --- | --- |
-| Dependency installation | Pass | GitHub Actions run 35741120544 |
-| Unit/lifecycle tests | Pass | `npm run test` |
-| TypeScript integrity | Pass | `npm run typecheck` |
-| Package build | Pass | `npm run build` |
-| Package contents | Pass | `npm run pack:check` |
+| Dependency installation | Pass | GitHub Actions run 35749073102 |
+| Unit/lifecycle tests | Pass | CI |
+| TypeScript integrity | Pass | CI |
+| Package build | Pass | CI |
+| Package contents | Pass | CI |
 
-## Covered behavior
+## Manual real-browser evidence
 
-The current unit suite covers:
+Reported by the project owner on 2026-09-22:
 
-- initialization against valid semantic markup;
-- all-items-fit state;
-- duplicate initialization reuse;
-- progressive-enhancement requirement that More starts hidden;
-- bubbling init/destroy lifecycle events;
-- explicit refresh after an application inserts a new primary item;
-- exact source-order restoration on destroy;
-- destroy/reinitialize safety.
+| Check | Status | Evidence |
+| --- | --- | --- |
+| Real-browser functional verification | Pass | Manual project-owner test |
+| VoiceOver verification | Pass | Manual project-owner test |
+| Blocking regression found | No | Manual project-owner report |
 
-## Failure found and resolved
+The exact browser/version and operating-system version were not recorded in the report, so this verification note does not infer them.
+
+## Previously resolved implementation regression
 
 ### V-01 — Refresh order reconciliation
 
-**Observed:** The first CI test run on Node 24 failed the dynamic-item refresh test. The newly added `Membership` item was no longer the last primary item after refresh.
+**Observed:** An earlier CI run found that a newly inserted primary item could be reordered behind the previous canonical items during `refresh()`.
 
-**Cause:** The old implementation restored the previous canonical item array before capturing the application's new primary-list order.
+**Resolution:** `refresh()` now captures current direct primary-item DOM order before rebuilding the canonical sequence and restoring/reflowing.
 
-**Resolution:** `refresh()` now validates stable structural nodes, captures direct primary items in their current DOM order, retains connected canonical overflow items, builds the next canonical sequence, and only then restores/reflows.
+**Result:** Subsequent automated package gates passed.
 
-**Result:** The follow-up CI run passed test, typecheck, build, and package checks.
+## Verification boundary
 
-## Remaining limitations
+Verified now:
 
-Not yet verified:
+- package install/test/typecheck/build/pack checks;
+- current implementation in a real browser;
+- VoiceOver manual interaction pass;
+- no reported blocking regression in that manual pass.
 
-- actual Flex nowrap, Flex wrap, and Grid geometry in Chromium/Firefox/WebKit;
-- fractional-width threshold behavior;
-- repeated grow/shrink oscillation resistance in a real layout engine;
-- live focus behavior during responsive redistribution;
-- 200–400% browser zoom and text-only resize;
+Not yet claimed as verified:
+
+- automated Chromium/Firefox/WebKit geometry matrix;
+- fractional-width threshold automation;
+- repeated threshold-cycle automation;
+- 200–400% zoom;
+- browser text-only resize;
 - forced-colors behavior;
-- VoiceOver/Safari;
-- NVDA/browser combinations.
+- NVDA/browser combinations;
+- performance stress measurements.
+
+## Next verification slice
+
+v0.3 release hardening:
+
+1. performance stress fixture and reflow-cost review;
+2. zoom/text-size checks;
+3. forced-colors checks;
+4. NVDA/browser coverage if in the supported release matrix;
+5. package release audit;
+6. final documentation synchronization.
 
 ## Final status
 
-**Package-level verification complete. Real-browser and manual accessibility verification pending.**
+**Core implementation verified through automated package gates plus manual real-browser and VoiceOver testing. Release-hardening checks remain open.**

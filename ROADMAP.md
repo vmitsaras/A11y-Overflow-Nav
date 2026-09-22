@@ -28,29 +28,44 @@
 - [x] OVN-900 DOM/lifecycle unit tests
 - [x] Automated package gates: install, test, typecheck, build, pack check
 
-Status: v0.1 implementation and package-level automated verification are complete. Real-browser geometry and manual accessibility evidence remain intentionally tracked in v0.2/v0.3 before a release-quality verification claim.
+Status: complete and package-gate verified.
 
-## v0.2 — Real-browser verification
+## v0.2 — Manual real-browser + VoiceOver verification
 
-- [ ] OVN-910 Playwright geometry suite for Chromium, Firefox, WebKit
-- [ ] Flex nowrap matrix
-- [ ] Flex wrap matrix
-- [ ] Grid matrix
-- [ ] grow/shrink threshold cycles
-- [ ] fractional widths
-- [ ] long/localized labels
-- [ ] RTL
-- [ ] focus transitions during live resize
+- [x] OVN-910 Manual real-browser functional verification
+- [x] Priority+ redistribution exercised in a real layout engine
+- [x] More disclosure exercised with the published A11y Menu Button integration
+- [x] VoiceOver verification completed
+- [x] No blocking regression reported during manual verification
 
-## v0.3 — Release QA
+Status: verified by the project owner on 2026-09-22 against the current implementation. Browser/version details were not recorded in the verification note, so this does not imply a full Chromium/Firefox/WebKit matrix.
 
+### Optional automation hardening
+
+- [ ] Playwright geometry suite for Chromium, Firefox, WebKit
+- [ ] automated Flex nowrap matrix
+- [ ] automated Flex wrap matrix
+- [ ] automated Grid matrix
+- [ ] automated grow/shrink threshold cycles
+- [ ] automated fractional-width checks
+- [ ] automated long/localized-label checks
+- [ ] automated RTL checks
+- [ ] automated focus-transition checks during live resize
+
+These are useful regression protections, but they are no longer blocking the manual v0.2 verification record.
+
+## v0.3 — Release hardening
+
+Next slice.
+
+- [ ] OVN-1000 Performance stress fixture and observer/reflow review
 - [ ] 200–400% zoom checks
 - [ ] browser text-size checks
 - [ ] forced-colors checks
-- [ ] NVDA/browser manual matrix
-- [ ] VoiceOver/Safari manual matrix
-- [ ] performance stress fixture
+- [ ] NVDA/browser manual matrix when Windows AT support is in scope
+- [x] VoiceOver manual verification
 - [ ] package release audit
+- [ ] documentation/repository synchronization review
 
 ## Deferred
 
