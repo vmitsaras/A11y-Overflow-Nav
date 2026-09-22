@@ -188,7 +188,7 @@ The package is designed to support accessible navigation, but integration detail
 
 ## Examples
 
-The root `index.html` is a scenario lab for layout, direction, text scaling, focus, and lifecycle events. A smaller copy-friendly example is in [`examples/basic/`](examples/basic/).
+The root `index.html` is a scenario lab for layout, direction, text scaling, focus, and lifecycle events. A smaller copy-friendly example is in [`examples/basic/`](examples/basic/). A developer-only performance fixture is in [`examples/stress/`](examples/stress/) and performs a 24-item width sweep while recording browser ResizeObserver signals, distribution changes, estimated item moves, and elapsed time.
 
 ~~~bash
 npm install
@@ -218,6 +218,8 @@ npm run pack:check
 ~~~
 
 Real-browser geometry, keyboard, focus, zoom, and assistive-technology verification remain separate from DOM unit tests.
+
+For performance investigation, use the stress fixture rather than adding debug counters to the runtime API. The fixture is intended for before/after comparisons on the same browser/device; it does not define a universal timing threshold.
 
 ## License
 

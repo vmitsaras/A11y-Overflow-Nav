@@ -1,4 +1,4 @@
-import { afterEach, describe, expect, it } from 'vitest';
+import { afterEach, describe, expect, it, vi } from 'vitest';
 import {
   createOverflowNav,
   OVERFLOW_NAV_EVENTS,
@@ -39,7 +39,44 @@ function createFixture(
   return root;
 }
 
+const originalResizeObserver = Reflect.get(window, 'ResizeObserver');
+
+class FakeResizeObserver {
+  public static instances: FakeResizeObserver[] = [];
+
+  public readonly observed = new Set<Element>();
+  private readonly callback: ResizeObserverCallback;
+
+  public constructor(callback: ResizeObserverCallback) {
+    this.callback = callback;
+    FakeResizeObserver.instances.push(this);
+  }
+
+  public observe(target: Element): void {
+    this.observed.add(target);
+  }
+
+  public unobserve(target: Element): void {
+    this.observed.delete(target);
+  }
+
+  public disconnect(): void {
+    this.observed.clear();
+  }
+
+  public trigger(): void {
+    this.callback([], this as unknown as ResizeObserver);
+  }
+}
+
 afterEach(() => {
+  vi.restoreAllMocks();
+  Object.defineProperty(window, 'ResizeObserver', {
+    configurable: true,
+    writable: true,
+    value: originalResizeObserver,
+  });
+  FakeResizeObserver.instances = [];
   document.body.replaceChildren();
 });
 
@@ -141,6 +178,65 @@ describe('A11yOverflowNav', () => {
     expect(root.hasAttribute('data-overflow-state')).toBe(false);
     expect(root.hasAttribute('data-overflow-count')).toBe(false);
     expect(root.hasAttribute('data-overflow-nav-ready')).toBe(false);
+  });
+
+  it('coalesces repeated resize observer signals into one animation frame', () => {
+    Object.defineProperty(window, 'ResizeObserver', {
+      configurable: true,
+      writable: true,
+      value: FakeResizeObserver,
+    });
+
+    const callbacks: FrameRequestCallback[] = [];
+    const raf = vi
+      .spyOn(window, 'requestAnimationFrame')
+      .mockImplementation((callback) => {
+        callbacks.push(callback);
+        return callbacks.length;
+      });
+
+    const root = createFixture();
+    const instance = createOverflowNav(root);
+
+    const observer = FakeResizeObserver.instances[0];
+    expect(observer).toBeDefined();
+    expect(observer?.observed.size).toBe(5);
+
+    observer?.trigger();
+    observer?.trigger();
+    observer?.trigger();
+
+    expect(raf).toHaveBeenCalledTimes(1);
+
+    callbacks[0]?.(16);
+    instance.destroy();
+  });
+
+  it('cancels pending resize work during destroy', () => {
+    Object.defineProperty(window, 'ResizeObserver', {
+      configurable: true,
+      writable: true,
+      value: FakeResizeObserver,
+    });
+
+    const raf = vi
+      .spyOn(window, 'requestAnimationFrame')
+      .mockImplementation(() => 37);
+    const cancel = vi
+      .spyOn(window, 'cancelAnimationFrame')
+      .mockImplementation(() => undefined);
+
+    const root = createFixture();
+    const instance = createOverflowNav(root);
+    const observer = FakeResizeObserver.instances[0];
+
+    observer?.trigger();
+    expect(raf).toHaveBeenCalledTimes(1);
+
+    instance.destroy();
+
+    expect(cancel).toHaveBeenCalledWith(37);
+    expect(observer?.observed.size).toBe(0);
   });
 
   it('can be destroyed and initialized again safely', () => {

@@ -294,6 +294,12 @@ if (root instanceof HTMLElement) {
       description: 'Interactive layout and lifecycle scenarios.',
       path: 'index.html',
     },
+    {
+      name: 'Performance stress fixture',
+      description:
+        'Developer-only 24-item width sweep that records observer signals, distribution changes, estimated DOM moves, and elapsed time without adding runtime instrumentation to the package.',
+      path: 'examples/stress',
+    },
   ],
   limitations: [
     'No nested or mega-menu redistribution.',

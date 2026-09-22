@@ -1,0 +1,359 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>A11y Overflow Nav — Performance stress fixture</title>
+  <style>
+    :root {
+      color-scheme: light dark;
+      font-family: system-ui, sans-serif;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      background: Canvas;
+      color: CanvasText;
+    }
+
+    main {
+      inline-size: min(86rem, calc(100% - 2rem));
+      margin-inline: auto;
+      padding-block: 2rem 4rem;
+    }
+
+    h1 { margin-block-end: 0.5rem; }
+
+    .stress-note {
+      max-inline-size: 62rem;
+      line-height: 1.6;
+    }
+
+    .stress-controls,
+    .stress-results {
+      display: grid;
+      gap: 1rem;
+      margin-block: 1.5rem;
+      padding: 1rem;
+      border: 1px solid color-mix(in srgb, CanvasText 22%, transparent);
+      border-radius: 0.8rem;
+    }
+
+    .stress-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+    }
+
+    button,
+    input {
+      font: inherit;
+    }
+
+    button {
+      min-block-size: 2.75rem;
+      padding-inline: 1rem;
+    }
+
+    label {
+      display: grid;
+      gap: 0.35rem;
+      max-inline-size: 32rem;
+      font-weight: 650;
+    }
+
+    .stress-frame {
+      inline-size: min(100%, var(--stress-width, 900px));
+      max-inline-size: 100%;
+      padding: 0.75rem;
+      overflow: hidden;
+      border: 1px solid color-mix(in srgb, CanvasText 25%, transparent);
+      border-radius: 0.8rem;
+    }
+
+    [data-overflow-nav-list] {
+      display: flex;
+      flex-wrap: nowrap;
+      align-items: center;
+      gap: 0.35rem;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    [data-overflow-nav-item] > a,
+    [data-overflow-nav-menu] > button {
+      display: block;
+      padding: 0.55rem 0.7rem;
+      white-space: nowrap;
+    }
+
+    [data-overflow-nav-menu] {
+      position: relative;
+    }
+
+    [data-overflow-nav-menu] > div {
+      position: absolute;
+      z-index: 10;
+      inset-block-start: calc(100% + 0.25rem);
+      inset-inline-end: 0;
+      min-inline-size: 15rem;
+      max-block-size: 60vh;
+      overflow: auto;
+      padding: 0.5rem;
+      border: 1px solid CanvasText;
+      background: Canvas;
+      color: CanvasText;
+    }
+
+    [data-overflow-nav-overflow-list] {
+      display: grid;
+      gap: 0.2rem;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .stress-results dl {
+      display: grid;
+      grid-template-columns: max-content 1fr;
+      gap: 0.4rem 1rem;
+      margin: 0;
+    }
+
+    .stress-results dt { font-weight: 700; }
+    .stress-results dd { margin: 0; }
+
+    :focus-visible {
+      outline: 3px solid currentColor;
+      outline-offset: 3px;
+    }
+
+    @media (forced-colors: active) {
+      .stress-controls,
+      .stress-results,
+      .stress-frame {
+        border-color: CanvasText;
+      }
+    }
+  </style>
+  <script type="importmap">
+    {
+      "imports": {
+        "a11y-menu-button/core": "../../node_modules/a11y-menu-button/dist/core.js"
+      }
+    }
+  </script>
+</head>
+<body>
+  <main>
+    <h1>A11y Overflow Nav performance stress fixture</h1>
+    <p class="stress-note">
+      This is a developer fixture, not a universal benchmark. It deliberately uses
+      24 navigation items and repeatedly changes only the component width. Compare
+      results before and after a code change on the same browser and device.
+      Runtime instrumentation is kept out of the package API.
+    </p>
+
+    <section class="stress-controls" aria-labelledby="controls-title">
+      <h2 id="controls-title">Controls</h2>
+      <div class="stress-actions">
+        <button type="button" data-run>Run width sweep</button>
+        <button type="button" data-reset>Reset</button>
+      </div>
+      <label>
+        Manual container width
+        <input data-width type="range" min="280" max="1200" value="900" step="10">
+        <output data-width-output>900px</output>
+      </label>
+    </section>
+
+    <div class="stress-frame" data-frame>
+      <nav data-a11y-overflow-nav aria-label="Stress test navigation">
+        <ul data-overflow-nav-list>
+          <li data-overflow-nav-item><a href="#dashboard">Dashboard</a></li>
+          <li data-overflow-nav-item><a href="#articles">Articles</a></li>
+          <li data-overflow-nav-item><a href="#books">Books</a></li>
+          <li data-overflow-nav-item><a href="#events">Events</a></li>
+          <li data-overflow-nav-item><a href="#membership">Membership</a></li>
+          <li data-overflow-nav-item><a href="#newsletter">Newsletter</a></li>
+          <li data-overflow-nav-item><a href="#community">Community</a></li>
+          <li data-overflow-nav-item><a href="#resources">Resources</a></li>
+          <li data-overflow-nav-item><a href="#tutorials">Tutorials</a></li>
+          <li data-overflow-nav-item><a href="#accessibility">Accessibility</a></li>
+          <li data-overflow-nav-item><a href="#performance">Performance</a></li>
+          <li data-overflow-nav-item><a href="#design-systems">Design Systems</a></li>
+          <li data-overflow-nav-item><a href="#components">Components</a></li>
+          <li data-overflow-nav-item><a href="#documentation">Documentation</a></li>
+          <li data-overflow-nav-item><a href="#case-studies">Case Studies</a></li>
+          <li data-overflow-nav-item><a href="#releases">Releases</a></li>
+          <li data-overflow-nav-item><a href="#changelog">Changelog</a></li>
+          <li data-overflow-nav-item><a href="#integrations">Integrations</a></li>
+          <li data-overflow-nav-item><a href="#partners">Partners</a></li>
+          <li data-overflow-nav-item><a href="#careers">Careers</a></li>
+          <li data-overflow-nav-item><a href="#about">About</a></li>
+          <li data-overflow-nav-item><a href="#contact">Contact</a></li>
+          <li data-overflow-nav-item><a href="#support">Support</a></li>
+          <li data-overflow-nav-item><a href="#account">Account</a></li>
+
+          <li data-overflow-nav-control hidden>
+            <div data-overflow-nav-menu>
+              <button type="button" aria-controls="stress-overflow-panel">More</button>
+              <div id="stress-overflow-panel" hidden>
+                <ul data-overflow-nav-overflow-list></ul>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </nav>
+    </div>
+
+    <section class="stress-results" aria-labelledby="results-title">
+      <h2 id="results-title">Latest sweep</h2>
+      <p data-summary aria-live="polite">No sweep has been run yet.</p>
+      <dl>
+        <dt>Elapsed</dt><dd data-elapsed>—</dd>
+        <dt>Steps</dt><dd data-steps>0</dd>
+        <dt>Change events</dt><dd data-change-events>0</dd>
+        <dt>Observer callbacks</dt><dd data-observer-callbacks>0</dd>
+        <dt>Observer entries</dt><dd data-observer-entries>0</dd>
+        <dt>Estimated item moves</dt><dd data-moves>0</dd>
+        <dt>Maximum overflow</dt><dd data-max-overflow>0</dd>
+        <dt>Final overflow</dt><dd data-final-overflow>0</dd>
+      </dl>
+    </section>
+  </main>
+
+  <script type="module">
+    import { createOverflowNav } from '../../dist/index.js';
+
+    const root = document.querySelector('[data-a11y-overflow-nav]');
+    const frame = document.querySelector('[data-frame]');
+    const run = document.querySelector('[data-run]');
+    const reset = document.querySelector('[data-reset]');
+    const width = document.querySelector('[data-width]');
+    const widthOutput = document.querySelector('[data-width-output]');
+    const summary = document.querySelector('[data-summary]');
+
+    const instance = createOverflowNav(root);
+
+    const metrics = {
+      changeEvents: 0,
+      observerCallbacks: 0,
+      observerEntries: 0,
+    };
+
+    root.addEventListener('overflow-nav:change', () => {
+      metrics.changeEvents += 1;
+    });
+
+    const diagnosticObserver = new ResizeObserver((entries) => {
+      metrics.observerCallbacks += 1;
+      metrics.observerEntries += entries.length;
+    });
+
+    diagnosticObserver.observe(instance.list);
+    diagnosticObserver.observe(instance.overflowControl);
+    for (const item of [...instance.visibleItems, ...instance.overflowItems]) {
+      diagnosticObserver.observe(item);
+    }
+
+    const outputs = {
+      elapsed: document.querySelector('[data-elapsed]'),
+      steps: document.querySelector('[data-steps]'),
+      changeEvents: document.querySelector('[data-change-events]'),
+      observerCallbacks: document.querySelector('[data-observer-callbacks]'),
+      observerEntries: document.querySelector('[data-observer-entries]'),
+      moves: document.querySelector('[data-moves]'),
+      maxOverflow: document.querySelector('[data-max-overflow]'),
+      finalOverflow: document.querySelector('[data-final-overflow]'),
+    };
+
+    const sweepWidths = [
+      1200, 1080, 960, 840, 720, 600, 520, 440, 360, 300, 280,
+      320, 380, 460, 540, 640, 760, 880, 1000, 1120, 1200,
+    ];
+
+    function nextFrame() {
+      return new Promise((resolve) => requestAnimationFrame(resolve));
+    }
+
+    async function settleLayout() {
+      await nextFrame();
+      await nextFrame();
+    }
+
+    function setWidth(value) {
+      frame.style.setProperty('--stress-width', value + 'px');
+      width.value = String(value);
+      widthOutput.value = value + 'px';
+    }
+
+    function resetMetrics() {
+      metrics.changeEvents = 0;
+      metrics.observerCallbacks = 0;
+      metrics.observerEntries = 0;
+    }
+
+    function writeMetrics(result) {
+      outputs.elapsed.textContent = result.elapsed.toFixed(1) + ' ms';
+      outputs.steps.textContent = String(result.steps);
+      outputs.changeEvents.textContent = String(metrics.changeEvents);
+      outputs.observerCallbacks.textContent = String(metrics.observerCallbacks);
+      outputs.observerEntries.textContent = String(metrics.observerEntries);
+      outputs.moves.textContent = String(result.moves);
+      outputs.maxOverflow.textContent = String(result.maxOverflow);
+      outputs.finalOverflow.textContent = String(instance.overflowCount);
+    }
+
+    width.addEventListener('input', () => {
+      setWidth(Number(width.value));
+    });
+
+    run.addEventListener('click', async () => {
+      run.disabled = true;
+      summary.textContent = 'Running width sweep…';
+      resetMetrics();
+
+      let previousOverflow = instance.overflowCount;
+      let moves = 0;
+      let maxOverflow = previousOverflow;
+      const start = performance.now();
+
+      for (const nextWidth of sweepWidths) {
+        setWidth(nextWidth);
+        await settleLayout();
+
+        const currentOverflow = instance.overflowCount;
+        moves += Math.abs(currentOverflow - previousOverflow);
+        maxOverflow = Math.max(maxOverflow, currentOverflow);
+        previousOverflow = currentOverflow;
+      }
+
+      const elapsed = performance.now() - start;
+      writeMetrics({
+        elapsed,
+        steps: sweepWidths.length,
+        moves,
+        maxOverflow,
+      });
+
+      summary.textContent =
+        'Sweep complete. Compare these values with a baseline from the same browser and device.';
+      run.disabled = false;
+    });
+
+    reset.addEventListener('click', async () => {
+      setWidth(900);
+      await settleLayout();
+      resetMetrics();
+      summary.textContent = 'Fixture reset. No sweep result is active.';
+      for (const output of Object.values(outputs)) {
+        output.textContent = output === outputs.elapsed ? '—' : '0';
+      }
+    });
+  </script>
+</body>
+</html>

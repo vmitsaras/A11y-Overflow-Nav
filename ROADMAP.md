@@ -56,16 +56,20 @@ These are useful regression protections, but they are no longer blocking the man
 
 ## v0.3 — Release hardening
 
-Next slice.
+In progress.
 
-- [ ] OVN-1000 Performance stress fixture and observer/reflow review
+- [x] OVN-1000 Add a developer-only 24-item performance stress fixture
+- [x] OVN-1010 Add ResizeObserver/requestAnimationFrame coalescing regression coverage
+- [x] OVN-1020 Complete source-level observer/reflow cost review
+- [ ] OVN-1030 Record manual stress-fixture measurements in a real browser
 - [ ] 200–400% zoom checks
 - [ ] browser text-size checks
 - [ ] forced-colors checks
 - [ ] NVDA/browser manual matrix when Windows AT support is in scope
 - [x] VoiceOver manual verification
-- [ ] package release audit
-- [ ] documentation/repository synchronization review
+- [x] Create release-audit checklist and evidence boundary
+- [ ] Final package release audit
+- [ ] Final documentation/repository synchronization review
 
 ## Deferred
 

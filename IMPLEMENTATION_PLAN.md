@@ -82,18 +82,28 @@ This is manual acceptance evidence. It does not claim that the optional Playwrig
 
 ## Slice 7 — Release hardening
 
-Status: next.
+Status: in progress.
 
-Primary tasks:
+Implemented in the current slice:
 
-1. add a performance stress fixture with a deliberately large navigation set;
-2. inspect ResizeObserver callback frequency, requestAnimationFrame batching, fit checks, and DOM moves;
-3. optimize only confirmed bottlenecks;
-4. run 200–400% zoom and browser text-size checks;
-5. run forced-colors checks;
-6. run NVDA/browser validation if Windows AT support is part of the release target;
-7. complete a package/release audit;
-8. synchronize README, docs metadata, roadmap, and verification records.
+1. a developer-only 24-item performance stress fixture in `examples/stress/`;
+2. browser-side measurement of elapsed sweep time, distribution-change events, mirrored ResizeObserver callbacks/entries, estimated item moves, and maximum overflow;
+3. unit regression coverage proving repeated ResizeObserver signals coalesce into one pending animation frame;
+4. unit regression coverage proving pending resize work is cancelled during `destroy()`;
+5. a source-level performance review documenting the current cost model and the threshold for future optimization;
+6. an in-progress release audit with explicit evidence boundaries.
+
+No runtime diagnostics or new runtime dependencies were added.
+
+Still required:
+
+1. run and record the stress fixture in a real browser;
+2. optimize only if those measurements expose a material bottleneck;
+3. run 200–400% zoom and browser text-size checks;
+4. run forced-colors checks;
+5. run NVDA/browser validation if Windows AT support is part of the release target;
+6. finish the package/release audit;
+7. synchronize final verification and release documentation.
 
 ### Optional regression automation
 
