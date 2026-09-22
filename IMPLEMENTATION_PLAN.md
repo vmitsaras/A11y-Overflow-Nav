@@ -2,7 +2,7 @@
 
 ## Slice 1 — Foundation and semantic contract
 
-Status: implemented.
+Status: implemented and package-gate verified.
 
 Deliverables:
 
@@ -16,7 +16,7 @@ Deliverables:
 
 ## Slice 2 — Responsive distribution
 
-Status: implemented.
+Status: implemented; real-browser geometry verification remains in Slice 6.
 
 Deliverables:
 
@@ -30,7 +30,7 @@ Deliverables:
 
 ## Slice 3 — Focus continuity
 
-Status: implemented.
+Status: implemented; real-browser focus verification remains in Slice 6.
 
 Deliverables:
 
@@ -41,7 +41,7 @@ Deliverables:
 
 ## Slice 4 — Dynamic content boundary
 
-Status: implemented.
+Status: implemented and unit-tested.
 
 Deliverables:
 
@@ -49,10 +49,11 @@ Deliverables:
 - canonical item reconciliation
 - observer target refresh
 - structural replacement rejection
+- regression fix preserving application-added primary item order
 
 ## Slice 5 — Demo and unit coverage
 
-Status: implemented.
+Status: implemented and package-gate verified.
 
 Deliverables:
 
@@ -79,11 +80,22 @@ Acceptance targets:
 - focus remains visible and valid during redistribution;
 - open More disclosure remains coherent during width changes.
 
-## Verification sequence
+## Current automated verification
 
-1. `npm run test`
-2. `npm run typecheck`
-3. `npm run build`
-4. `npm run pack:check`
-5. add and run real-browser geometry tests
-6. manual assistive-technology and zoom validation
+The latest v0.1 implementation passed the GitHub Actions package gates on 2026-09-22:
+
+1. dependency installation
+2. `npm run test`
+3. `npm run typecheck`
+4. `npm run build`
+5. `npm run pack:check`
+
+See `VERIFICATION.md` for the recorded evidence and remaining limitations.
+
+## Remaining verification sequence
+
+1. add and run real-browser geometry tests
+2. validate focus transitions in real browsers
+3. run zoom, text-size, forced-colors, and localization checks
+4. run the supported assistive-technology matrix
+5. complete the package release audit

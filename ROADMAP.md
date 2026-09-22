@@ -26,8 +26,9 @@
 - [x] OVN-800 Basic example
 - [x] OVN-810 Interactive scenario lab
 - [x] OVN-900 DOM/lifecycle unit tests
+- [x] Automated package gates: install, test, typecheck, build, pack check
 
-Status: implemented; automated CI and real-browser evidence are required before v0.1 is considered verified.
+Status: v0.1 implementation and package-level automated verification are complete. Real-browser geometry and manual accessibility evidence remain intentionally tracked in v0.2/v0.3 before a release-quality verification claim.
 
 ## v0.2 — Real-browser verification
 
