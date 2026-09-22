@@ -113,6 +113,28 @@ If a focused primary destination moves into a closed overflow panel, focus moves
 
 With JavaScript disabled, all navigation destinations remain in the primary list and More stays hidden. Consuming CSS should provide a readable fallback such as wrapping.
 
+## Interactive demo
+
+The repository root contains a scenario lab covering:
+
+- arbitrary container widths without resizing the browser viewport;
+- Flex nowrap, Flex wrap, and Grid;
+- LTR and RTL;
+- short English, long English, German, and Greek labels;
+- 100–200% text scaling;
+- state inspection for visible items, overflow items, count, focus, and lifecycle events;
+- refresh, destroy, and reinitialize lifecycle actions.
+
+Run it after installing and building:
+
+~~~bash
+npm install
+npm run build
+npx serve .
+~~~
+
+Then open `index.html`. A minimal example is available in `examples/basic/`.
+
 ## Limitations
 
 v1 deliberately excludes nested/mega-menu redistribution, numeric priorities, viewport breakpoints, cloned navigation trees, MutationObserver automation, animation, generated markup, and arbitrary CSS visual reordering.
