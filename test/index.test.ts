@@ -149,6 +149,72 @@ describe('A11yOverflowNav', () => {
     expect(instance.visibleItems.at(-1)).toBe(item);
   });
 
+  it('treats different-height same-row items as fitting', () => {
+    const root = createFixture();
+    const instance = createOverflowNav(root, {
+      observeResize: false,
+    });
+    const firstItem = instance.visibleItems[0];
+
+    if (!firstItem) throw new Error('missing item');
+
+    Object.defineProperties(instance.list, {
+      clientWidth: {
+        configurable: true,
+        value: 200,
+      },
+      scrollWidth: {
+        configurable: true,
+        value: 200,
+      },
+    });
+
+    vi.spyOn(instance.list, 'getBoundingClientRect').mockReturnValue({
+      left: 0,
+      right: 200,
+      top: 0,
+      bottom: 48,
+      width: 200,
+      height: 48,
+      x: 0,
+      y: 0,
+      toJSON: () => ({}),
+    });
+
+    vi.spyOn(firstItem, 'getBoundingClientRect').mockReturnValue({
+      left: 0,
+      right: 80,
+      top: 2,
+      bottom: 42,
+      width: 80,
+      height: 40,
+      x: 0,
+      y: 2,
+      toJSON: () => ({}),
+    });
+
+    vi.spyOn(instance.overflowControl, 'getBoundingClientRect').mockReturnValue({
+      left: 88,
+      right: 160,
+      top: 0,
+      bottom: 46,
+      width: 72,
+      height: 46,
+      x: 88,
+      y: 0,
+      toJSON: () => ({}),
+    });
+
+    instance.overflowControl.hidden = false;
+    instance.visibleItems.slice(1).forEach((item) => {
+      instance.overflowList.append(item);
+    });
+
+    const fits = Reflect.get(instance, 'fits').bind(instance);
+
+    expect(fits()).toBe(true);
+  });
+
   it('restores original order and control visibility on destroy', () => {
     const root = createFixture([
       'Articles',

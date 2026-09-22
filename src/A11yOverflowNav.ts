@@ -379,7 +379,14 @@ export class A11yOverflowNav implements A11yOverflowNavInstance {
     for (const participant of participants) {
       const rect = participant.getBoundingClientRect();
 
-      if (Math.abs(rect.top - firstRect.top) > tolerance) {
+      const hasMeasurableBlockSize =
+        firstRect.height > 0 && rect.height > 0;
+      const overlapsFirstRow =
+        !hasMeasurableBlockSize ||
+        (rect.bottom >= firstRect.top + tolerance &&
+          rect.top <= firstRect.bottom - tolerance);
+
+      if (!overlapsFirstRow) {
         return false;
       }
 

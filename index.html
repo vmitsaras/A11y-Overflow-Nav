@@ -3,6 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
   <title>Priority+ Navigation Scenario Lab | A11y Overflow Nav</title>
   <meta name="description" content="Test accessible Priority+ navigation across widths, layouts, directions, languages, text scales, focus states, and lifecycle events.">
   <meta name="robots" content="index,follow">
@@ -230,7 +231,7 @@ if (root instanceof HTMLElement) {
 
             <li data-overflow-nav-control hidden>
               <div data-overflow-nav-menu>
-                <button class="lab__more" type="button" aria-controls="demo-overflow-panel">
+                <button class="lab__more" type="button" aria-controls="demo-overflow-panel" data-more-label>
                   More
                 </button>
                 <div class="lab__panel" id="demo-overflow-panel" hidden>
@@ -316,7 +317,8 @@ if (root instanceof HTMLElement) {
         membership: 'Membership',
         newsletter: 'Newsletter',
         about: 'About',
-        careers: 'Careers'
+        careers: 'Careers',
+        more: 'More'
       },
       long: {
         articles: 'Latest articles',
@@ -325,7 +327,8 @@ if (root instanceof HTMLElement) {
         membership: 'Membership options',
         newsletter: 'Email newsletter',
         about: 'About this project',
-        careers: 'Career opportunities'
+        careers: 'Career opportunities',
+        more: 'More'
       },
       de: {
         articles: 'Artikel',
@@ -334,7 +337,8 @@ if (root instanceof HTMLElement) {
         membership: 'Mitgliedschaft',
         newsletter: 'Newsletter',
         about: 'Über uns',
-        careers: 'Karrieremöglichkeiten'
+        careers: 'Karrieremöglichkeiten',
+        more: 'Mehr'
       },
       el: {
         articles: 'Άρθρα',
@@ -343,12 +347,14 @@ if (root instanceof HTMLElement) {
         membership: 'Συνδρομή',
         newsletter: 'Ενημερωτικό δελτίο',
         about: 'Σχετικά',
-        careers: 'Ευκαιρίες καριέρας'
+        careers: 'Ευκαιρίες καριέρας',
+        more: 'Περισσότερα'
       }
     };
 
     let instance = null;
     let eventSequence = 0;
+    let isApplyingPreset = false;
 
     function textFor(items) {
       return items
@@ -438,12 +444,12 @@ if (root instanceof HTMLElement) {
 
     layout.addEventListener('change', () => {
       frame.dataset.layout = layout.value;
-      instance?.refresh();
+      if (!isApplyingPreset) instance?.refresh();
     });
 
     direction.addEventListener('change', () => {
       frame.dir = direction.value;
-      instance?.refresh();
+      if (!isApplyingPreset) instance?.refresh();
     });
 
     labels.addEventListener('change', () => {
@@ -451,7 +457,8 @@ if (root instanceof HTMLElement) {
       root.querySelectorAll('[data-key]').forEach((link) => {
         link.textContent = set[link.dataset.key];
       });
-      instance?.refresh();
+      root.querySelector('[data-more-label]').textContent = set.more;
+      if (!isApplyingPreset) instance?.refresh();
     });
 
     scale.addEventListener('input', () => {
@@ -460,7 +467,7 @@ if (root instanceof HTMLElement) {
         String(Number(scale.value) / 100) + 'rem'
       );
       scaleOutput.value = scale.value + '%';
-      instance?.refresh();
+      if (!isApplyingPreset) instance?.refresh();
     });
 
     document.querySelector('[data-refresh]').addEventListener('click', () => {
@@ -477,6 +484,25 @@ if (root instanceof HTMLElement) {
       if (!instance) initialize();
     });
 
+    function applyPresetValues(values) {
+      [width.value, layout.value, direction.value, labels.value, scale.value] = values;
+
+      isApplyingPreset = true;
+      try {
+        layout.dispatchEvent(new Event('change'));
+        direction.dispatchEvent(new Event('change'));
+        labels.dispatchEvent(new Event('change'));
+        scale.dispatchEvent(new Event('input'));
+        width.dispatchEvent(new Event('input'));
+      } finally {
+        isApplyingPreset = false;
+      }
+
+      requestAnimationFrame(() => {
+        instance?.refresh();
+      });
+    }
+
     document.querySelectorAll('[data-preset]').forEach((button) => {
       button.addEventListener('click', () => {
         const values = {
@@ -490,12 +516,7 @@ if (root instanceof HTMLElement) {
 
         if (!values) return;
 
-        [width.value, layout.value, direction.value, labels.value, scale.value] = values;
-        width.dispatchEvent(new Event('input'));
-        layout.dispatchEvent(new Event('change'));
-        direction.dispatchEvent(new Event('change'));
-        labels.dispatchEvent(new Event('change'));
-        scale.dispatchEvent(new Event('input'));
+        applyPresetValues(values);
       });
     });
 
