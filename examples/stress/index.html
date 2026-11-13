@@ -26,6 +26,24 @@
 
     h1 { margin-block-end: 0.5rem; }
 
+    .example-nav { margin-block-start: 1.5rem; }
+    .example-nav__list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.25rem 1.25rem;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+    .example-nav a {
+      display: inline-flex;
+      align-items: center;
+      min-block-size: 2.75rem;
+      color: LinkText;
+      text-underline-offset: 0.2em;
+    }
+    .example-nav [aria-current="page"] { font-weight: 700; }
+
     .stress-note {
       max-inline-size: 62rem;
       line-height: 1.6;
@@ -68,14 +86,15 @@
       inline-size: min(100%, var(--stress-width, 900px));
       max-inline-size: 100%;
       padding: 0.75rem;
-      overflow: hidden;
+      overflow: visible;
       border: 1px solid color-mix(in srgb, CanvasText 25%, transparent);
       border-radius: 0.8rem;
     }
 
     [data-overflow-nav-list] {
+      position: relative;
       display: flex;
-      flex-wrap: nowrap;
+      flex-wrap: wrap;
       align-items: center;
       gap: 0.35rem;
       margin: 0;
@@ -87,11 +106,15 @@
     [data-overflow-nav-menu] > button {
       display: block;
       padding: 0.55rem 0.7rem;
-      white-space: nowrap;
+      overflow-wrap: anywhere;
     }
 
+    [data-overflow-nav-ready="true"] [data-overflow-nav-list] { flex-wrap: nowrap; }
+    [data-overflow-nav-ready="true"] [data-overflow-nav-list] > [data-overflow-nav-item] > a,
+    [data-overflow-nav-ready="true"] [data-overflow-nav-menu] > button { white-space: nowrap; }
+
     [data-overflow-nav-menu] {
-      position: relative;
+      position: static;
     }
 
     [data-overflow-nav-menu] > div {
@@ -99,13 +122,19 @@
       z-index: 10;
       inset-block-start: calc(100% + 0.25rem);
       inset-inline-end: 0;
-      min-inline-size: 15rem;
-      max-block-size: 60vh;
+      min-inline-size: min(15rem, 100%);
+      max-inline-size: min(24rem, 100%);
+      max-block-size: min(60vh, var(--_panel-max-height, 60vh));
       overflow: auto;
       padding: 0.5rem;
       border: 1px solid CanvasText;
       background: Canvas;
       color: CanvasText;
+    }
+
+    [data-overflow-nav-menu][data-placement^="top"] > div {
+      inset-block-start: auto;
+      inset-block-end: calc(100% + 0.25rem);
     }
 
     [data-overflow-nav-overflow-list] {
@@ -118,13 +147,13 @@
 
     .stress-results dl {
       display: grid;
-      grid-template-columns: max-content 1fr;
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
       gap: 0.4rem 1rem;
       margin: 0;
     }
 
     .stress-results dt { font-weight: 700; }
-    .stress-results dd { margin: 0; }
+    .stress-results dd { margin: 0; overflow-wrap: anywhere; }
 
     :focus-visible {
       outline: 3px solid currentColor;
@@ -152,51 +181,64 @@
     <h1>A11y Overflow Nav performance stress fixture</h1>
     <p class="stress-note">
       This is a developer fixture, not a universal benchmark. It deliberately uses
-      24 navigation items and repeatedly changes only the component width. Compare
+      24 nature-reserve destinations and repeatedly changes only the component width. Compare
       results before and after a code change on the same browser and device.
       Runtime instrumentation is kept out of the package API.
+    </p>
+    <nav class="example-nav" aria-label="Examples">
+      <ul class="example-nav__list">
+        <li><a href="../../index.html">Scenario lab</a></li>
+        <li><a href="../basic/index.html">Basic example</a></li>
+        <li><a href="./index.html" aria-current="page">Performance fixture (developer)</a></li>
+      </ul>
+    </nav>
+    <p class="stress-note">
+      For integration, start with the <a href="../basic/index.html">basic example</a>
+      and adapt its <a href="../basic/styles.css">consumer-owned stylesheet</a>.
+      The package ships no runtime CSS.
     </p>
 
     <section class="stress-controls" aria-labelledby="controls-title">
       <h2 id="controls-title">Controls</h2>
       <div class="stress-actions">
-        <button type="button" data-run>Run width sweep</button>
-        <button type="button" data-reset>Reset</button>
+        <button type="button" data-run disabled>Run width sweep</button>
+        <button type="button" data-reset disabled>Reset</button>
       </div>
       <label>
-        Manual container width
-        <input data-width type="range" min="280" max="1200" value="900" step="10">
+        Maximum container width
+        <input data-width type="range" min="280" max="1200" value="900" step="10" aria-describedby="width-hint" disabled>
         <output data-width-output>900px</output>
       </label>
+      <p id="width-hint">The container fits within the available space. A sweep requests 280–1200px; the measured width range below shows what actually fits. Changing the width manually clears the previous result.</p>
     </section>
 
     <div class="stress-frame" data-frame>
       <nav data-a11y-overflow-nav aria-label="Stress test navigation">
         <ul data-overflow-nav-list>
-          <li data-overflow-nav-item><a href="#dashboard">Dashboard</a></li>
-          <li data-overflow-nav-item><a href="#articles">Articles</a></li>
-          <li data-overflow-nav-item><a href="#books">Books</a></li>
-          <li data-overflow-nav-item><a href="#events">Events</a></li>
-          <li data-overflow-nav-item><a href="#membership">Membership</a></li>
-          <li data-overflow-nav-item><a href="#newsletter">Newsletter</a></li>
-          <li data-overflow-nav-item><a href="#community">Community</a></li>
-          <li data-overflow-nav-item><a href="#resources">Resources</a></li>
-          <li data-overflow-nav-item><a href="#tutorials">Tutorials</a></li>
-          <li data-overflow-nav-item><a href="#accessibility">Accessibility</a></li>
-          <li data-overflow-nav-item><a href="#performance">Performance</a></li>
-          <li data-overflow-nav-item><a href="#design-systems">Design Systems</a></li>
-          <li data-overflow-nav-item><a href="#components">Components</a></li>
-          <li data-overflow-nav-item><a href="#documentation">Documentation</a></li>
-          <li data-overflow-nav-item><a href="#case-studies">Case Studies</a></li>
-          <li data-overflow-nav-item><a href="#releases">Releases</a></li>
-          <li data-overflow-nav-item><a href="#changelog">Changelog</a></li>
-          <li data-overflow-nav-item><a href="#integrations">Integrations</a></li>
-          <li data-overflow-nav-item><a href="#partners">Partners</a></li>
-          <li data-overflow-nav-item><a href="#careers">Careers</a></li>
-          <li data-overflow-nav-item><a href="#about">About</a></li>
-          <li data-overflow-nav-item><a href="#contact">Contact</a></li>
-          <li data-overflow-nav-item><a href="#support">Support</a></li>
-          <li data-overflow-nav-item><a href="#account">Account</a></li>
+          <li data-overflow-nav-item><a href="#trails">Trails</a></li>
+          <li data-overflow-nav-item><a href="#habitats">Habitats</a></li>
+          <li data-overflow-nav-item><a href="#wildlife">Wildlife</a></li>
+          <li data-overflow-nav-item><a href="#guided-walks">Guided walks</a></li>
+          <li data-overflow-nav-item><a href="#ranger-talks">Ranger talks</a></li>
+          <li data-overflow-nav-item><a href="#conservation">Conservation</a></li>
+          <li data-overflow-nav-item><a href="#getting-here">Getting here</a></li>
+          <li data-overflow-nav-item><a href="#tide-pools">Tide pools</a></li>
+          <li data-overflow-nav-item><a href="#bird-hides">Bird hides</a></li>
+          <li data-overflow-nav-item><a href="#dune-paths">Dune paths</a></li>
+          <li data-overflow-nav-item><a href="#wetland-boardwalk">Wetland boardwalk</a></li>
+          <li data-overflow-nav-item><a href="#woodland-loop">Woodland loop</a></li>
+          <li data-overflow-nav-item><a href="#viewpoints">Viewpoints</a></li>
+          <li data-overflow-nav-item><a href="#picnic-spots">Picnic spots</a></li>
+          <li data-overflow-nav-item><a href="#visitor-centre">Visitor centre</a></li>
+          <li data-overflow-nav-item><a href="#trail-conditions">Trail conditions</a></li>
+          <li data-overflow-nav-item><a href="#tide-times">Tide times</a></li>
+          <li data-overflow-nav-item><a href="#seasonal-highlights">Seasonal highlights</a></li>
+          <li data-overflow-nav-item><a href="#species-guide">Species guide</a></li>
+          <li data-overflow-nav-item><a href="#habitat-restoration">Habitat restoration</a></li>
+          <li data-overflow-nav-item><a href="#citizen-science">Citizen science</a></li>
+          <li data-overflow-nav-item><a href="#volunteer-days">Volunteer days</a></li>
+          <li data-overflow-nav-item><a href="#group-visits">Group visits</a></li>
+          <li data-overflow-nav-item><a href="#reserve-map">Reserve map</a></li>
 
           <li data-overflow-nav-control hidden>
             <div data-overflow-nav-menu>
@@ -212,10 +254,11 @@
 
     <section class="stress-results" aria-labelledby="results-title">
       <h2 id="results-title">Latest sweep</h2>
-      <p data-summary aria-live="polite">No sweep has been run yet.</p>
+      <p data-summary role="status">Sweep controls require JavaScript and ResizeObserver. All navigation links remain available without enhancement.</p>
       <dl>
         <dt>Elapsed</dt><dd data-elapsed>—</dd>
         <dt>Steps</dt><dd data-steps>0</dd>
+        <dt>Measured width range</dt><dd data-width-range>—</dd>
         <dt>Change events</dt><dd data-change-events>0</dd>
         <dt>Observer callbacks</dt><dd data-observer-callbacks>0</dd>
         <dt>Observer entries</dt><dd data-observer-entries>0</dd>
@@ -227,7 +270,7 @@
   </main>
 
   <script type="module">
-    import { createOverflowNav } from '../../dist/index.js';
+    import { createOverflowNav, OVERFLOW_NAV_EVENTS } from '../../dist/index.js';
 
     const root = document.querySelector('[data-a11y-overflow-nav]');
     const frame = document.querySelector('[data-frame]');
@@ -245,7 +288,7 @@
       observerEntries: 0,
     };
 
-    root.addEventListener('overflow-nav:change', () => {
+    root.addEventListener(OVERFLOW_NAV_EVENTS.change, () => {
       metrics.changeEvents += 1;
     });
 
@@ -263,6 +306,7 @@
     const outputs = {
       elapsed: document.querySelector('[data-elapsed]'),
       steps: document.querySelector('[data-steps]'),
+      widthRange: document.querySelector('[data-width-range]'),
       changeEvents: document.querySelector('[data-change-events]'),
       observerCallbacks: document.querySelector('[data-observer-callbacks]'),
       observerEntries: document.querySelector('[data-observer-entries]'),
@@ -283,6 +327,9 @@
     async function settleLayout() {
       await nextFrame();
       await nextFrame();
+      // ResizeObserver schedules the plugin's work in the next frame. Sample
+      // one frame later so this continuation cannot run before that work.
+      await nextFrame();
     }
 
     function setWidth(value) {
@@ -300,6 +347,7 @@
     function writeMetrics(result) {
       outputs.elapsed.textContent = result.elapsed.toFixed(1) + ' ms';
       outputs.steps.textContent = String(result.steps);
+      outputs.widthRange.textContent = `${result.minWidth.toFixed(1)}–${result.maxWidth.toFixed(1)} px`;
       outputs.changeEvents.textContent = String(metrics.changeEvents);
       outputs.observerCallbacks.textContent = String(metrics.observerCallbacks);
       outputs.observerEntries.textContent = String(metrics.observerEntries);
@@ -308,52 +356,106 @@
       outputs.finalOverflow.textContent = String(instance.overflowCount);
     }
 
+    let operationPending = false;
+    let operationFocus = null;
+
+    function setBusy(busy) {
+      if (busy) operationFocus = document.activeElement;
+      operationPending = busy;
+      run.disabled = busy;
+      reset.disabled = busy;
+      width.disabled = busy;
+      if (!busy && document.activeElement === document.body &&
+          (operationFocus === run || operationFocus === reset)) {
+        operationFocus.focus({ preventScroll: true });
+      }
+      if (!busy) operationFocus = null;
+    }
+
+    function clearResults() {
+      for (const output of Object.values(outputs)) {
+        output.textContent = output === outputs.elapsed || output === outputs.widthRange ? '—' : '0';
+      }
+    }
+
     width.addEventListener('input', () => {
+      if (operationPending) return;
       setWidth(Number(width.value));
+      clearResults();
+      summary.textContent = 'Manual width changed. Run a width sweep to record a new result.';
     });
 
     run.addEventListener('click', async () => {
-      run.disabled = true;
-      summary.textContent = 'Running width sweep…';
-      resetMetrics();
-
-      let previousOverflow = instance.overflowCount;
-      let moves = 0;
-      let maxOverflow = previousOverflow;
-      const start = performance.now();
-
-      for (const nextWidth of sweepWidths) {
-        setWidth(nextWidth);
+      if (operationPending) return;
+      setBusy(true);
+      try {
+        summary.textContent = 'Running width sweep…';
+        clearResults();
+        // Settle at the same starting width before each timed sweep.
+        setWidth(1200);
         await settleLayout();
+        resetMetrics();
+        let previousOverflow = instance.overflowCount;
+        let moves = 0;
+        let maxOverflow = previousOverflow;
+        let minWidth = Infinity;
+        let maxWidth = 0;
+        const start = performance.now();
 
-        const currentOverflow = instance.overflowCount;
-        moves += Math.abs(currentOverflow - previousOverflow);
-        maxOverflow = Math.max(maxOverflow, currentOverflow);
-        previousOverflow = currentOverflow;
+        for (const nextWidth of sweepWidths) {
+          setWidth(nextWidth);
+          await settleLayout();
+
+          const measuredWidth = frame.getBoundingClientRect().width;
+          minWidth = Math.min(minWidth, measuredWidth);
+          maxWidth = Math.max(maxWidth, measuredWidth);
+          const currentOverflow = instance.overflowCount;
+          moves += Math.abs(currentOverflow - previousOverflow);
+          maxOverflow = Math.max(maxOverflow, currentOverflow);
+          previousOverflow = currentOverflow;
+        }
+
+        const elapsed = performance.now() - start;
+        writeMetrics({
+          elapsed,
+          steps: sweepWidths.length,
+          moves,
+          maxOverflow,
+          minWidth,
+          maxWidth,
+        });
+
+        summary.textContent =
+          `Sweep complete: ${sweepWidths.length} steps. Compare with a baseline using the same browser, device, and window size. Elapsed time includes waiting for animation frames.`;
+      } catch (error) {
+        clearResults();
+        summary.textContent = 'Width sweep failed. Reset the fixture or try again.';
+        console.error('Width sweep failed:', error);
+      } finally {
+        setBusy(false);
       }
-
-      const elapsed = performance.now() - start;
-      writeMetrics({
-        elapsed,
-        steps: sweepWidths.length,
-        moves,
-        maxOverflow,
-      });
-
-      summary.textContent =
-        'Sweep complete. Compare these values with a baseline from the same browser and device.';
-      run.disabled = false;
     });
 
     reset.addEventListener('click', async () => {
-      setWidth(900);
-      await settleLayout();
-      resetMetrics();
-      summary.textContent = 'Fixture reset. No sweep result is active.';
-      for (const output of Object.values(outputs)) {
-        output.textContent = output === outputs.elapsed ? '—' : '0';
+      if (operationPending) return;
+      setBusy(true);
+      try {
+        summary.textContent = 'Resetting fixture…';
+        clearResults();
+        setWidth(900);
+        await settleLayout();
+        resetMetrics();
+        summary.textContent = 'Fixture reset. No sweep result is active.';
+      } catch (error) {
+        summary.textContent = 'Fixture reset failed. Try resetting again.';
+        console.error('Fixture reset failed:', error);
+      } finally {
+        setBusy(false);
       }
     });
+
+    setBusy(false);
+    summary.textContent = 'Ready. No sweep has been run yet.';
   </script>
 </body>
 </html>

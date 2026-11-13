@@ -15,6 +15,8 @@ Keep as many source-ordered top-level navigation items visible as the current na
 
 Overflow Nav imports only `a11y-menu-button/core`.
 
+For the 1.0.0 release scope, the project owner retired native Windows contrast-theme testing as a package release gate on 2026-11-13: the package ships no CSS, and each consuming site owns that styling. Contrast-theme validation remains an integration responsibility, including visible focus and current-page state.
+
 ## Canonical-order invariant
 
 The original managed item array is authoritative.
@@ -58,6 +60,10 @@ MutationObserver automation is intentionally deferred.
 
 Node identity is preserved across moves. When a focused item would become hidden inside a closed panel, focus moves to More before the item is moved. When More disappears, focus is moved to the restored destination.
 
+Explicit refresh captures focus before moving nodes and resolves it against the final distribution: a visible destination retains focus, a destination in the closed panel falls back to More, and a disappearing More falls back to a restored destination. Focus outside the navigation is preserved.
+
 ## Destruction
 
 `destroy()` disconnects observation, cancels scheduled work, restores canonical item order, destroys the owned Menu Button instance, restores plugin-owned root attributes, restores the original More hidden state, and releases the WeakMap instance.
+
+Item ownership is determined by direct membership in the managed lists, allowing refresh and destruction after the root is detached. Removed or externally reparented items are not reclaimed. Synchronous destruction during a callback stops the active operation before it can resume observation, redistribution, or lifecycle completion events.

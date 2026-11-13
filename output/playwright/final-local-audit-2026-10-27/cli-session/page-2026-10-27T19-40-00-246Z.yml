@@ -1,0 +1,113 @@
+- generic [active] [ref=e1]:
+  - main [ref=e2]:
+    - generic [ref=e3]:
+      - paragraph [ref=e4]: Interactive scenario lab
+      - heading "A11y Overflow Nav" [level=1] [ref=e5]
+      - paragraph [ref=e6]: Resize the component rather than the browser. Switch layout mode, direction, label length, and text scale while inspecting the exact visible/overflow distribution and lifecycle events.
+      - paragraph [ref=e7]:
+        - link "View GitHub repository" [ref=e8] [cursor=pointer]:
+          - /url: https://github.com/vmitsaras/A11y-Overflow-Nav
+    - region [ref=e9]:
+      - heading "Initialization and lifecycle" [level=2] [ref=e10]
+      - paragraph [ref=e11]: Author every destination in the primary list and keep the final More control hidden. Register lifecycle listeners before initialization so the synchronous initial events are captured.
+      - generic [ref=e12]:
+        - generic [ref=e13]:
+          - heading "Semantic structure" [level=3] [ref=e14]
+          - code [ref=e16]: <nav data-a11y-overflow-nav aria-label="Primary"> <ul data-overflow-nav-list> <li data-overflow-nav-item><a href="/articles">Articles</a></li> <li data-overflow-nav-control hidden> <div data-overflow-nav-menu> <button aria-controls="overflow-panel">More</button> <div id="overflow-panel" hidden> <ul data-overflow-nav-overflow-list></ul> </div> </div> </li> </ul> </nav>
+        - generic [ref=e17]:
+          - heading "Initialize and observe" [level=3] [ref=e18]
+          - code [ref=e20]: "import { createOverflowNav, OVERFLOW_NAV_EVENTS, } from 'a11y-overflow-nav'; const root = document.querySelector('[data-a11y-overflow-nav]'); if (root instanceof HTMLElement) { for (const name of Object.values(OVERFLOW_NAV_EVENTS)) { root.addEventListener(name, (event) => { console.log(event.type, event.detail.reason, event.detail.overflowCount); }); } const instance = createOverflowNav(root, { observeResize: true, fitTolerance: 1, menuButtonOptions: {}, }); instance.refresh(); // After application-driven content changes. // instance.destroy(); // During application teardown. }"
+      - paragraph [ref=e21]:
+        - text: An initial redistribution can emit
+        - code [ref=e22]: overflow-nav:change
+        - text: before
+        - code [ref=e23]: overflow-nav:init
+        - text: . A refresh can likewise emit a change before its refresh event. Destroy emits its snapshot before the authored DOM and state are restored.
+    - region [ref=e24]:
+      - heading "Scenario controls" [level=2] [ref=e25]
+      - generic "Scenario presets" [ref=e26]:
+        - button "Wide" [ref=e27] [cursor=pointer]
+        - button "One overflow" [ref=e28] [cursor=pointer]
+        - button "Many overflow" [ref=e29] [cursor=pointer]
+        - button "Long labels" [ref=e30] [cursor=pointer]
+        - button "Grid" [ref=e31] [cursor=pointer]
+        - button "RTL" [ref=e32] [cursor=pointer]
+      - generic [ref=e33]:
+        - generic [ref=e34]:
+          - text: Container width
+          - slider "Container width" [ref=e35]: "760"
+          - status [ref=e36]: 760px
+        - generic [ref=e37]:
+          - text: Layout
+          - combobox "Layout" [ref=e38]:
+            - option "Flex nowrap" [selected]
+            - option "Flex wrap"
+            - option "Grid"
+        - generic [ref=e39]:
+          - text: Direction
+          - combobox "Direction" [ref=e40]:
+            - option "LTR" [selected]
+            - option "RTL"
+        - generic [ref=e41]:
+          - text: Labels
+          - combobox "Labels" [ref=e42]:
+            - option "Short English" [selected]
+            - option "Long English"
+            - option "German"
+            - option "Greek"
+        - generic [ref=e43]:
+          - text: Text scale
+          - slider "Text scale" [ref=e44]: "100"
+          - status [ref=e45]: 100%
+      - generic [ref=e46]:
+        - button "Refresh" [ref=e47] [cursor=pointer]
+        - button "Destroy" [ref=e48] [cursor=pointer]
+        - button "Reinitialize" [ref=e49] [cursor=pointer]
+      - navigation "Demo primary navigation" [ref=e51]:
+        - list [ref=e52]:
+          - listitem [ref=e53]:
+            - link "Articles" [ref=e54] [cursor=pointer]:
+              - /url: "#articles"
+          - listitem [ref=e55]:
+            - button "More" [ref=e57] [cursor=pointer]
+      - complementary [ref=e58]:
+        - heading "State inspector" [level=2] [ref=e59]
+        - generic [ref=e60]:
+          - term [ref=e61]: Status
+          - definition [ref=e62]: overflow
+          - term [ref=e63]: Visible
+          - definition [ref=e64]: Articles
+          - term [ref=e65]: Overflow
+          - definition [ref=e66]: Books · Events · Membership · Newsletter · About · Careers
+          - term [ref=e67]: Count
+          - definition [ref=e68]: "6"
+          - term [ref=e69]: Focus
+          - definition [ref=e70]: None
+          - term [ref=e71]: Last event
+          - definition [ref=e72]: overflow-nav:init (init)
+        - generic [ref=e73]:
+          - heading "Event history" [level=3] [ref=e74]
+          - button "Clear history" [ref=e75] [cursor=pointer]
+        - list "Event history" [ref=e76]:
+          - listitem [ref=e77]: "2. overflow-nav:init (init) — count 6; visible: Articles; overflow: Books · Events · Membership · Newsletter · About · Careers"
+          - listitem [ref=e78]: "1. overflow-nav:change (init) — count 6; visible: Articles; overflow: Books · Events · Membership · Newsletter · About · Careers"
+  - contentinfo [ref=e79]:
+    - generic [ref=e80]:
+      - generic [ref=e81]:
+        - paragraph [ref=e82]: Accessibility plugin demo
+        - paragraph [ref=e83]:
+          - text: A11y Overflow Nav · Built by
+          - link "Vasileios Mitsaras" [ref=e84] [cursor=pointer]:
+            - /url: https://github.com/vmitsaras/
+          - text: ·
+          - link "LinkedIn profile" [ref=e85] [cursor=pointer]:
+            - /url: https://linkedin.com/in/vasilis-mitsaras
+        - paragraph [ref=e86]: a11y-overflow-nav · MIT License
+      - navigation "Project links" [ref=e87]:
+        - list [ref=e88]:
+          - listitem [ref=e89]:
+            - link "GitHub repository" [ref=e90] [cursor=pointer]:
+              - /url: https://github.com/vmitsaras/A11y-Overflow-Nav
+          - listitem [ref=e91]:
+            - link "npm package" [ref=e92] [cursor=pointer]:
+              - /url: https://www.npmjs.com/package/a11y-overflow-nav

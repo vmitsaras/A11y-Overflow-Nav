@@ -2,6 +2,8 @@
 
 A polished, copy-friendly example of source-ordered navigation that moves links
 into an accessible More disclosure when horizontal space runs out.
+The fictional Cedar Coast Reserve supplies the sample destinations, from trails
+and wildlife to guided walks and conservation.
 
 ## What this example shows
 
@@ -32,6 +34,8 @@ will produce a 404 for that file.
 ## What to try
 
 - Use “Narrow preview” or resize the viewport until one or more links move into More.
+- The toggle limits the preview to 28rem. Its hint describes the current setting;
+  in smaller windows, turning it on may leave the width unchanged.
 - Tab to More, open it with Enter or Space, and close it with Escape.
 - Use the menu’s arrow-key, Home, End, and typeahead behavior.
 - Increase browser text size and confirm every destination remains available.
@@ -44,6 +48,9 @@ will produce a 404 for that file.
 - Responsive redistribution preserves focus when an active item must move.
 - The live overflow count is consumer-authored example behavior; the core plugin
   emits lifecycle events but does not create live announcements.
+- The demo disclosure stays within the navigation row's width, scrolls within
+  its available height, and honors the menu dependency's top placement when
+  there is more room above the trigger.
 - With JavaScript unavailable, all links remain in the primary list.
 - Nested and mega-menu navigation are intentionally unsupported in v1.
 
@@ -52,10 +59,11 @@ will produce a 404 for that file.
 - Root selector: `[data-a11y-overflow-nav]`.
 - Child selectors: the documented `data-overflow-nav-*` attributes in `index.html`.
 - Initialization: `createOverflowNav(root)` from `../../dist/index.js`.
-- CSS: `styles.css` is demo-only; the package intentionally ships no layout CSS.
+- CSS: adapt [styles.css](styles.css) for consumer-owned Flex layout, wrapping fallback, and disclosure sizing. The package intentionally ships no runtime CSS.
 - Options: defaults are used, including resize observation and fit tolerance.
 - Full lifecycle timing and event payloads are demonstrated in the repository-root
   [`index.html`](../../index.html) scenario lab.
+- For browser measurement work, open the [developer performance fixture](../stress/index.html) and read its [measurement guide](../stress/README.md).
 
 ## Files
 

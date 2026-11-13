@@ -1,0 +1,55 @@
+{
+  "date": "2026-10-27",
+  "scope": "RH-01/RH-02 consumer demo CSS remediation",
+  "status": "resolved in tested scope; manual release checks remain open",
+  "matrixCases": 48,
+  "nativeCases": 9,
+  "supplementalAssertions": 17,
+  "nativeBrowser": "153.0.8010.12",
+  "nativeZoom": [
+    {
+      "zoom": 200,
+      "viewport": [
+        640,
+        468
+      ],
+      "widths": [
+        632,
+        632
+      ]
+    },
+    {
+      "zoom": 300,
+      "viewport": [
+        426,
+        312
+      ],
+      "widths": [
+        421,
+        421
+      ]
+    },
+    {
+      "zoom": 400,
+      "viewport": [
+        320,
+        234
+      ],
+      "widths": [
+        316,
+        316
+      ]
+    }
+  ],
+  "sourceSha256": {
+    "src/A11yOverflowNav.ts": "6c89642a131a825a80670a05aedc2952de36978529539f590f5e717809e5b111",
+    "demo.css": "21f877ae35c42581c72b7cae2e22e179fe61a88992929745da3fe9844c6a5577",
+    "docs/demo.css": "21f877ae35c42581c72b7cae2e22e179fe61a88992929745da3fe9844c6a5577",
+    "index.html": "ab729e9ae2b797ab6866038961010c73058b173d18e9ea76516f9bbd938ccc32",
+    "examples/basic/styles.css": "ba0e2e9c5cef8124ae89b9403902b01cfc4a5e7aa3734de7e8ae4427f0d3cf9e",
+    "examples/stress/index.html": "7e5582383cf5eee483daede5f3265f10268cde19cb1aa89713eaea5d66c9ac86",
+    "dist/index.js": "cd1badd6b50d16e379c56a2382db288d7e4b938e147b067b1b569635710e0c92"
+  },
+  "runtimeUnchanged": true,
+  "pagesParity": true
+}

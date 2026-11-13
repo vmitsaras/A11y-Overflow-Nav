@@ -1,0 +1,90 @@
+{
+  "staticLinks": [
+    {
+      "prefix": "/source/",
+      "page": "index.html",
+      "localLinks": 7,
+      "navigationLinks": 3,
+      "currentPage": true
+    },
+    {
+      "prefix": "/source/",
+      "page": "examples/basic/index.html",
+      "localLinks": 5,
+      "navigationLinks": 3,
+      "currentPage": true
+    },
+    {
+      "prefix": "/source/",
+      "page": "examples/stress/index.html",
+      "localLinks": 5,
+      "navigationLinks": 3,
+      "currentPage": true
+    },
+    {
+      "prefix": "/A11y-Overflow-Nav/",
+      "page": "index.html",
+      "localLinks": 7,
+      "navigationLinks": 3,
+      "currentPage": true
+    },
+    {
+      "prefix": "/A11y-Overflow-Nav/",
+      "page": "examples/basic/index.html",
+      "localLinks": 5,
+      "navigationLinks": 3,
+      "currentPage": true
+    },
+    {
+      "prefix": "/A11y-Overflow-Nav/",
+      "page": "examples/stress/index.html",
+      "localLinks": 5,
+      "navigationLinks": 3,
+      "currentPage": true
+    }
+  ],
+  "generatedParity": true,
+  "unchangedDemoScripts": true,
+  "unchangedUnrelatedFilesAndRuntime": true,
+  "changedFiles": [
+    "docs/demo.css",
+    "docs/dist/docs.js",
+    "docs/dist/docs.js.map",
+    "docs/examples/basic/index.html",
+    "docs/examples/basic/styles.css",
+    "docs/examples/stress/index.html",
+    "docs/index.html",
+    "README.md",
+    "demo.css",
+    "examples/basic/README.md",
+    "examples/basic/index.html",
+    "examples/basic/styles.css",
+    "examples/stress/README.md",
+    "examples/stress/index.html",
+    "index.html",
+    "src/docs.ts",
+    "dist/docs.js",
+    "dist/docs.js.map"
+  ],
+  "browser": {
+    "environment": "connected Chrome",
+    "prefix": "/A11y-Overflow-Nav/",
+    "keyboardCycle": [
+      "Scenario lab",
+      "Basic example",
+      "Performance fixture (developer)",
+      "Scenario lab"
+    ],
+    "narrowViewport": {
+      "width": 320,
+      "height": 700,
+      "allDocumentScrollWidths": 305,
+      "newLinkHeight": 44,
+      "currentPageLabelsCorrect": true,
+      "basicKeyboardFocusOutline": "solid"
+    },
+    "capturedLabWarningErrorLogs": [],
+    "standaloneStylesheetNavigation": "Blocked by Chrome ERR_BLOCKED_BY_CLIENT; separate HTTP HEAD returned 200 text/css (9133 bytes); stylesheet loaded on the basic demo",
+    "viewportReset": true
+  }
+}

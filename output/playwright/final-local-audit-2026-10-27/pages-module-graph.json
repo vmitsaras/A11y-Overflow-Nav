@@ -1,0 +1,28 @@
+{
+  "pages": {
+    "docs/index.html": {
+      "importMap": {
+        "a11y-menu-button/core": "./vendor/a11y-menu-button/core.js"
+      },
+      "localReferences": "pass"
+    },
+    "docs/examples/basic/index.html": {
+      "importMap": {
+        "a11y-menu-button/core": "../../vendor/a11y-menu-button/core.js"
+      },
+      "localReferences": "pass"
+    },
+    "docs/examples/stress/index.html": {
+      "importMap": {
+        "a11y-menu-button/core": "../../vendor/a11y-menu-button/core.js"
+      },
+      "localReferences": "pass"
+    }
+  },
+  "modules": [
+    "docs/dist/index.js",
+    "docs/vendor/a11y-menu-button/core-4x3kILRD.js",
+    "docs/vendor/a11y-menu-button/core.js",
+    "docs/vendor/a11y-menu-button/events-Qrks-Ivi.js"
+  ]
+}

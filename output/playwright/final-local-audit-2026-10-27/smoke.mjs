@@ -1,0 +1,14 @@
+import assert from 'node:assert/strict';
+import * as runtime from 'a11y-overflow-nav';
+import { docs } from 'a11y-overflow-nav/docs';
+import meta from 'a11y-overflow-nav/package.json' with { type: 'json' };
+assert.equal(typeof globalThis.document, 'undefined');
+assert.deepEqual(Object.keys(runtime).sort(), ['A11yOverflowNav','OVERFLOW_NAV_EVENTS','createOverflowNav','initOverflowNavs'].sort());
+assert.ok(Object.isFrozen(runtime.OVERFLOW_NAV_EVENTS));
+assert.equal(docs.packageName, meta.name);
+assert.equal(meta.version,'0.1.0');
+assert.equal(typeof runtime.createOverflowNav,'function');
+assert.equal(typeof runtime.A11yOverflowNav.prototype.refresh,'function');
+assert.equal(typeof runtime.A11yOverflowNav.prototype.destroy,'function');
+assert.equal(Object.keys(meta.dependencies).join(','),'a11y-menu-button');
+console.log(JSON.stringify({node:process.version,exports:Object.keys(runtime),version:meta.version,importWithoutDOM:'pass',docsAndPackageJsonSubpaths:'pass'}));

@@ -1,0 +1,349 @@
+{
+  "checks": [
+    {
+      "case": "lab-wide",
+      "count": "0",
+      "links": [
+        "Trails",
+        "Habitats",
+        "Wildlife",
+        "Guided walks",
+        "Ranger talks",
+        "Conservation",
+        "Getting here"
+      ],
+      "scrollWidth": 1256,
+      "viewport": 1271
+    },
+    {
+      "case": "lab-short",
+      "count": "5",
+      "links": [
+        {
+          "href": "#trails",
+          "lang": "en",
+          "text": "Trails"
+        },
+        {
+          "href": "#habitats",
+          "lang": "en",
+          "text": "Habitats"
+        },
+        {
+          "href": "#wildlife",
+          "lang": "en",
+          "text": "Wildlife"
+        },
+        {
+          "href": "#guided-walks",
+          "lang": "en",
+          "text": "Guided walks"
+        },
+        {
+          "href": "#ranger-talks",
+          "lang": "en",
+          "text": "Ranger talks"
+        },
+        {
+          "href": "#conservation",
+          "lang": "en",
+          "text": "Conservation"
+        },
+        {
+          "href": "#getting-here",
+          "lang": "en",
+          "text": "Getting here"
+        }
+      ]
+    },
+    {
+      "case": "lab-long",
+      "count": "6",
+      "links": [
+        {
+          "href": "#trails",
+          "lang": "en",
+          "text": "Explore the coastal trails"
+        },
+        {
+          "href": "#habitats",
+          "lang": "en",
+          "text": "Discover protected habitats"
+        },
+        {
+          "href": "#wildlife",
+          "lang": "en",
+          "text": "Spot local wildlife"
+        },
+        {
+          "href": "#guided-walks",
+          "lang": "en",
+          "text": "Join a guided nature walk"
+        },
+        {
+          "href": "#ranger-talks",
+          "lang": "en",
+          "text": "Meet the reserve rangers"
+        },
+        {
+          "href": "#conservation",
+          "lang": "en",
+          "text": "Support habitat conservation"
+        },
+        {
+          "href": "#getting-here",
+          "lang": "en",
+          "text": "Plan your journey to the reserve"
+        }
+      ]
+    },
+    {
+      "case": "lab-de",
+      "count": "6",
+      "links": [
+        {
+          "href": "#trails",
+          "lang": "de",
+          "text": "Wanderwege"
+        },
+        {
+          "href": "#habitats",
+          "lang": "de",
+          "text": "Lebensräume"
+        },
+        {
+          "href": "#wildlife",
+          "lang": "de",
+          "text": "Tierwelt"
+        },
+        {
+          "href": "#guided-walks",
+          "lang": "de",
+          "text": "Geführte Wanderungen"
+        },
+        {
+          "href": "#ranger-talks",
+          "lang": "de",
+          "text": "Ranger-Vorträge"
+        },
+        {
+          "href": "#conservation",
+          "lang": "de",
+          "text": "Naturschutz"
+        },
+        {
+          "href": "#getting-here",
+          "lang": "de",
+          "text": "Anreise"
+        }
+      ]
+    },
+    {
+      "case": "lab-el",
+      "count": "6",
+      "links": [
+        {
+          "href": "#trails",
+          "lang": "el",
+          "text": "Μονοπάτια"
+        },
+        {
+          "href": "#habitats",
+          "lang": "el",
+          "text": "Οικότοποι"
+        },
+        {
+          "href": "#wildlife",
+          "lang": "el",
+          "text": "Άγρια ζωή"
+        },
+        {
+          "href": "#guided-walks",
+          "lang": "el",
+          "text": "Περίπατοι με οδηγό"
+        },
+        {
+          "href": "#ranger-talks",
+          "lang": "el",
+          "text": "Ομιλίες δασοφυλάκων"
+        },
+        {
+          "href": "#conservation",
+          "lang": "el",
+          "text": "Προστασία της φύσης"
+        },
+        {
+          "href": "#getting-here",
+          "lang": "el",
+          "text": "Πρόσβαση"
+        }
+      ]
+    },
+    {
+      "case": "lab-greek-narrow-keyboard",
+      "focus": "Πρόσβαση",
+      "focused": {
+        "bottom": 319.2421875,
+        "top": 272.8515625
+      },
+      "panel": {
+        "bottom": 320.15625,
+        "left": 48.046875,
+        "right": 266.40625,
+        "top": 0.0078125
+      },
+      "scrollWidth": 305,
+      "viewport": 320
+    },
+    {
+      "case": "basic-narrow",
+      "current": "Trails",
+      "focus": "Getting here",
+      "links": [
+        "Trails",
+        "Habitats",
+        "Wildlife",
+        "Guided walks",
+        "Ranger talks",
+        "Conservation",
+        "Getting here"
+      ],
+      "scrollWidth": 1256,
+      "status": "4 navigation links are in More. Open More to reach them.",
+      "viewport": 1271
+    },
+    {
+      "case": "basic-320",
+      "count": "6 navigation links are in More. Open More to reach them.",
+      "links": 7,
+      "scrollWidth": 305,
+      "viewport": 320
+    },
+    {
+      "case": "stress-sweep",
+      "count": 24,
+      "links": [
+        "Trails",
+        "Habitats",
+        "Wildlife",
+        "Guided walks",
+        "Ranger talks",
+        "Conservation",
+        "Getting here",
+        "Tide pools",
+        "Bird hides",
+        "Dune paths",
+        "Wetland boardwalk",
+        "Woodland loop",
+        "Viewpoints",
+        "Picnic spots",
+        "Visitor centre",
+        "Trail conditions",
+        "Tide times",
+        "Seasonal highlights",
+        "Species guide",
+        "Habitat restoration",
+        "Citizen science",
+        "Volunteer days",
+        "Group visits",
+        "Reserve map"
+      ],
+      "overflow": "14",
+      "range": "280.0–1200.0 px",
+      "steps": "21",
+      "summary": "Sweep complete: 21 steps. Compare with a baseline using the same browser, device, and window size. Elapsed time includes waiting for animation frames."
+    },
+    {
+      "case": "stress-final-link",
+      "focus": "Reserve map"
+    },
+    {
+      "case": "lab-grid-ltr-short",
+      "count": "6",
+      "links": [
+        "Trails",
+        "Habitats",
+        "Wildlife",
+        "Guided walks",
+        "Ranger talks",
+        "Conservation",
+        "Getting here"
+      ],
+      "scrollWidth": 305,
+      "viewport": 320
+    },
+    {
+      "case": "lab-flex-nowrap-rtl-short",
+      "count": "6",
+      "links": [
+        "Trails",
+        "Habitats",
+        "Wildlife",
+        "Guided walks",
+        "Ranger talks",
+        "Conservation",
+        "Getting here"
+      ],
+      "scrollWidth": 305,
+      "viewport": 320
+    },
+    {
+      "case": "lab-flex-nowrap-ltr-long",
+      "count": "7",
+      "links": [
+        "Explore the coastal trails",
+        "Discover protected habitats",
+        "Spot local wildlife",
+        "Join a guided nature walk",
+        "Meet the reserve rangers",
+        "Support habitat conservation",
+        "Plan your journey to the reserve"
+      ],
+      "scrollWidth": 305,
+      "viewport": 320
+    },
+    {
+      "case": "lab-long-final-link",
+      "focus": "Plan your journey to the reserve",
+      "scrollWidth": 305,
+      "viewport": 320
+    }
+  ],
+  "logs": {
+    "lab": [
+      {
+        "level": "error",
+        "message": "Error: A listener indicated an asynchronous response by returning true, but the message channel closed before a response was received",
+        "timestamp": "2026-11-12T15:49:14.648Z",
+        "url": "http://127.0.0.1:4190/docs/"
+      },
+      {
+        "level": "error",
+        "message": "Error: A listener indicated an asynchronous response by returning true, but the message channel closed before a response was received",
+        "timestamp": "2026-11-12T15:49:14.648Z",
+        "url": "http://127.0.0.1:4190/docs/"
+      },
+      {
+        "level": "error",
+        "message": "Error: A listener indicated an asynchronous response by returning true, but the message channel closed before a response was received",
+        "timestamp": "2026-11-12T15:49:14.648Z",
+        "url": "http://127.0.0.1:4190/docs/"
+      }
+    ],
+    "basic": [
+      {
+        "level": "error",
+        "message": "Error: A listener indicated an asynchronous response by returning true, but the message channel closed before a response was received",
+        "timestamp": "2026-11-12T15:49:14.637Z",
+        "url": "http://127.0.0.1:4190/docs/examples/basic/"
+      },
+      {
+        "level": "error",
+        "message": "Error: A listener indicated an asynchronous response by returning true, but the message channel closed before a response was received",
+        "timestamp": "2026-11-12T15:49:14.646Z",
+        "url": "http://127.0.0.1:4190/docs/examples/basic/"
+      }
+    ],
+    "stress": []
+  }
+}

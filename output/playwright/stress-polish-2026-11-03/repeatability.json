@@ -1,0 +1,18 @@
+{
+  "from900": {
+    "change-events": "16",
+    "final-overflow": "13",
+    "max-overflow": "22",
+    "moves": "18",
+    "steps": "21",
+    "width-range": "280.0–1200.0 px"
+  },
+  "from280": {
+    "change-events": "16",
+    "final-overflow": "13",
+    "max-overflow": "22",
+    "moves": "18",
+    "steps": "21",
+    "width-range": "280.0–1200.0 px"
+  }
+}

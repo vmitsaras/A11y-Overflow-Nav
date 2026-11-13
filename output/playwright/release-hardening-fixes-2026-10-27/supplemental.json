@@ -1,0 +1,22 @@
+{
+  "checks": 17,
+  "results": [
+    "320px wide preset reflow",
+    "320px one preset reflow",
+    "320px many preset reflow",
+    "320px long preset reflow",
+    "320px grid preset reflow",
+    "320px rtl preset reflow",
+    "destroy fallback flex-nowrap",
+    "destroy fallback flex-wrap",
+    "destroy fallback grid",
+    "forced-colors light short viewport keyboard",
+    "forced-colors dark short viewport keyboard",
+    "doubled computed text at 1280px (supplemental, not native text-only zoom)",
+    "Pages initialization and reflow /docs/",
+    "Pages initialization and reflow /docs/examples/basic/index.html",
+    "Pages initialization and reflow /docs/examples/stress/index.html",
+    "Pages no uncaught errors",
+    "320px no-JavaScript wrapping fallback"
+  ]
+}

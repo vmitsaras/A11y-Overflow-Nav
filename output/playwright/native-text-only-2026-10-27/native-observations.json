@@ -1,0 +1,26 @@
+{
+  "source": "Transcription of native CUA accessibility observations, not a browser-generated event log",
+  "nativeSettings": {
+    "route": "about:preferences#accessibility",
+    "checked": "Nur Text zoomen, Value: 1",
+    "selectedZooms": [
+      "100 %",
+      "150 %",
+      "200 %"
+    ],
+    "restoredZoom": "100 %"
+  },
+  "cleanStressReproduction": {
+    "url": "http://127.0.0.1:8876/examples/stress/index.html",
+    "firefoxVersion": "159.0",
+    "nativeTextPercent": 200,
+    "more": "AX button activation opens panel",
+    "ArrowDown": "Focused UI element: link Membership",
+    "End": "Focused UI element: HTML-Inhalt; panel links removed from AX tree, More remains"
+  },
+  "localizedActivation": {
+    "de": "Home/arrows then Return navigated to #articles; Escape focused Mehr",
+    "el": "Home/arrows then Return navigated to #articles; Escape focused Περισσότερα"
+  },
+  "recovery": "100%: End focuses Account; Escape focuses More"
+}

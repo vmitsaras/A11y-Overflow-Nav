@@ -3,7 +3,15 @@
 Date: 2026-09-22  
 Scope: overflow redistribution, ResizeObserver scheduling, DOM movement, cleanup.
 
-## Current runtime cost model
+## Measurement validity — reconciled 2026-11-12
+
+This is a **historical 2026-09-22 source review and fixture measurement** for the v0.3 planning milestone, not an npm version or a fresh performance qualification. The recorded numbers below are preserved, but are not a baseline for the current fixture.
+
+The [2026-11-03 fixture correction](VERIFICATION.md#stress-fixture-product-polish--2026-11-03) changed sampling from two to three animation-frame waits and settled each run at a requested 1200px before timing/counters. The [2026-11-12 content change](VERIFICATION.md#original-example-navigation-content--2026-11-12) changed label widths and distribution counts. Elapsed sweep time includes frame waits, diagnostic work, and scheduling; it does not isolate plugin CPU time. Counts and timings across these revisions are not directly comparable.
+
+Use the [current fixture guide](examples/stress/README.md#how-to-use-the-result) and a fresh baseline with the same fixture revision, browser, device, and window size. Neither the newer demo checks nor the historical values establish a runtime speed improvement or justify an optimization by themselves. Referenced artifacts follow the [local evidence delivery policy](VERIFICATION.md#evidence-delivery).
+
+## Runtime cost model reviewed on 2026-09-22
 
 The plugin uses one `ResizeObserver` instance per initialized navigation when observation is enabled. It observes:
 
@@ -30,7 +38,7 @@ For normal site navigation, the expected item count is small. The implementation
 
 ## Complexity note
 
-The current implementation repeatedly derives visible/overflow arrays from the canonical item list. In a pathological large navigation, repeated filtering during grow/shrink can trend toward quadratic work.
+The reviewed implementation repeatedly derives visible/overflow arrays from the canonical item list. In a pathological large navigation, repeated filtering during grow/shrink can trend toward quadratic work.
 
 No optimization is applied in this slice because there is no measured bottleneck yet. Introducing index bookkeeping or cached widths would add state and invalidation complexity.
 
@@ -46,7 +54,7 @@ If the stress fixture exposes a material regression, the first optimization cand
 
 The fixture deliberately has no pass/fail timing threshold because hardware, browser, zoom, and font metrics vary.
 
-Manual fixture run recorded on 2026-09-22:
+Historical fixture run recorded on 2026-09-22 (not comparable to the revised fixture):
 
 - environment: `examples/stress/index.html` served locally in HeadlessChrome 153.0.0.0 on macOS (`MacIntel`);
 - viewport: 756 x 469, device pixel ratio 1;
@@ -65,4 +73,4 @@ Manual fixture run recorded on 2026-09-22:
 - No new runtime dependency is required for performance diagnostics.
 - No source optimization is justified by the recorded fixture result.
 
-Status: **implementation hardening complete; manual stress measurements recorded; no source optimization justified by the recorded fixture result.**
+Historical review status: **implementation hardening complete for the reviewed slice; stress measurements recorded; no source optimization justified by that result.** This does not close the current release-qualification checks.

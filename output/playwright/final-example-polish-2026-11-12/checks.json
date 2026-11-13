@@ -1,0 +1,375 @@
+{
+  "checks": [
+    {
+      "case": "basic-before-280",
+      "count": 7,
+      "panel": {
+        "bottom": 651.7734375,
+        "left": -15.828125,
+        "right": 192.171875,
+        "top": 377.84375,
+        "width": 208
+      },
+      "scrollWidth": 265,
+      "viewport": 280
+    },
+    {
+      "case": "stress-before-280",
+      "count": 24,
+      "panel": {
+        "bottom": 696,
+        "left": -81.046875,
+        "right": 158.953125,
+        "top": 375.984375,
+        "width": 240
+      },
+      "scrollWidth": 265,
+      "viewport": 280
+    },
+    {
+      "case": "lab-before-focus",
+      "focus": "INPUT"
+    },
+    {
+      "case": "basic-after-280",
+      "count": 7,
+      "panel": {
+        "bottom": 651.765625,
+        "left": 38.609375,
+        "right": 226.40625,
+        "top": 377.8359375,
+        "width": 187.796875
+      },
+      "scrollWidth": 265,
+      "viewport": 280
+    },
+    {
+      "case": "basic-final-link",
+      "focus": "Getting here",
+      "visible": true
+    },
+    {
+      "case": "stress-after-280",
+      "count": 24,
+      "panel": {
+        "bottom": 696,
+        "left": 29,
+        "right": 236,
+        "top": 375.984375,
+        "width": 207
+      },
+      "scrollWidth": 265,
+      "viewport": 280
+    },
+    {
+      "case": "stress-final-link",
+      "focus": "Reserve map",
+      "visible": true
+    },
+    {
+      "case": "lab-after-slider",
+      "focus": "Maximum container width"
+    },
+    {
+      "case": "lab-after-select",
+      "focus": "Layout"
+    },
+    {
+      "case": "basic-bottom-280",
+      "count": 7,
+      "panel": {
+        "bottom": 651.765625,
+        "left": 38.609375,
+        "right": 226.40625,
+        "top": 377.8359375,
+        "width": 187.796875
+      },
+      "scrollWidth": 265,
+      "viewport": 280
+    },
+    {
+      "case": "basic-bottom-320x500",
+      "count": 7,
+      "panel": {
+        "bottom": 499.9921875,
+        "left": 58.40625,
+        "right": 266.40625,
+        "top": 277.8046875,
+        "width": 208
+      },
+      "scrollWidth": 305,
+      "viewport": 320
+    },
+    {
+      "case": "basic-top-320x500",
+      "count": 7,
+      "panel": {
+        "bottom": 401.828125,
+        "left": 58.40625,
+        "right": 266.40625,
+        "top": 127.8984375,
+        "width": 208
+      },
+      "scrollWidth": 305,
+      "viewport": 320,
+      "placement": "top-end"
+    },
+    {
+      "case": "stress-bottom-320x500",
+      "count": 24,
+      "panel": {
+        "bottom": 496,
+        "left": 36,
+        "right": 276,
+        "top": 275.796875,
+        "width": 240
+      },
+      "scrollWidth": 305,
+      "viewport": 320
+    },
+    {
+      "case": "stress-top-320x500",
+      "count": 24,
+      "panel": {
+        "bottom": 403.796875,
+        "left": 36,
+        "right": 276,
+        "top": 103.796875,
+        "width": 240
+      },
+      "scrollWidth": 305,
+      "viewport": 320,
+      "placement": "top-end"
+    },
+    {
+      "case": "stress-sweep",
+      "focus": "Run width sweep",
+      "items": 24,
+      "range": "280.0–1200.0 px",
+      "steps": "21",
+      "summary": "Sweep complete: 21 steps. Compare with a baseline using the same browser, device, and window size. Elapsed time includes waiting for animation frames."
+    },
+    {
+      "case": "stress-reset",
+      "focus": "Reset",
+      "steps": "0",
+      "summary": "Fixture reset. No sweep result is active.",
+      "width": "900"
+    },
+    {
+      "case": "lab-controls-focus",
+      "names": [
+        "Maximum container width",
+        "Layout",
+        "Direction",
+        "Labels",
+        "Text scale"
+      ]
+    },
+    {
+      "case": "lab-preset",
+      "count": "0",
+      "dir": "ltr",
+      "items": 7,
+      "labels": "short",
+      "layout": "flex-nowrap"
+    },
+    {
+      "case": "lab-preset",
+      "count": "5",
+      "dir": "ltr",
+      "items": 7,
+      "labels": "short",
+      "layout": "flex-nowrap"
+    },
+    {
+      "case": "lab-preset",
+      "count": "6",
+      "dir": "ltr",
+      "items": 7,
+      "labels": "long",
+      "layout": "flex-nowrap"
+    },
+    {
+      "case": "lab-preset",
+      "count": "3",
+      "dir": "ltr",
+      "items": 7,
+      "labels": "short",
+      "layout": "grid"
+    },
+    {
+      "case": "lab-preset",
+      "count": "3",
+      "dir": "rtl",
+      "items": 7,
+      "labels": "short",
+      "layout": "flex-nowrap"
+    },
+    {
+      "case": "lab-localized",
+      "labels": "short",
+      "links": [
+        {
+          "lang": "en",
+          "text": "Trails"
+        },
+        {
+          "lang": "en",
+          "text": "Habitats"
+        },
+        {
+          "lang": "en",
+          "text": "Wildlife"
+        },
+        {
+          "lang": "en",
+          "text": "Guided walks"
+        },
+        {
+          "lang": "en",
+          "text": "Ranger talks"
+        },
+        {
+          "lang": "en",
+          "text": "Conservation"
+        },
+        {
+          "lang": "en",
+          "text": "Getting here"
+        }
+      ],
+      "scrollWidth": 305,
+      "viewport": 320
+    },
+    {
+      "case": "lab-localized",
+      "labels": "long",
+      "links": [
+        {
+          "lang": "en",
+          "text": "Explore the coastal trails"
+        },
+        {
+          "lang": "en",
+          "text": "Discover protected habitats"
+        },
+        {
+          "lang": "en",
+          "text": "Spot local wildlife"
+        },
+        {
+          "lang": "en",
+          "text": "Join a guided nature walk"
+        },
+        {
+          "lang": "en",
+          "text": "Meet the reserve rangers"
+        },
+        {
+          "lang": "en",
+          "text": "Support habitat conservation"
+        },
+        {
+          "lang": "en",
+          "text": "Plan your journey to the reserve"
+        }
+      ],
+      "scrollWidth": 305,
+      "viewport": 320
+    },
+    {
+      "case": "lab-localized",
+      "labels": "de",
+      "links": [
+        {
+          "lang": "de",
+          "text": "Wanderwege"
+        },
+        {
+          "lang": "de",
+          "text": "Lebensräume"
+        },
+        {
+          "lang": "de",
+          "text": "Tierwelt"
+        },
+        {
+          "lang": "de",
+          "text": "Geführte Wanderungen"
+        },
+        {
+          "lang": "de",
+          "text": "Ranger-Vorträge"
+        },
+        {
+          "lang": "de",
+          "text": "Naturschutz"
+        },
+        {
+          "lang": "de",
+          "text": "Anreise"
+        }
+      ],
+      "scrollWidth": 305,
+      "viewport": 320
+    },
+    {
+      "case": "lab-localized",
+      "labels": "el",
+      "links": [
+        {
+          "lang": "el",
+          "text": "Μονοπάτια"
+        },
+        {
+          "lang": "el",
+          "text": "Οικότοποι"
+        },
+        {
+          "lang": "el",
+          "text": "Άγρια ζωή"
+        },
+        {
+          "lang": "el",
+          "text": "Περίπατοι με οδηγό"
+        },
+        {
+          "lang": "el",
+          "text": "Ομιλίες δασοφυλάκων"
+        },
+        {
+          "lang": "el",
+          "text": "Προστασία της φύσης"
+        },
+        {
+          "lang": "el",
+          "text": "Πρόσβαση"
+        }
+      ],
+      "scrollWidth": 305,
+      "viewport": 320
+    },
+    {
+      "case": "lab-greek-200-rtl",
+      "focus": "Πρόσβαση",
+      "inspector": "Πρόσβαση",
+      "scale": "200",
+      "scrollWidth": 305,
+      "viewport": 320
+    },
+    {
+      "case": "lab-destroy",
+      "focus": "Reinitialize",
+      "primary": 7,
+      "status": "Destroyed"
+    },
+    {
+      "case": "lab-reinitialize",
+      "focus": "Destroy",
+      "items": 7,
+      "status": "overflow"
+    }
+  ],
+  "logs": []
+}

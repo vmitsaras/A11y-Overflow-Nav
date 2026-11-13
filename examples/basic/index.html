@@ -42,7 +42,7 @@
           "codeRepository": "https://github.com/vmitsaras/A11y-Overflow-Nav",
           "programmingLanguage": "TypeScript",
           "runtimePlatform": "Browser",
-          "version": "0.1.0",
+          "version": "1.0.0",
           "license": "https://github.com/vmitsaras/A11y-Overflow-Nav/blob/main/LICENSE",
           "keywords": [
             "accessibility",
@@ -66,7 +66,7 @@
             "applicationCategory": "DeveloperApplication",
             "operatingSystem": "Any",
             "runtimePlatform": "Browser",
-            "softwareVersion": "0.1.0"
+            "softwareVersion": "1.0.0"
           },
           "sameAs": [
             "https://github.com/vmitsaras/A11y-Overflow-Nav",
@@ -87,11 +87,18 @@
       <p class="demo-hero__eyebrow">Basic example</p>
       <h1>Navigation that adapts without losing its order</h1>
       <p class="demo-hero__intro">A Priority+ navigation keeps the links that fit visible and moves the remaining original links into an accessible More menu.</p>
+      <nav class="example-nav" aria-label="Examples">
+        <ul class="example-nav__list">
+          <li><a href="../../index.html">Scenario lab</a></li>
+          <li><a href="./index.html" aria-current="page">Basic example</a></li>
+          <li><a href="../stress/index.html">Performance fixture (developer)</a></li>
+        </ul>
+      </nav>
     </header>
 
     <section class="demo-section" aria-labelledby="scenario-title">
       <h2 id="scenario-title">Scenario</h2>
-      <p>A publication has more destinations than every layout can display on one line. Readers should still reach every destination in the same source order at narrow widths or when text is enlarged.</p>
+      <p>A nature reserve has more destinations than every layout can display on one line. Visitors should still reach every destination in the same source order at narrow widths or when text is enlarged.</p>
     </section>
 
     <section class="demo-section" aria-labelledby="try-title">
@@ -107,25 +114,25 @@
     <section class="demo-stage" aria-labelledby="example-title">
       <div class="demo-stage__heading">
         <div>
-          <p class="demo-stage__label">The Daily Fieldnote</p>
+          <p class="demo-stage__label">Cedar Coast Reserve</p>
           <h2 id="example-title">Explore</h2>
         </div>
         <div class="demo-stage__controls">
-          <p class="demo-stage__hint" id="resize-hint">Toggle the preview width to create overflow.</p>
-          <button class="demo-stage__resize" type="button" aria-controls="daily-fieldnote-preview" aria-pressed="false" aria-describedby="resize-hint" data-demo-resize hidden>Narrow preview</button>
+          <p class="demo-stage__hint" id="resize-hint">The preview uses the available width. Narrow preview limits it to 28rem; in small windows, both settings may look the same.</p>
+          <button class="demo-stage__resize" type="button" aria-controls="cedar-coast-preview" aria-pressed="false" aria-describedby="resize-hint" data-demo-resize hidden>Narrow preview</button>
         </div>
       </div>
 
-      <div class="demo-stage__preview" id="daily-fieldnote-preview" data-demo-preview>
+      <div class="demo-stage__preview" id="cedar-coast-preview" data-demo-preview>
         <nav class="overflow-nav" data-a11y-overflow-nav aria-label="Primary">
           <ul class="overflow-nav__list" data-overflow-nav-list>
-            <li data-overflow-nav-item><a href="#articles" aria-current="page">Articles</a></li>
-            <li data-overflow-nav-item><a href="#books">Books</a></li>
-            <li data-overflow-nav-item><a href="#events">Events</a></li>
-            <li data-overflow-nav-item><a href="#membership">Membership</a></li>
-            <li data-overflow-nav-item><a href="#newsletter">Newsletter</a></li>
-            <li data-overflow-nav-item><a href="#podcasts">Podcasts</a></li>
-            <li data-overflow-nav-item><a href="#about">About us</a></li>
+            <li data-overflow-nav-item><a href="#trails" aria-current="page">Trails</a></li>
+            <li data-overflow-nav-item><a href="#habitats">Habitats</a></li>
+            <li data-overflow-nav-item><a href="#wildlife">Wildlife</a></li>
+            <li data-overflow-nav-item><a href="#guided-walks">Guided walks</a></li>
+            <li data-overflow-nav-item><a href="#ranger-talks">Ranger talks</a></li>
+            <li data-overflow-nav-item><a href="#conservation">Conservation</a></li>
+            <li data-overflow-nav-item><a href="#getting-here">Getting here</a></li>
             <li data-overflow-nav-control hidden>
               <div class="overflow-nav__menu" data-overflow-nav-menu>
                 <button class="overflow-nav__more" type="button" aria-controls="basic-overflow-panel">More</button>
@@ -136,7 +143,7 @@
             </li>
           </ul>
         </nav>
-        <p class="demo-status" aria-live="polite" data-demo-status>Navigation is ready.</p>
+        <p class="demo-status" role="status" data-demo-status>All navigation links are visible. Adaptive navigation is not active yet.</p>
       </div>
     </section>
 
@@ -166,7 +173,7 @@ if (root instanceof HTMLElement) {
 
     <section class="demo-section demo-developer" aria-labelledby="developer-title">
       <h2 id="developer-title">Developer notes</h2>
-      <p>Initialize <code>[data-a11y-overflow-nav]</code> with <code>createOverflowNav()</code>. The child elements use the documented <code>data-*</code> selectors. This package ships no layout CSS; the local <code>styles.css</code> belongs only to this demo. Default options are used.</p>
+      <p>Initialize <code>[data-a11y-overflow-nav]</code> with <code>createOverflowNav()</code>. The child elements use the documented <code>data-*</code> selectors. Adapt this demo's <a href="./styles.css">stylesheet</a> for your own Flex layout, wrapping fallback, and disclosure sizing. The package ships no runtime CSS. Default options are used.</p>
     </section>
   </main>
 
@@ -197,28 +204,35 @@ if (root instanceof HTMLElement) {
   </footer>
 
   <script type="module">
-    import { createOverflowNav } from '../../dist/index.js';
+    import { createOverflowNav, OVERFLOW_NAV_EVENTS } from '../../dist/index.js';
 
     const root = document.querySelector('[data-a11y-overflow-nav]');
     const status = document.querySelector('[data-demo-status]');
     const preview = document.querySelector('[data-demo-preview]');
     const resizeButton = document.querySelector('[data-demo-resize]');
+    const resizeHint = document.querySelector('#resize-hint');
 
     if (root instanceof HTMLElement) {
       const instance = createOverflowNav(root);
       const updateStatus = () => {
         if (!(status instanceof HTMLElement)) return;
-        status.textContent = instance.overflowCount === 0
+        const message = instance.overflowCount === 0
           ? 'All navigation links are visible.'
-          : `${instance.overflowCount} navigation ${instance.overflowCount === 1 ? 'link is' : 'links are'} in More.`;
+          : `${instance.overflowCount} navigation ${instance.overflowCount === 1 ? 'link is' : 'links are'} in More. Open More to reach ${instance.overflowCount === 1 ? 'it' : 'them'}.`;
+        if (status.textContent !== message) status.textContent = message;
       };
-      root.addEventListener('overflow-nav:change', updateStatus);
+      root.addEventListener(OVERFLOW_NAV_EVENTS.change, updateStatus);
 
       if (preview instanceof HTMLElement && resizeButton instanceof HTMLButtonElement) {
         resizeButton.hidden = false;
         resizeButton.addEventListener('click', () => {
           const isNarrow = preview.classList.toggle('is-narrow');
           resizeButton.setAttribute('aria-pressed', String(isNarrow));
+          if (resizeHint instanceof HTMLElement) {
+            resizeHint.textContent = isNarrow
+              ? 'Narrow preview is on: width is limited to 28rem. Turn it off to use the available width. In small windows, both settings may look the same.'
+              : 'The preview uses the available width. Narrow preview limits it to 28rem; in small windows, both settings may look the same.';
+          }
         });
       }
 

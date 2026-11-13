@@ -1,6 +1,6 @@
 {
   "name": "a11y-overflow-nav",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "Accessible Priority+ overflow navigation that moves source-ordered items into an A11y Menu Button disclosure when space runs out.",
   "type": "module",
   "main": "./dist/index.js",
@@ -14,11 +14,14 @@
   "files": ["dist", "README.md", "CHANGELOG.md", "LICENSE"],
   "scripts": {
     "clean": "node -e \"require('node:fs').rmSync('dist', { recursive: true, force: true })\"",
-    "build": "npm run clean && tsdown",
+    "build": "npm run pages:build",
+    "build:dist": "npm run clean && tsdown",
+    "pages:generate": "node scripts/build-pages.mjs",
+    "pages:build": "npm run build:dist && npm run pages:generate",
     "typecheck": "tsc --noEmit",
     "test": "vitest run",
     "pack:check": "npm pack --dry-run",
-    "prepack": "npm run build",
+    "prepack": "npm run build:dist",
     "changeset": "changeset",
     "version-packages": "changeset version",
     "release": "npm run test && npm run typecheck && npm run build && changeset publish"

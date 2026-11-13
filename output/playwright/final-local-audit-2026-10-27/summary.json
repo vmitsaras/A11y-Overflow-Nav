@@ -1,0 +1,135 @@
+{
+  "date": "2026-10-27",
+  "targetHead": "6895d10e226fe8332a1b6eb740da079f759319d6",
+  "target": "current uncommitted working tree, fingerprints in target-sha256.json",
+  "package": {
+    "name": "a11y-overflow-nav",
+    "version": "0.1.0",
+    "type": "framework-agnostic TypeScript ESM behavior library",
+    "manager": "npm, no lockfile present",
+    "publishIntent": "unscoped public, not private",
+    "runtimeDependency": "a11y-menu-button@1.0.1 installed, declared ^1.0.1",
+    "files": 12,
+    "tarballBytes": 26044,
+    "unpackedBytes": 97809,
+    "shasum": "2781ca9fc0973174c030daa2d682f7b9b139634f",
+    "sourceMaps": "intentional tsdown sourcemap:true and declarationMap:true"
+  },
+  "technicalGate": "pass",
+  "codeBlockers": [],
+  "packageContentBlockers": [],
+  "releaseWorkflowIssues": [
+    {
+      "id": "RA-01",
+      "status": "open",
+      "check": "Changesets status",
+      "exitCode": 1,
+      "message": "Some packages have been changed but no changesets were found.",
+      "next": "Prepare a release changeset and release notes/version decision before the Changesets release workflow. No changeset or version mutation was authorized or performed."
+    }
+  ],
+  "checks": {
+    "tests": "48 pass",
+    "typecheck": "pass",
+    "fullBuildAndPages": "pass; regenerated Pages identical to pre-audit backup",
+    "packageDryRun": "pass, 12 files",
+    "actualTarball": "pass, file allowlist and bytes match build",
+    "isolatedOfflineConsumerInstall": "pass; installed locally packed plugin and installed runtime dependency tarballs into a fresh directory with ignore-scripts/no-audit",
+    "nodeImports": "pass on Node v24.21.0; public runtime/docs/package.json subpaths import without document/window",
+    "strictConsumerTypes": "pass, TypeScript NodeNext with no skipLibCheck, all root public types and docs type exercised",
+    "pagesModuleGraph": "pass, all three generated entrypoints and imported local JS/CSS resolve",
+    "pagesBrowser": {
+      "browser": "153.0.8010.12",
+      "viewport": {
+        "width": 320,
+        "height": 900
+      },
+      "results": [
+        {
+          "route": "/docs/",
+          "pass": true,
+          "end": {
+            "active": "Karrieremöglichkeiten",
+            "expanded": "true",
+            "visible": true,
+            "focusVisible": true,
+            "panelWidth": [
+              206,
+              206
+            ],
+            "documentWidth": [
+              320,
+              320
+            ],
+            "identity": true,
+            "placement": "bottom-end"
+          },
+          "escape": true,
+          "errors": [],
+          "responses": []
+        },
+        {
+          "route": "/docs/examples/basic/index.html",
+          "pass": true,
+          "end": {
+            "active": "About us",
+            "expanded": "true",
+            "visible": true,
+            "focusVisible": true,
+            "panelWidth": [
+              206,
+              206
+            ],
+            "documentWidth": [
+              320,
+              320
+            ],
+            "identity": true,
+            "placement": "bottom-end"
+          },
+          "escape": true,
+          "errors": [],
+          "responses": []
+        },
+        {
+          "route": "/docs/examples/stress/index.html",
+          "pass": true,
+          "end": {
+            "active": "Account",
+            "expanded": "true",
+            "visible": true,
+            "focusVisible": true,
+            "panelWidth": [
+              238,
+              238
+            ],
+            "documentWidth": [
+              320,
+              320
+            ],
+            "identity": true,
+            "placement": "top-end"
+          },
+          "escape": true,
+          "errors": [],
+          "responses": []
+        }
+      ]
+    },
+    "sourceReview": "pass within audited diff; no confirmed runtime/API/lifecycle blocker found",
+    "sourceFingerprints": "unchanged",
+    "generatedParity": "pass",
+    "diffCheck": "pass",
+    "lint": "not applicable, no script"
+  },
+  "releaseDecision": "Local code/package gate passed; release workflow and intentionally open qualification prevent an unconditional ready-to-publish verdict",
+  "notRun": [
+    "Manual screen-reader testing, explicitly excluded",
+    "Native Windows contrast themes",
+    "Current VoiceOver/NVDA matrix",
+    "Wider chosen supported-browser/native matrix beyond recorded evidence",
+    "Fresh CI against the current tree",
+    "Registry version/name availability, credentials, and advisory freshness (local audit only)"
+  ],
+  "sideEffects": "No runtime/demo edits, dependencies, changesets, versions, commits, tags, publishing, or deployment"
+}

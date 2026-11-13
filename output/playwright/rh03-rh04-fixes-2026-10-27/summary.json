@@ -1,0 +1,394 @@
+{
+  "date": "2026-10-27",
+  "scope": "RH-03/RH-04 demo CSS fixes",
+  "browser": "Native Firefox 159.0 on macOS 27.0.1",
+  "nativeTextOnlyPercent": 200,
+  "cases": [
+    {
+      "time": "2026-10-27T19:18:54.278Z",
+      "sequence": 4,
+      "reason": "key:End",
+      "path": "/examples/stress/index.html",
+      "case": "default",
+      "stage": "200",
+      "locale": "en",
+      "triggerText": "More",
+      "ua": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:159.0) Gecko/20100101 Firefox/159.0",
+      "viewport": [
+        1280,
+        955
+      ],
+      "dpr": 2,
+      "pageWidths": [
+        1265,
+        1265
+      ],
+      "calibration": {
+        "authorFont": "16px",
+        "computedFont": "32px",
+        "textRect": {
+          "x": -10000,
+          "y": 0.51666259765625,
+          "width": 266.5,
+          "height": 36,
+          "top": 0.51666259765625,
+          "right": -9733.5,
+          "bottom": 36.51666259765625,
+          "left": -10000
+        },
+        "fixedBox": {
+          "x": -10000,
+          "y": 0,
+          "width": 100,
+          "height": 20,
+          "top": 0,
+          "right": -9900,
+          "bottom": 20,
+          "left": -10000
+        }
+      },
+      "linkFont": "32px",
+      "overflow": 20,
+      "order": [
+        "#dashboard",
+        "#articles",
+        "#books",
+        "#events",
+        "#membership",
+        "#newsletter",
+        "#community",
+        "#resources",
+        "#tutorials",
+        "#accessibility",
+        "#performance",
+        "#design-systems",
+        "#components",
+        "#documentation",
+        "#case-studies",
+        "#releases",
+        "#changelog",
+        "#integrations",
+        "#partners",
+        "#careers",
+        "#about",
+        "#contact",
+        "#support",
+        "#account"
+      ],
+      "identity": true,
+      "expanded": "true",
+      "active": {
+        "tag": "A",
+        "text": "Account",
+        "href": "#account",
+        "visible": true,
+        "focusVisible": true,
+        "outline": "rgb(0, 0, 238) solid 3px"
+      },
+      "panel": {
+        "rect": {
+          "x": 353.5333251953125,
+          "y": 529.5,
+          "width": 480,
+          "height": 425.5,
+          "top": 529.5,
+          "right": 833.5333251953125,
+          "bottom": 955,
+          "left": 353.5333251953125
+        },
+        "clientWidth": 463,
+        "scrollWidth": 463,
+        "maxHeight": "425.5px",
+        "overflowY": "auto"
+      },
+      "lastEvent": null
+    },
+    {
+      "time": "2026-10-27T19:19:06.531Z",
+      "sequence": 4,
+      "reason": "key:End",
+      "path": "/",
+      "case": "de",
+      "stage": "200",
+      "locale": "de",
+      "triggerText": "Mehr",
+      "ua": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:159.0) Gecko/20100101 Firefox/159.0",
+      "viewport": [
+        1280,
+        955
+      ],
+      "dpr": 2,
+      "pageWidths": [
+        1265,
+        1265
+      ],
+      "calibration": {
+        "authorFont": "16px",
+        "computedFont": "32px",
+        "textRect": {
+          "x": -10000,
+          "y": 0.51666259765625,
+          "width": 266.5,
+          "height": 36,
+          "top": 0.51666259765625,
+          "right": -9733.5,
+          "bottom": 36.51666259765625,
+          "left": -10000
+        },
+        "fixedBox": {
+          "x": -10000,
+          "y": 0,
+          "width": 100,
+          "height": 20,
+          "top": 0,
+          "right": -9900,
+          "bottom": 20,
+          "left": -10000
+        }
+      },
+      "linkFont": "32px",
+      "overflow": 7,
+      "order": [
+        "#articles",
+        "#books",
+        "#events",
+        "#membership",
+        "#newsletter",
+        "#about",
+        "#careers"
+      ],
+      "identity": true,
+      "expanded": "true",
+      "active": {
+        "tag": "A",
+        "text": "Karrieremöglichkeiten",
+        "href": "#careers",
+        "visible": true,
+        "focusVisible": true,
+        "outline": "rgb(49, 88, 213) solid 6px"
+      },
+      "panel": {
+        "rect": {
+          "x": 76.19999694824219,
+          "y": 537.5,
+          "width": 271.6000061035156,
+          "height": 417.5,
+          "top": 537.5,
+          "right": 347.8000030517578,
+          "bottom": 955,
+          "left": 76.19999694824219
+        },
+        "clientWidth": 255,
+        "scrollWidth": 255,
+        "maxHeight": "417.5px",
+        "overflowY": "auto"
+      },
+      "lastEvent": "8. Menu Button event: menu-button:open — reason: trigger"
+    },
+    {
+      "time": "2026-10-27T19:19:37.578Z",
+      "sequence": 4,
+      "reason": "key:End",
+      "path": "/docs/index.html",
+      "case": "de",
+      "stage": "200",
+      "locale": "de",
+      "triggerText": "Mehr",
+      "ua": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:159.0) Gecko/20100101 Firefox/159.0",
+      "viewport": [
+        1280,
+        955
+      ],
+      "dpr": 2,
+      "pageWidths": [
+        1265,
+        1265
+      ],
+      "calibration": {
+        "authorFont": "16px",
+        "computedFont": "32px",
+        "textRect": {
+          "x": -10000,
+          "y": 0.51666259765625,
+          "width": 266.5,
+          "height": 36,
+          "top": 0.51666259765625,
+          "right": -9733.5,
+          "bottom": 36.51666259765625,
+          "left": -10000
+        },
+        "fixedBox": {
+          "x": -10000,
+          "y": 0,
+          "width": 100,
+          "height": 20,
+          "top": 0,
+          "right": -9900,
+          "bottom": 20,
+          "left": -10000
+        }
+      },
+      "linkFont": "32px",
+      "overflow": 7,
+      "order": [
+        "#articles",
+        "#books",
+        "#events",
+        "#membership",
+        "#newsletter",
+        "#about",
+        "#careers"
+      ],
+      "identity": true,
+      "expanded": "true",
+      "active": {
+        "tag": "A",
+        "text": "Karrieremöglichkeiten",
+        "href": "#careers",
+        "visible": true,
+        "focusVisible": true,
+        "outline": "rgb(49, 88, 213) solid 6px"
+      },
+      "panel": {
+        "rect": {
+          "x": 76.19999694824219,
+          "y": 537.5,
+          "width": 271.6000061035156,
+          "height": 417.5,
+          "top": 537.5,
+          "right": 347.8000030517578,
+          "bottom": 955,
+          "left": 76.19999694824219
+        },
+        "clientWidth": 255,
+        "scrollWidth": 255,
+        "maxHeight": "417.5px",
+        "overflowY": "auto"
+      },
+      "lastEvent": "8. Menu Button event: menu-button:open — reason: trigger"
+    },
+    {
+      "time": "2026-10-27T19:20:13.623Z",
+      "sequence": 4,
+      "reason": "key:End",
+      "path": "/docs/examples/stress/index.html",
+      "case": "top",
+      "stage": "200",
+      "locale": "en",
+      "triggerText": "More",
+      "placement": "top-end",
+      "ua": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:159.0) Gecko/20100101 Firefox/159.0",
+      "viewport": [
+        1280,
+        955
+      ],
+      "dpr": 2,
+      "pageWidths": [
+        1265,
+        1265
+      ],
+      "calibration": {
+        "authorFont": "16px",
+        "computedFont": "32px",
+        "textRect": {
+          "x": -10000,
+          "y": 0.51666259765625,
+          "width": 266.5,
+          "height": 36,
+          "top": 0.51666259765625,
+          "right": -9733.5,
+          "bottom": 36.51666259765625,
+          "left": -10000
+        },
+        "fixedBox": {
+          "x": -10000,
+          "y": 0,
+          "width": 100,
+          "height": 20,
+          "top": 0,
+          "right": -9900,
+          "bottom": 20,
+          "left": -10000
+        }
+      },
+      "linkFont": "32px",
+      "overflow": 20,
+      "order": [
+        "#dashboard",
+        "#articles",
+        "#books",
+        "#events",
+        "#membership",
+        "#newsletter",
+        "#community",
+        "#resources",
+        "#tutorials",
+        "#accessibility",
+        "#performance",
+        "#design-systems",
+        "#components",
+        "#documentation",
+        "#case-studies",
+        "#releases",
+        "#changelog",
+        "#integrations",
+        "#partners",
+        "#careers",
+        "#about",
+        "#contact",
+        "#support",
+        "#account"
+      ],
+      "identity": true,
+      "expanded": "true",
+      "active": {
+        "tag": "A",
+        "text": "Account",
+        "href": "#account",
+        "visible": true,
+        "focusVisible": true,
+        "outline": "rgb(0, 0, 238) solid 3px"
+      },
+      "panel": {
+        "rect": {
+          "x": 353.5333251953125,
+          "y": 286,
+          "width": 480,
+          "height": 573,
+          "top": 286,
+          "right": 833.5333251953125,
+          "bottom": 859,
+          "left": 353.5333251953125
+        },
+        "clientWidth": 463,
+        "scrollWidth": 463,
+        "maxHeight": "573px",
+        "overflowY": "auto"
+      },
+      "lastEvent": null
+    }
+  ],
+  "runtimeUnchanged": true,
+  "pagesCssAndDistributionParity": true,
+  "packageGates": {
+    "tests": "48 pass",
+    "typecheck": "pass",
+    "buildIncludingPages": "pass",
+    "packageDryRun": "12 files pass"
+  },
+  "manualScreenReaderTesting": "Not run, explicitly excluded by user",
+  "remaining": [
+    "Windows contrast themes",
+    "Current AT checks",
+    "Wider chosen native/browser matrix",
+    "Final release audit"
+  ],
+  "sourceSha256": {
+    "demo.css": "7b181d26623afdbeff2b1272bff91b7fa52912f488aa73b50d7d74643a562689",
+    "examples/stress/index.html": "b97e9be9bbbf553cbafee9ae5f84db6a1fec844302564d20bf53ba9c6f5f7ba6",
+    "docs/demo.css": "7b181d26623afdbeff2b1272bff91b7fa52912f488aa73b50d7d74643a562689",
+    "docs/examples/stress/index.html": "e219d8c4926d7d0a0637a615432e55b23e60997c5cb74de12b1867c776b3d1b0",
+    "src/A11yOverflowNav.ts": "6c89642a131a825a80670a05aedc2952de36978529539f590f5e717809e5b111",
+    "dist/index.js": "cd1badd6b50d16e379c56a2382db288d7e4b938e147b067b1b569635710e0c92"
+  }
+}

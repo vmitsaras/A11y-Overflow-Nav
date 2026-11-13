@@ -54,6 +54,13 @@ interface InitialDomState {
   controlHidden: boolean;
 }
 
+interface NavStructure {
+  list: HTMLElement;
+  overflowControl: HTMLElement;
+  menuRoot: HTMLElement;
+  overflowList: HTMLElement;
+}
+
 const DEFAULT_OPTIONS = Object.freeze({
   observeResize: true,
   fitTolerance: 1,
@@ -92,6 +99,13 @@ export const OVERFLOW_NAV_EVENTS = Object.freeze({
 export type OverflowNavEventName =
   (typeof OVERFLOW_NAV_EVENTS)[keyof typeof OVERFLOW_NAV_EVENTS];
 
+export interface OverflowNavEventMap {
+  [OVERFLOW_NAV_EVENTS.init]: OverflowNavEventDetail;
+  [OVERFLOW_NAV_EVENTS.change]: OverflowNavEventDetail;
+  [OVERFLOW_NAV_EVENTS.refresh]: OverflowNavEventDetail;
+  [OVERFLOW_NAV_EVENTS.destroy]: OverflowNavEventDetail;
+}
+
 function snapshotAttribute(element: Element, name: string): AttributeSnapshot {
   return {
     exists: element.hasAttribute(name),
@@ -125,8 +139,10 @@ function toSafeNumber(
   fallback: number,
   min = 0,
 ): number {
-  if (value === '' || value === undefined) return fallback;
-  const parsed = typeof value === 'number' ? value : Number.parseFloat(value);
+  if (value === undefined || (typeof value === 'string' && value.trim() === '')) {
+    return fallback;
+  }
+  const parsed = typeof value === 'number' ? value : Number(value);
   return Number.isFinite(parsed) && parsed >= min ? parsed : fallback;
 }
 
@@ -164,11 +180,11 @@ export class A11yOverflowNav implements A11yOverflowNavInstance {
 
   public readonly root!: HTMLElement;
   public readonly options!: Readonly<NormalizedOptions>;
-  public list!: HTMLElement;
-  public overflowControl!: HTMLElement;
-  public overflowList!: HTMLElement;
+  public readonly list!: HTMLElement;
+  public readonly overflowControl!: HTMLElement;
+  public readonly overflowList!: HTMLElement;
 
-  private menuRoot!: HTMLElement;
+  private readonly menuRoot!: HTMLElement;
   private menuButton!: A11yMenuButton;
   private canonicalItems: HTMLElement[] = [];
   private initialState!: InitialDomState;
@@ -195,7 +211,12 @@ export class A11yOverflowNav implements A11yOverflowNavInstance {
     this.options = normalizeOptions(root, options);
     this.handleResize = this.onResize.bind(this);
 
-    this.queryStructure(true);
+    const { list, overflowControl, menuRoot, overflowList } =
+      this.queryStructure(true);
+    this.list = list;
+    this.overflowControl = overflowControl;
+    this.menuRoot = menuRoot;
+    this.overflowList = overflowList;
     this.initialState = this.captureInitialState();
     this.canonicalItems = this.getDirectItems(this.list);
     A11yOverflowNav.instances.set(root, this);
@@ -205,8 +226,27 @@ export class A11yOverflowNav implements A11yOverflowNavInstance {
         this.menuRoot,
         this.options.menuButtonOptions,
       );
+      if (this.destroyed) {
+        this.menuButton.destroy();
+        return;
+      }
       this.initialize();
     } catch (error) {
+      this.resizeObserver?.disconnect();
+      this.resizeObserver = null;
+      this.cancelScheduledLayout();
+
+      try {
+        this.menuButton?.destroy();
+      } catch {
+        // Preserve the setup error while still attempting the remaining rollback.
+      }
+
+      this.restoreCanonicalItemsToPrimary();
+      restoreAttribute(this.root, ATTRIBUTES.state, this.initialState.rootState);
+      restoreAttribute(this.root, ATTRIBUTES.count, this.initialState.rootCount);
+      restoreAttribute(this.root, ATTRIBUTES.ready, this.initialState.rootReady);
+      this.overflowControl.hidden = this.initialState.controlHidden;
       A11yOverflowNav.instances.delete(root);
       throw error;
     }
@@ -229,13 +269,16 @@ export class A11yOverflowNav implements A11yOverflowNavInstance {
   }
 
   private initialize(): void {
+    if (this.destroyed) return;
     this.root.setAttribute(ATTRIBUTES.ready, 'true');
     this.reflow('init');
+    if (this.destroyed) return;
     this.observeLayout();
+    if (this.destroyed) return;
     this.dispatch(OVERFLOW_NAV_EVENTS.init, 'init');
   }
 
-  private queryStructure(initial: boolean): void {
+  private queryStructure(initial: boolean): NavStructure {
     const list = this.root.querySelector(SELECTORS.list);
     if (!(list instanceof HTMLElement)) {
       throw new Error(
@@ -286,10 +329,7 @@ export class A11yOverflowNav implements A11yOverflowNavInstance {
       );
     }
 
-    this.list = list;
-    this.overflowControl = control;
-    this.menuRoot = menuRoot;
-    this.overflowList = overflowList;
+    return { list, overflowControl: control, menuRoot, overflowList };
   }
 
   private captureInitialState(): InitialDomState {
@@ -310,6 +350,7 @@ export class A11yOverflowNav implements A11yOverflowNavInstance {
   }
 
   private observeLayout(): void {
+    if (this.destroyed) return;
     this.resizeObserver?.disconnect();
     this.resizeObserver = null;
 
@@ -348,15 +389,9 @@ export class A11yOverflowNav implements A11yOverflowNavInstance {
     this.pendingReason = null;
   }
 
-  private getPrimaryItems(): HTMLElement[] {
-    return this.canonicalItems.filter(
-      (item) => item.parentElement === this.list,
-    );
-  }
-
   private fits(): boolean {
     const participants = [
-      ...this.getPrimaryItems(),
+      ...this.visibleItems,
       ...(this.overflowControl.hidden ? [] : [this.overflowControl]),
     ];
 
@@ -411,7 +446,12 @@ export class A11yOverflowNav implements A11yOverflowNavInstance {
   }
 
   private restoreFocus(element: HTMLElement | null): void {
-    if (!element || !document.contains(element)) return;
+    if (
+      this.destroyed ||
+      !element ||
+      !document.contains(element) ||
+      element.closest('[hidden], [inert]')
+    ) return;
     element.focus({ preventScroll: true });
   }
 
@@ -430,12 +470,14 @@ export class A11yOverflowNav implements A11yOverflowNavInstance {
 
     if (focusedInside && !this.menuButton.isOpen()) {
       this.menuButton.trigger.focus({ preventScroll: true });
+      if (this.destroyed) return;
     }
 
     this.overflowList.insertBefore(
       item,
       this.overflowList.firstElementChild,
     );
+    if (this.destroyed) return;
 
     if (focusedInside && this.menuButton.isOpen()) {
       this.restoreFocus(active);
@@ -459,6 +501,7 @@ export class A11yOverflowNav implements A11yOverflowNavInstance {
         this.overflowControl.contains(active));
 
     this.list.insertBefore(candidate, this.overflowControl);
+    if (this.destroyed) return false;
 
     const isFinalOverflowItem = this.overflowItems.length === 0;
     if (isFinalOverflowItem) {
@@ -472,6 +515,7 @@ export class A11yOverflowNav implements A11yOverflowNavInstance {
             returnFocus: false,
             reason: 'programmatic',
           });
+          if (this.destroyed) return false;
         }
 
         if (focusWasInsideControl && !focusWasInsideCandidate) {
@@ -489,6 +533,7 @@ export class A11yOverflowNav implements A11yOverflowNavInstance {
       candidate,
       this.overflowList.firstElementChild,
     );
+    if (this.destroyed) return false;
     this.overflowControl.hidden = false;
 
     if (focusWasInsideCandidate || focusWasInsideControl) {
@@ -503,15 +548,15 @@ export class A11yOverflowNav implements A11yOverflowNavInstance {
 
     this.overflowControl.hidden = false;
 
-    while (!this.fits()) {
-      const candidate = this.getPrimaryItems().at(-1);
+    while (!this.destroyed && !this.fits()) {
+      const candidate = this.visibleItems.at(-1);
       if (!candidate) break;
       this.movePrimaryItemToOverflow(candidate);
     }
   }
 
   private growWhilePossible(): void {
-    while (this.overflowItems.length > 0) {
+    while (!this.destroyed && this.overflowItems.length > 0) {
       if (!this.tryRestoreFirstOverflowItem()) break;
     }
   }
@@ -526,7 +571,13 @@ export class A11yOverflowNav implements A11yOverflowNavInstance {
     this.overflowControl.hidden = count === 0;
   }
 
-  private reflow(reason: OverflowNavReason): void {
+  private reflow(
+    reason: OverflowNavReason,
+    previousDistribution?: {
+      visibleItems: readonly HTMLElement[];
+      overflowItems: readonly HTMLElement[];
+    },
+  ): void {
     if (this.destroyed) return;
 
     if (this.layoutRunning) {
@@ -535,8 +586,12 @@ export class A11yOverflowNav implements A11yOverflowNavInstance {
     }
 
     this.layoutRunning = true;
-    const beforeVisible = [...this.visibleItems];
-    const beforeOverflow = [...this.overflowItems];
+    const beforeVisible = previousDistribution
+      ? [...previousDistribution.visibleItems]
+      : [...this.visibleItems];
+    const beforeOverflow = previousDistribution
+      ? [...previousDistribution.overflowItems]
+      : [...this.overflowItems];
 
     try {
       if (this.overflowItems.length === 0) {
@@ -546,11 +601,15 @@ export class A11yOverflowNav implements A11yOverflowNavInstance {
         this.growWhilePossible();
       }
 
+      if (this.destroyed) return;
       this.shrinkUntilFit();
+      if (this.destroyed) return;
       this.syncState();
 
       if (!this.overflowControl.hidden) {
-        this.menuButton.refresh();
+        // The owned menu resolves aria-controls through document.getElementById.
+        // Defer its geometry refresh while detached; our item queries remain live.
+        if (this.menuRoot.isConnected) this.menuButton.refresh();
       } else if (this.menuButton.isOpen()) {
         this.menuButton.close({
           returnFocus: false,
@@ -561,6 +620,7 @@ export class A11yOverflowNav implements A11yOverflowNavInstance {
       this.layoutRunning = false;
     }
 
+    if (this.destroyed) return;
     const afterVisible = [...this.visibleItems];
     const afterOverflow = [...this.overflowItems];
 
@@ -571,12 +631,13 @@ export class A11yOverflowNav implements A11yOverflowNavInstance {
       this.dispatch(OVERFLOW_NAV_EVENTS.change, reason);
     }
 
+    if (this.destroyed) return;
     const pendingReason = this.pendingReason;
     this.pendingReason = null;
     if (pendingReason) this.scheduleLayout(pendingReason);
   }
 
-  private restoreCanonicalItemsToPrimary(): void {
+  private restoreCanonicalItemsToPrimary(stopWhenDestroyed = false): void {
     let anchor: Element = this.overflowControl;
 
     for (
@@ -584,9 +645,16 @@ export class A11yOverflowNav implements A11yOverflowNavInstance {
       index >= 0;
       index -= 1
     ) {
+      if (stopWhenDestroyed && this.destroyed) return;
       const item = this.canonicalItems[index];
-      if (!item || !item.isConnected) continue;
-      this.list.insertBefore(item, anchor);
+      if (
+        !item ||
+        (item.parentElement !== this.list &&
+          item.parentElement !== this.overflowList)
+      ) continue;
+      if (item.parentElement !== this.list || item.nextElementSibling !== anchor) {
+        this.list.insertBefore(item, anchor);
+      }
       anchor = item;
     }
   }
@@ -594,23 +662,18 @@ export class A11yOverflowNav implements A11yOverflowNavInstance {
   public refresh(): void {
     if (this.destroyed) return;
 
-    const previousList = this.list;
-    const previousControl = this.overflowControl;
-    const previousMenuRoot = this.menuRoot;
-    const previousOverflowList = this.overflowList;
+    const previousDistribution = {
+      visibleItems: [...this.visibleItems],
+      overflowItems: [...this.overflowItems],
+    };
 
-    this.queryStructure(false);
-
+    const structure = this.queryStructure(false);
     if (
-      this.list !== previousList ||
-      this.overflowControl !== previousControl ||
-      this.menuRoot !== previousMenuRoot ||
-      this.overflowList !== previousOverflowList
+      structure.list !== this.list ||
+      structure.overflowControl !== this.overflowControl ||
+      structure.menuRoot !== this.menuRoot ||
+      structure.overflowList !== this.overflowList
     ) {
-      this.list = previousList;
-      this.overflowControl = previousControl;
-      this.menuRoot = previousMenuRoot;
-      this.overflowList = previousOverflowList;
       throw new Error(
         'A11yOverflowNav: refresh cannot replace structural nodes; destroy and reinitialize instead',
       );
@@ -630,12 +693,13 @@ export class A11yOverflowNav implements A11yOverflowNavInstance {
       document.activeElement instanceof HTMLElement
         ? document.activeElement
         : null;
+    const focusWasInsideControl =
+      active !== null && this.overflowControl.contains(active);
 
     const primaryItems = this.getDirectItems(this.list);
     const primarySet = new Set(primaryItems);
     const retainedOverflowItems = this.canonicalItems.filter(
       (item) =>
-        item.isConnected &&
         item.parentElement === this.overflowList &&
         !primarySet.has(item),
     );
@@ -645,30 +709,47 @@ export class A11yOverflowNav implements A11yOverflowNavInstance {
       ...retainedOverflowItems,
     ];
 
-    this.restoreCanonicalItemsToPrimary();
+    this.restoreCanonicalItemsToPrimary(true);
+    if (this.destroyed) return;
 
     if (this.menuButton.isOpen()) {
       this.menuButton.close({
         returnFocus: false,
         reason: 'programmatic',
       });
+      if (this.destroyed) return;
     }
 
     this.overflowControl.hidden = true;
     this.observeLayout();
-    this.reflow('refresh');
-    this.restoreFocus(active);
+    this.reflow('refresh', previousDistribution);
+    if (this.destroyed) return;
+    if (active && this.overflowList.contains(active) && !this.menuButton.isOpen()) {
+      this.restoreFocus(this.menuButton.trigger);
+    } else if (
+      active &&
+      focusWasInsideControl &&
+      this.overflowControl.contains(active) &&
+      this.overflowControl.hidden
+    ) {
+      const restoredItem = this.visibleItems.at(-1);
+      this.restoreFocus(restoredItem ? this.getFocusableWithin(restoredItem) : null);
+    } else {
+      this.restoreFocus(active);
+    }
+    if (this.destroyed) return;
     this.dispatch(OVERFLOW_NAV_EVENTS.refresh, 'refresh');
   }
 
   private createEventDetail(
     reason: OverflowNavReason,
   ): OverflowNavEventDetail {
+    const overflowItems = [...this.overflowItems];
     return {
       instance: this,
       visibleItems: [...this.visibleItems],
-      overflowItems: [...this.overflowItems],
-      overflowCount: this.overflowCount,
+      overflowItems,
+      overflowCount: overflowItems.length,
       reason,
     };
   }
@@ -681,6 +762,7 @@ export class A11yOverflowNav implements A11yOverflowNavInstance {
       new CustomEvent<OverflowNavEventDetail>(type, {
         bubbles: true,
         composed: false,
+        cancelable: false,
         detail: this.createEventDetail(reason),
       }),
     );
@@ -703,13 +785,16 @@ export class A11yOverflowNav implements A11yOverflowNavInstance {
     this.restoreCanonicalItemsToPrimary();
 
     if (controlHadFocus) {
-      const lastItem = this.canonicalItems.at(-1);
+      const lastItem = this.visibleItems.at(-1);
       if (lastItem) {
         this.getFocusableWithin(lastItem)?.focus({ preventScroll: true });
       }
     }
 
-    this.menuButton.destroy();
+    if (this.menuButton?.isOpen()) {
+      this.menuButton.close({ returnFocus: false, reason: 'programmatic' });
+    }
+    this.menuButton?.destroy();
 
     restoreAttribute(
       this.root,

@@ -1,0 +1,1156 @@
+{
+  "date": "2026-10-27",
+  "scope": "Native text-only resizing inspection; no product fixes",
+  "targetHead": "6895d10e226fe8332a1b6eb740da079f759319d6 with pre-existing working-tree changes",
+  "status": "Executed; qualification fails on RH-03 and RH-04",
+  "platform": "macOS 27.0.1 (26A434)",
+  "nativeBrowserVersions": [
+    "Firefox 158.0.1 (UA 158.0)",
+    "Firefox 159.0 (UA 159.0), after native-browser restart"
+  ],
+  "method": "Native Firefox Default Zoom 100/150/200 percent with Zoom text only checked, isolated temporary profile; no CSS font override; helper measures and posts local telemetry. See VERIFICATION.md.",
+  "calibration": [
+    {
+      "nativeTextPercent": 100,
+      "computedFont": "16px",
+      "textWidth": 133.3333282470703
+    },
+    {
+      "nativeTextPercent": 150,
+      "computedFont": "24px",
+      "textWidth": 200
+    },
+    {
+      "nativeTextPercent": 200,
+      "computedFont": "32px",
+      "textWidth": 266.5
+    }
+  ],
+  "constantGeometry": {
+    "authorFont": "16px",
+    "fixedBox": [
+      100,
+      20
+    ],
+    "viewport": [
+      1280,
+      955
+    ],
+    "dpr": 2,
+    "documentClientAndScrollWidth": [
+      1265,
+      1265
+    ]
+  },
+  "cases": [
+    {
+      "path": "/examples/basic/index.html",
+      "nativeTextPercent": 100,
+      "case": "narrow",
+      "firefoxUserAgentVersion": "158.0",
+      "status": "pass",
+      "lastLinkSnapshot": {
+        "time": "2026-10-27T18:16:16.361Z",
+        "sequence": 2,
+        "reason": "key:End",
+        "path": "/examples/basic/index.html",
+        "case": "narrow",
+        "stage": "100",
+        "ua": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:158.0) Gecko/20100101 Firefox/158.0",
+        "viewport": [
+          1280,
+          955
+        ],
+        "dpr": 2,
+        "pageWidths": [
+          1265,
+          1265
+        ],
+        "calibration": {
+          "authorFont": "16px",
+          "computedFont": "16px",
+          "textRect": {
+            "x": -10000,
+            "y": 0.25,
+            "width": 133.3333282470703,
+            "height": 18,
+            "top": 0.25,
+            "right": -9866.66667175293,
+            "bottom": 18.25,
+            "left": -10000
+          },
+          "fixedBox": {
+            "x": -10000,
+            "y": 0,
+            "width": 100,
+            "height": 20,
+            "top": 0,
+            "right": -9900,
+            "bottom": 20,
+            "left": -10000
+          }
+        },
+        "linkFont": "16px",
+        "overflow": 4,
+        "order": [
+          "#articles",
+          "#books",
+          "#events",
+          "#membership",
+          "#newsletter",
+          "#podcasts",
+          "#about"
+        ],
+        "identity": true,
+        "expanded": "true",
+        "active": {
+          "tag": "A",
+          "text": "About us",
+          "href": "#about",
+          "visible": true,
+          "focusVisible": true,
+          "outline": "rgb(49, 88, 213) solid 3px"
+        },
+        "panel": {
+          "rect": {
+            "x": 535.3499755859375,
+            "y": 505.5,
+            "width": 208,
+            "height": 187.60000610351562,
+            "top": 505.5,
+            "right": 743.3499755859375,
+            "bottom": 693.1000061035156,
+            "left": 535.3499755859375
+          },
+          "clientWidth": 206,
+          "scrollWidth": 206,
+          "maxHeight": "none",
+          "overflowY": "visible"
+        },
+        "lastEvent": null
+      },
+      "nodeIdentityAndOrderRetained": true,
+      "documentInlineBoundsRetained": true
+    },
+    {
+      "path": "/",
+      "nativeTextPercent": 100,
+      "case": "many",
+      "firefoxUserAgentVersion": "158.0",
+      "status": "pass",
+      "lastLinkSnapshot": {
+        "time": "2026-10-27T18:17:03.832Z",
+        "sequence": 2,
+        "reason": "key:End",
+        "path": "/",
+        "case": "many",
+        "stage": "100",
+        "ua": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:158.0) Gecko/20100101 Firefox/158.0",
+        "viewport": [
+          1280,
+          955
+        ],
+        "dpr": 2,
+        "pageWidths": [
+          1265,
+          1265
+        ],
+        "calibration": {
+          "authorFont": "16px",
+          "computedFont": "16px",
+          "textRect": {
+            "x": -10000,
+            "y": 0.25,
+            "width": 133.3333282470703,
+            "height": 18,
+            "top": 0.25,
+            "right": -9866.66667175293,
+            "bottom": 18.25,
+            "left": -10000
+          },
+          "fixedBox": {
+            "x": -10000,
+            "y": 0,
+            "width": 100,
+            "height": 20,
+            "top": 0,
+            "right": -9900,
+            "bottom": 20,
+            "left": -10000
+          }
+        },
+        "linkFont": "16px",
+        "overflow": 5,
+        "order": [
+          "#articles",
+          "#books",
+          "#events",
+          "#membership",
+          "#newsletter",
+          "#about",
+          "#careers"
+        ],
+        "identity": true,
+        "expanded": "true",
+        "active": {
+          "tag": "A",
+          "text": "Careers",
+          "href": "#careers",
+          "visible": true,
+          "focusVisible": true,
+          "outline": "rgb(49, 88, 213) solid 3px"
+        },
+        "panel": {
+          "rect": {
+            "x": 185.89999389648438,
+            "y": 507.5,
+            "width": 208,
+            "height": 266,
+            "top": 507.5,
+            "right": 393.8999938964844,
+            "bottom": 773.5,
+            "left": 185.89999389648438
+          },
+          "clientWidth": 206,
+          "scrollWidth": 206,
+          "maxHeight": "267px",
+          "overflowY": "auto"
+        },
+        "lastEvent": "7. Menu Button event: menu-button:open — reason: trigger"
+      },
+      "nodeIdentityAndOrderRetained": true,
+      "documentInlineBoundsRetained": true
+    },
+    {
+      "path": "/examples/stress/index.html",
+      "nativeTextPercent": 100,
+      "case": "default",
+      "firefoxUserAgentVersion": "158.0",
+      "status": "pass",
+      "lastLinkSnapshot": {
+        "time": "2026-10-27T18:17:10.464Z",
+        "sequence": 2,
+        "reason": "key:End",
+        "path": "/examples/stress/index.html",
+        "case": "default",
+        "stage": "100",
+        "ua": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:158.0) Gecko/20100101 Firefox/158.0",
+        "viewport": [
+          1280,
+          955
+        ],
+        "dpr": 2,
+        "pageWidths": [
+          1265,
+          1265
+        ],
+        "calibration": {
+          "authorFont": "16px",
+          "computedFont": "16px",
+          "textRect": {
+            "x": -10000,
+            "y": 0.25,
+            "width": 133.3333282470703,
+            "height": 18,
+            "top": 0.25,
+            "right": -9866.66667175293,
+            "bottom": 18.25,
+            "left": -10000
+          },
+          "fixedBox": {
+            "x": -10000,
+            "y": 0,
+            "width": 100,
+            "height": 20,
+            "top": 0,
+            "right": -9900,
+            "bottom": 20,
+            "left": -10000
+          }
+        },
+        "linkFont": "16px",
+        "overflow": 16,
+        "order": [
+          "#dashboard",
+          "#articles",
+          "#books",
+          "#events",
+          "#membership",
+          "#newsletter",
+          "#community",
+          "#resources",
+          "#tutorials",
+          "#accessibility",
+          "#performance",
+          "#design-systems",
+          "#components",
+          "#documentation",
+          "#case-studies",
+          "#releases",
+          "#changelog",
+          "#integrations",
+          "#partners",
+          "#careers",
+          "#about",
+          "#contact",
+          "#support",
+          "#account"
+        ],
+        "identity": true,
+        "expanded": "true",
+        "active": {
+          "tag": "A",
+          "text": "Account",
+          "href": "#account",
+          "visible": true,
+          "focusVisible": true,
+          "outline": "rgb(0, 0, 238) solid 3px"
+        },
+        "panel": {
+          "rect": {
+            "x": 631.2833251953125,
+            "y": 382,
+            "width": 240,
+            "height": 573,
+            "top": 382,
+            "right": 871.2833251953125,
+            "bottom": 955,
+            "left": 631.2833251953125
+          },
+          "clientWidth": 223,
+          "scrollWidth": 223,
+          "maxHeight": "573px",
+          "overflowY": "auto"
+        },
+        "lastEvent": null
+      },
+      "nodeIdentityAndOrderRetained": true,
+      "documentInlineBoundsRetained": true
+    },
+    {
+      "path": "/examples/basic/index.html",
+      "nativeTextPercent": 150,
+      "case": "narrow",
+      "firefoxUserAgentVersion": "158.0",
+      "status": "pass",
+      "lastLinkSnapshot": {
+        "time": "2026-10-27T18:17:54.424Z",
+        "sequence": 2,
+        "reason": "key:End",
+        "path": "/examples/basic/index.html",
+        "case": "narrow",
+        "stage": "150",
+        "ua": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:158.0) Gecko/20100101 Firefox/158.0",
+        "viewport": [
+          1280,
+          955
+        ],
+        "dpr": 2,
+        "pageWidths": [
+          1265,
+          1265
+        ],
+        "calibration": {
+          "authorFont": "16px",
+          "computedFont": "24px",
+          "textRect": {
+            "x": -10000,
+            "y": 0.383331298828125,
+            "width": 200,
+            "height": 27.5,
+            "top": 0.383331298828125,
+            "right": -9800,
+            "bottom": 27.883331298828125,
+            "left": -10000
+          },
+          "fixedBox": {
+            "x": -10000,
+            "y": 0,
+            "width": 100,
+            "height": 20,
+            "top": 0,
+            "right": -9900,
+            "bottom": 20,
+            "left": -10000
+          }
+        },
+        "linkFont": "24px",
+        "overflow": 4,
+        "order": [
+          "#articles",
+          "#books",
+          "#events",
+          "#membership",
+          "#newsletter",
+          "#podcasts",
+          "#about"
+        ],
+        "identity": true,
+        "expanded": "true",
+        "active": {
+          "tag": "A",
+          "text": "About us",
+          "href": "#about",
+          "visible": true,
+          "focusVisible": true,
+          "outline": "rgb(49, 88, 213) solid 4.5px"
+        },
+        "panel": {
+          "rect": {
+            "x": 476.2166748046875,
+            "y": 519.5,
+            "width": 312,
+            "height": 280.3999938964844,
+            "top": 519.5,
+            "right": 788.2166748046875,
+            "bottom": 799.8999938964844,
+            "left": 476.2166748046875
+          },
+          "clientWidth": 310,
+          "scrollWidth": 310,
+          "maxHeight": "none",
+          "overflowY": "visible"
+        },
+        "lastEvent": null
+      },
+      "nodeIdentityAndOrderRetained": true,
+      "documentInlineBoundsRetained": true
+    },
+    {
+      "path": "/",
+      "nativeTextPercent": 150,
+      "case": "many",
+      "firefoxUserAgentVersion": "158.0",
+      "status": "pass",
+      "lastLinkSnapshot": {
+        "time": "2026-10-27T18:18:48.799Z",
+        "sequence": 2,
+        "reason": "key:End",
+        "path": "/",
+        "case": "many",
+        "stage": "150",
+        "ua": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:158.0) Gecko/20100101 Firefox/158.0",
+        "viewport": [
+          1280,
+          955
+        ],
+        "dpr": 2,
+        "pageWidths": [
+          1265,
+          1265
+        ],
+        "calibration": {
+          "authorFont": "16px",
+          "computedFont": "24px",
+          "textRect": {
+            "x": -10000,
+            "y": 0.383331298828125,
+            "width": 200,
+            "height": 27.5,
+            "top": 0.383331298828125,
+            "right": -9800,
+            "bottom": 27.883331298828125,
+            "left": -10000
+          },
+          "fixedBox": {
+            "x": -10000,
+            "y": 0,
+            "width": 100,
+            "height": 20,
+            "top": 0,
+            "right": -9900,
+            "bottom": 20,
+            "left": -10000
+          }
+        },
+        "linkFont": "24px",
+        "overflow": 6,
+        "order": [
+          "#articles",
+          "#books",
+          "#events",
+          "#membership",
+          "#newsletter",
+          "#about",
+          "#careers"
+        ],
+        "identity": true,
+        "expanded": "true",
+        "active": {
+          "tag": "A",
+          "text": "Careers",
+          "href": "#careers",
+          "visible": true,
+          "focusVisible": true,
+          "outline": "rgb(49, 88, 213) solid 4.5px"
+        },
+        "panel": {
+          "rect": {
+            "x": 57.399993896484375,
+            "y": 522.5,
+            "width": 293.20001220703125,
+            "height": 432.5,
+            "top": 522.5,
+            "right": 350.6000061035156,
+            "bottom": 955,
+            "left": 57.399993896484375
+          },
+          "clientWidth": 276,
+          "scrollWidth": 276,
+          "maxHeight": "432.5px",
+          "overflowY": "auto"
+        },
+        "lastEvent": "7. Menu Button event: menu-button:open — reason: trigger"
+      },
+      "nodeIdentityAndOrderRetained": true,
+      "documentInlineBoundsRetained": true
+    },
+    {
+      "path": "/examples/stress/index.html",
+      "nativeTextPercent": 150,
+      "case": "default",
+      "firefoxUserAgentVersion": "158.0",
+      "status": "pass",
+      "lastLinkSnapshot": {
+        "time": "2026-10-27T18:18:55.249Z",
+        "sequence": 2,
+        "reason": "key:End",
+        "path": "/examples/stress/index.html",
+        "case": "default",
+        "stage": "150",
+        "ua": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:158.0) Gecko/20100101 Firefox/158.0",
+        "viewport": [
+          1280,
+          955
+        ],
+        "dpr": 2,
+        "pageWidths": [
+          1265,
+          1265
+        ],
+        "calibration": {
+          "authorFont": "16px",
+          "computedFont": "24px",
+          "textRect": {
+            "x": -10000,
+            "y": 0.383331298828125,
+            "width": 200,
+            "height": 27.5,
+            "top": 0.383331298828125,
+            "right": -9800,
+            "bottom": 27.883331298828125,
+            "left": -10000
+          },
+          "fixedBox": {
+            "x": -10000,
+            "y": 0,
+            "width": 100,
+            "height": 20,
+            "top": 0,
+            "right": -9900,
+            "bottom": 20,
+            "left": -10000
+          }
+        },
+        "linkFont": "24px",
+        "overflow": 19,
+        "order": [
+          "#dashboard",
+          "#articles",
+          "#books",
+          "#events",
+          "#membership",
+          "#newsletter",
+          "#community",
+          "#resources",
+          "#tutorials",
+          "#accessibility",
+          "#performance",
+          "#design-systems",
+          "#components",
+          "#documentation",
+          "#case-studies",
+          "#releases",
+          "#changelog",
+          "#integrations",
+          "#partners",
+          "#careers",
+          "#about",
+          "#contact",
+          "#support",
+          "#account"
+        ],
+        "identity": true,
+        "expanded": "true",
+        "active": {
+          "tag": "A",
+          "text": "Account",
+          "href": "#account",
+          "visible": true,
+          "focusVisible": true,
+          "outline": "rgb(0, 0, 238) solid 3px"
+        },
+        "panel": {
+          "rect": {
+            "x": 438.75,
+            "y": 197.03334045410156,
+            "width": 360,
+            "height": 573,
+            "top": 197.03334045410156,
+            "right": 798.75,
+            "bottom": 770.0333404541016,
+            "left": 438.75
+          },
+          "clientWidth": 343,
+          "scrollWidth": 343,
+          "maxHeight": "573px",
+          "overflowY": "auto"
+        },
+        "lastEvent": null
+      },
+      "nodeIdentityAndOrderRetained": true,
+      "documentInlineBoundsRetained": true
+    },
+    {
+      "path": "/examples/basic/index.html",
+      "nativeTextPercent": 200,
+      "case": "narrow",
+      "firefoxUserAgentVersion": "158.0",
+      "status": "pass",
+      "lastLinkSnapshot": {
+        "time": "2026-10-27T18:19:21.466Z",
+        "sequence": 2,
+        "reason": "key:End",
+        "path": "/examples/basic/index.html",
+        "case": "narrow",
+        "stage": "200",
+        "ua": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:158.0) Gecko/20100101 Firefox/158.0",
+        "viewport": [
+          1280,
+          955
+        ],
+        "dpr": 2,
+        "pageWidths": [
+          1265,
+          1265
+        ],
+        "calibration": {
+          "authorFont": "16px",
+          "computedFont": "32px",
+          "textRect": {
+            "x": -10000,
+            "y": 0.51666259765625,
+            "width": 266.5,
+            "height": 36,
+            "top": 0.51666259765625,
+            "right": -9733.5,
+            "bottom": 36.51666259765625,
+            "left": -10000
+          },
+          "fixedBox": {
+            "x": -10000,
+            "y": 0,
+            "width": 100,
+            "height": 20,
+            "top": 0,
+            "right": -9900,
+            "bottom": 20,
+            "left": -10000
+          }
+        },
+        "linkFont": "32px",
+        "overflow": 4,
+        "order": [
+          "#articles",
+          "#books",
+          "#events",
+          "#membership",
+          "#newsletter",
+          "#podcasts",
+          "#about"
+        ],
+        "identity": true,
+        "expanded": "true",
+        "active": {
+          "tag": "A",
+          "text": "About us",
+          "href": "#about",
+          "visible": true,
+          "focusVisible": true,
+          "outline": "rgb(49, 88, 213) solid 6px"
+        },
+        "panel": {
+          "rect": {
+            "x": 424.4666748046875,
+            "y": 533.5,
+            "width": 416,
+            "height": 373.20001220703125,
+            "top": 533.5,
+            "right": 840.4666748046875,
+            "bottom": 906.7000122070312,
+            "left": 424.4666748046875
+          },
+          "clientWidth": 414,
+          "scrollWidth": 414,
+          "maxHeight": "none",
+          "overflowY": "visible"
+        },
+        "lastEvent": null
+      },
+      "nodeIdentityAndOrderRetained": true,
+      "documentInlineBoundsRetained": true
+    },
+    {
+      "path": "/",
+      "nativeTextPercent": 200,
+      "case": "many",
+      "firefoxUserAgentVersion": "158.0",
+      "status": "pass",
+      "lastLinkSnapshot": {
+        "time": "2026-10-27T18:20:36.305Z",
+        "sequence": 2,
+        "reason": "key:End",
+        "path": "/",
+        "case": "many",
+        "stage": "200",
+        "ua": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:158.0) Gecko/20100101 Firefox/158.0",
+        "viewport": [
+          1280,
+          955
+        ],
+        "dpr": 2,
+        "pageWidths": [
+          1265,
+          1265
+        ],
+        "calibration": {
+          "authorFont": "16px",
+          "computedFont": "32px",
+          "textRect": {
+            "x": -10000,
+            "y": 0.51666259765625,
+            "width": 266.5,
+            "height": 36,
+            "top": 0.51666259765625,
+            "right": -9733.5,
+            "bottom": 36.51666259765625,
+            "left": -10000
+          },
+          "fixedBox": {
+            "x": -10000,
+            "y": 0,
+            "width": 100,
+            "height": 20,
+            "top": 0,
+            "right": -9900,
+            "bottom": 20,
+            "left": -10000
+          }
+        },
+        "linkFont": "32px",
+        "overflow": 7,
+        "order": [
+          "#articles",
+          "#books",
+          "#events",
+          "#membership",
+          "#newsletter",
+          "#about",
+          "#careers"
+        ],
+        "identity": true,
+        "expanded": "true",
+        "active": {
+          "tag": "A",
+          "text": "Careers",
+          "href": "#careers",
+          "visible": true,
+          "focusVisible": true,
+          "outline": "rgb(49, 88, 213) solid 6px"
+        },
+        "panel": {
+          "rect": {
+            "x": 76.19999694824219,
+            "y": 537.5,
+            "width": 271.6000061035156,
+            "height": 417.5,
+            "top": 537.5,
+            "right": 347.8000030517578,
+            "bottom": 955,
+            "left": 76.19999694824219
+          },
+          "clientWidth": 255,
+          "scrollWidth": 255,
+          "maxHeight": "417.5px",
+          "overflowY": "auto"
+        },
+        "lastEvent": "7. Menu Button event: menu-button:open — reason: trigger"
+      },
+      "nodeIdentityAndOrderRetained": true,
+      "documentInlineBoundsRetained": true
+    },
+    {
+      "path": "/examples/stress/index.html",
+      "nativeTextPercent": 200,
+      "case": "default",
+      "firefoxUserAgentVersion": "159.0",
+      "status": "fail",
+      "lastLinkSnapshot": null,
+      "nodeIdentityAndOrderRetained": true,
+      "documentInlineBoundsRetained": true
+    },
+    {
+      "path": "/",
+      "nativeTextPercent": 200,
+      "case": "de",
+      "firefoxUserAgentVersion": "159.0",
+      "status": "fail",
+      "lastLinkSnapshot": {
+        "time": "2026-10-27T18:29:11.848Z",
+        "sequence": 4,
+        "reason": "key:End",
+        "path": "/",
+        "case": "de",
+        "stage": "200",
+        "locale": "de",
+        "triggerText": "Mehr",
+        "ua": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:159.0) Gecko/20100101 Firefox/159.0",
+        "viewport": [
+          1280,
+          955
+        ],
+        "dpr": 2,
+        "pageWidths": [
+          1265,
+          1265
+        ],
+        "calibration": {
+          "authorFont": "16px",
+          "computedFont": "32px",
+          "textRect": {
+            "x": -10000,
+            "y": 0.51666259765625,
+            "width": 266.5,
+            "height": 36,
+            "top": 0.51666259765625,
+            "right": -9733.5,
+            "bottom": 36.51666259765625,
+            "left": -10000
+          },
+          "fixedBox": {
+            "x": -10000,
+            "y": 0,
+            "width": 100,
+            "height": 20,
+            "top": 0,
+            "right": -9900,
+            "bottom": 20,
+            "left": -10000
+          }
+        },
+        "linkFont": "32px",
+        "overflow": 7,
+        "order": [
+          "#articles",
+          "#books",
+          "#events",
+          "#membership",
+          "#newsletter",
+          "#about",
+          "#careers"
+        ],
+        "identity": true,
+        "expanded": "true",
+        "active": {
+          "tag": "A",
+          "text": "Karrieremöglichkeiten",
+          "href": "#careers",
+          "visible": true,
+          "focusVisible": true,
+          "outline": "rgb(49, 88, 213) solid 6px"
+        },
+        "panel": {
+          "rect": {
+            "x": 76.19999694824219,
+            "y": 537.5,
+            "width": 271.6000061035156,
+            "height": 417.5,
+            "top": 537.5,
+            "right": 347.8000030517578,
+            "bottom": 955,
+            "left": 76.19999694824219
+          },
+          "clientWidth": 255,
+          "scrollWidth": 362,
+          "maxHeight": "417.5px",
+          "overflowY": "auto"
+        },
+        "lastEvent": "8. Menu Button event: menu-button:open — reason: trigger"
+      },
+      "nodeIdentityAndOrderRetained": true,
+      "documentInlineBoundsRetained": true
+    },
+    {
+      "path": "/",
+      "nativeTextPercent": 200,
+      "case": "el",
+      "firefoxUserAgentVersion": "159.0",
+      "status": "pass",
+      "lastLinkSnapshot": {
+        "time": "2026-10-27T18:29:24.446Z",
+        "sequence": 4,
+        "reason": "key:End",
+        "path": "/",
+        "case": "el",
+        "stage": "200",
+        "locale": "el",
+        "triggerText": "Περισσότερα",
+        "ua": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:159.0) Gecko/20100101 Firefox/159.0",
+        "viewport": [
+          1280,
+          955
+        ],
+        "dpr": 2,
+        "pageWidths": [
+          1265,
+          1265
+        ],
+        "calibration": {
+          "authorFont": "16px",
+          "computedFont": "32px",
+          "textRect": {
+            "x": -10000,
+            "y": 0.51666259765625,
+            "width": 266.5,
+            "height": 36,
+            "top": 0.51666259765625,
+            "right": -9733.5,
+            "bottom": 36.51666259765625,
+            "left": -10000
+          },
+          "fixedBox": {
+            "x": -10000,
+            "y": 0,
+            "width": 100,
+            "height": 20,
+            "top": 0,
+            "right": -9900,
+            "bottom": 20,
+            "left": -10000
+          }
+        },
+        "linkFont": "32px",
+        "overflow": 7,
+        "order": [
+          "#articles",
+          "#books",
+          "#events",
+          "#membership",
+          "#newsletter",
+          "#about",
+          "#careers"
+        ],
+        "identity": true,
+        "expanded": "true",
+        "active": {
+          "tag": "A",
+          "text": "Ευκαιρίες καριέρας",
+          "href": "#careers",
+          "visible": true,
+          "focusVisible": true,
+          "outline": "rgb(49, 88, 213) solid 6px"
+        },
+        "panel": {
+          "rect": {
+            "x": 76.19999694824219,
+            "y": 537.5,
+            "width": 271.6000061035156,
+            "height": 417.5,
+            "top": 537.5,
+            "right": 347.8000030517578,
+            "bottom": 955,
+            "left": 76.19999694824219
+          },
+          "clientWidth": 255,
+          "scrollWidth": 255,
+          "maxHeight": "417.5px",
+          "overflowY": "auto"
+        },
+        "lastEvent": "8. Menu Button event: menu-button:open — reason: trigger"
+      },
+      "nodeIdentityAndOrderRetained": true,
+      "documentInlineBoundsRetained": true
+    },
+    {
+      "path": "/examples/stress/index.html",
+      "nativeTextPercent": 100,
+      "case": "recovery",
+      "firefoxUserAgentVersion": "159.0",
+      "status": "pass",
+      "lastLinkSnapshot": {
+        "time": "2026-10-27T18:30:34.014Z",
+        "sequence": 4,
+        "reason": "key:End",
+        "path": "/examples/stress/index.html",
+        "case": "recovery",
+        "stage": "100",
+        "locale": "en",
+        "triggerText": "More",
+        "ua": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:159.0) Gecko/20100101 Firefox/159.0",
+        "viewport": [
+          1280,
+          955
+        ],
+        "dpr": 2,
+        "pageWidths": [
+          1265,
+          1265
+        ],
+        "calibration": {
+          "authorFont": "16px",
+          "computedFont": "16px",
+          "textRect": {
+            "x": -10000,
+            "y": 0.25,
+            "width": 133.3333282470703,
+            "height": 18,
+            "top": 0.25,
+            "right": -9866.66667175293,
+            "bottom": 18.25,
+            "left": -10000
+          },
+          "fixedBox": {
+            "x": -10000,
+            "y": 0,
+            "width": 100,
+            "height": 20,
+            "top": 0,
+            "right": -9900,
+            "bottom": 20,
+            "left": -10000
+          }
+        },
+        "linkFont": "16px",
+        "overflow": 16,
+        "order": [
+          "#dashboard",
+          "#articles",
+          "#books",
+          "#events",
+          "#membership",
+          "#newsletter",
+          "#community",
+          "#resources",
+          "#tutorials",
+          "#accessibility",
+          "#performance",
+          "#design-systems",
+          "#components",
+          "#documentation",
+          "#case-studies",
+          "#releases",
+          "#changelog",
+          "#integrations",
+          "#partners",
+          "#careers",
+          "#about",
+          "#contact",
+          "#support",
+          "#account"
+        ],
+        "identity": true,
+        "expanded": "true",
+        "active": {
+          "tag": "A",
+          "text": "Account",
+          "href": "#account",
+          "visible": true,
+          "focusVisible": true,
+          "outline": "rgb(0, 0, 238) solid 3px"
+        },
+        "panel": {
+          "rect": {
+            "x": 631.2833251953125,
+            "y": 382,
+            "width": 240,
+            "height": 573,
+            "top": 382,
+            "right": 871.2833251953125,
+            "bottom": 955,
+            "left": 631.2833251953125
+          },
+          "clientWidth": 223,
+          "scrollWidth": 223,
+          "maxHeight": "573px",
+          "overflowY": "auto"
+        },
+        "lastEvent": null
+      },
+      "nodeIdentityAndOrderRetained": true,
+      "documentInlineBoundsRetained": true
+    }
+  ],
+  "findings": [
+    {
+      "id": "RH-03",
+      "status": "open",
+      "page": "examples/stress/index.html",
+      "nativeTextPercent": 200,
+      "expected": "Last overflow destination remains visibly focused in an open disclosure",
+      "observed": "More opens; ArrowDown focuses Membership; End closes disclosure and active element becomes BODY. Native AX focus becomes HTML content. Reproduced twice with telemetry and once on the original page served without injection.",
+      "panelAtOpening": {
+        "top": 529.5,
+        "bottom": 1102.5,
+        "height": 573,
+        "viewportHeight": 955
+      },
+      "cause": "Source-supported inference: stress CSS uses a fixed 60vh bound and ignores available-height/top-placement values; focus scroll moves the trigger outside the viewport, invoking dependency visibility protection. Exact event cause was not captured."
+    },
+    {
+      "id": "RH-04",
+      "status": "open",
+      "page": "index.html, Many overflow, German labels, Flex nowrap LTR",
+      "nativeTextPercent": 200,
+      "expected": "Localized disclosure labels reflow without horizontal scrolling",
+      "observed": "Karrieremöglichkeiten remains focused in the open panel, but panel scrollWidth 362 exceeds clientWidth 255 CSS px; document remains within inline bounds.",
+      "panelClientWidth": 255,
+      "panelScrollWidth": 362
+    }
+  ],
+  "recovery": {
+    "nativeTextPercent": 100,
+    "firefoxVersion": "159.0",
+    "computedFont": "16px",
+    "stressEndDestination": "Account",
+    "escapeReturnsFocus": "More"
+  },
+  "sourceSha256": {
+    "src/A11yOverflowNav.ts": "6c89642a131a825a80670a05aedc2952de36978529539f590f5e717809e5b111",
+    "demo.css": "21f877ae35c42581c72b7cae2e22e179fe61a88992929745da3fe9844c6a5577",
+    "docs/demo.css": "21f877ae35c42581c72b7cae2e22e179fe61a88992929745da3fe9844c6a5577",
+    "index.html": "ab729e9ae2b797ab6866038961010c73058b173d18e9ea76516f9bbd938ccc32",
+    "examples/basic/styles.css": "ba0e2e9c5cef8124ae89b9403902b01cfc4a5e7aa3734de7e8ae4427f0d3cf9e",
+    "examples/stress/index.html": "7e5582383cf5eee483daede5f3265f10268cde19cb1aa89713eaea5d66c9ac86",
+    "dist/index.js": "cd1badd6b50d16e379c56a2382db288d7e4b938e147b067b1b569635710e0c92"
+  },
+  "productFilesUnchangedFromPriorFix": true,
+  "pagesDistributionParity": true,
+  "packageGates": {
+    "unitTests": "48 pass",
+    "typecheck": "pass",
+    "buildIncludingPages": "pass",
+    "packageDryRun": "pass, 12 files, temporary npm cache"
+  },
+  "remaining": [
+    "Remediate and retest RH-03/RH-04",
+    "Native localized/configuration matrix beyond samples",
+    "Windows light/dark contrast themes",
+    "Current-tree VoiceOver and NVDA/browser matrix where supported",
+    "Chosen supported-browser/native-zoom matrix and final release audit"
+  ],
+  "toolingLimits": [
+    "Cached Playwright Firefox builds failed before page load with macOS sandbox/helper errors; no sandbox was disabled",
+    "Native Firefox 158 UI stalled during label selection; recovered in the same isolated profile, now reporting Firefox 159. No plugin hang established",
+    "Native AX observations are transcribed in native-observations.json; event snapshots are debounced, so not every key has a retained row"
+  ]
+}

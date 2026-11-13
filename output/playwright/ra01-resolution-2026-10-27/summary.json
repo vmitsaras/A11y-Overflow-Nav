@@ -1,0 +1,37 @@
+{
+  "date": "2026-10-27",
+  "finding": "RA-01",
+  "status": "resolved",
+  "changeset": ".changeset/fix-overflow-nav-lifecycle-and-demos.md",
+  "releaseNotes": "Included in Changeset body; versioned changelog deferred",
+  "changesetsStatusExitCode": 0,
+  "pendingReleasePlan": {
+    "name": "a11y-overflow-nav",
+    "type": "patch",
+    "oldVersion": "0.1.0",
+    "changesets": [
+      "fix-overflow-nav-lifecycle-and-demos"
+    ],
+    "newVersion": "0.1.1"
+  },
+  "currentPackageVersion": "0.1.0",
+  "versionApplied": false,
+  "published": false,
+  "packageJsonAndChangelogUnchanged": true,
+  "productFingerprintsUnchanged": true,
+  "tests": "48 pass",
+  "typecheck": "pass",
+  "buildIncludingPages": "pass",
+  "packDryRun": "pass,12files,same package shasum2781ca9fc0973174c030daa2d682f7b9b139634f",
+  "pagesParity": "pass",
+  "changesetSha256": "5f06d325712fce43740bec71db4f7377c74fc5812251f57bebc42dec0436efb9",
+  "notRun": [
+    "Manual SR testing",
+    "Windows contrast themes",
+    "AT checks",
+    "Wider native/browser qualification",
+    "Current-tree CI",
+    "Version application",
+    "Publishing"
+  ]
+}

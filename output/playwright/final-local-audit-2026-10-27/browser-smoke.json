@@ -1,0 +1,78 @@
+{
+  "browser": "153.0.8010.12",
+  "viewport": {
+    "width": 320,
+    "height": 900
+  },
+  "results": [
+    {
+      "route": "/docs/",
+      "pass": true,
+      "end": {
+        "active": "Karrieremöglichkeiten",
+        "expanded": "true",
+        "visible": true,
+        "focusVisible": true,
+        "panelWidth": [
+          206,
+          206
+        ],
+        "documentWidth": [
+          320,
+          320
+        ],
+        "identity": true,
+        "placement": "bottom-end"
+      },
+      "escape": true,
+      "errors": [],
+      "responses": []
+    },
+    {
+      "route": "/docs/examples/basic/index.html",
+      "pass": true,
+      "end": {
+        "active": "About us",
+        "expanded": "true",
+        "visible": true,
+        "focusVisible": true,
+        "panelWidth": [
+          206,
+          206
+        ],
+        "documentWidth": [
+          320,
+          320
+        ],
+        "identity": true,
+        "placement": "bottom-end"
+      },
+      "escape": true,
+      "errors": [],
+      "responses": []
+    },
+    {
+      "route": "/docs/examples/stress/index.html",
+      "pass": true,
+      "end": {
+        "active": "Account",
+        "expanded": "true",
+        "visible": true,
+        "focusVisible": true,
+        "panelWidth": [
+          238,
+          238
+        ],
+        "documentWidth": [
+          320,
+          320
+        ],
+        "identity": true,
+        "placement": "top-end"
+      },
+      "escape": true,
+      "errors": [],
+      "responses": []
+    }
+  ]
+}

@@ -1,0 +1,2825 @@
+{
+  "browser": "156.0.8078.48",
+  "rows": [
+    {
+      "width": 320,
+      "height": 900,
+      "layout": "flex-nowrap",
+      "direction": "ltr",
+      "labels": "short",
+      "initial": {
+        "viewport": [
+          320,
+          900
+        ],
+        "widths": [
+          320,
+          320
+        ],
+        "count": 6,
+        "expanded": "false",
+        "active": "Interactive scenario lab\n      A11y Overflow Nav\n      \n        Resize the compo",
+        "visible": false,
+        "focusVisible": false,
+        "panel": {
+          "rect": {
+            "x": 0,
+            "y": 0,
+            "width": 0,
+            "height": 0,
+            "top": 0,
+            "right": 0,
+            "bottom": 0,
+            "left": 0
+          },
+          "maxHeight": "540px",
+          "overflowY": "auto",
+          "scrollWidth": 0,
+          "clientWidth": 0
+        },
+        "placement": "bottom-end",
+        "trigger": {
+          "x": 127.640625,
+          "y": 2757,
+          "width": 83.734375,
+          "height": 44,
+          "top": 2757,
+          "right": 211.375,
+          "bottom": 2801,
+          "left": 127.640625
+        },
+        "order": [
+          "#articles",
+          "#books",
+          "#events",
+          "#membership",
+          "#newsletter",
+          "#about",
+          "#careers"
+        ],
+        "identity": true
+      },
+      "keys": {
+        "home": true,
+        "end": {
+          "viewport": [
+            320,
+            900
+          ],
+          "widths": [
+            320,
+            320
+          ],
+          "count": 6,
+          "expanded": "true",
+          "active": "Careers",
+          "visible": true,
+          "focusVisible": true,
+          "panel": {
+            "rect": {
+              "x": 73.40625,
+              "y": 479.984375,
+              "width": 208,
+              "height": 316.25,
+              "top": 479.984375,
+              "right": 281.40625,
+              "bottom": 796.234375,
+              "left": 73.40625
+            },
+            "maxHeight": "317px",
+            "overflowY": "auto",
+            "scrollWidth": 206,
+            "clientWidth": 206
+          },
+          "placement": "bottom-end",
+          "trigger": {
+            "x": 127.640625,
+            "y": 428,
+            "width": 83.734375,
+            "height": 44,
+            "top": 428,
+            "right": 211.375,
+            "bottom": 472,
+            "left": 127.640625
+          },
+          "order": [
+            "#articles",
+            "#books",
+            "#events",
+            "#membership",
+            "#newsletter",
+            "#about",
+            "#careers"
+          ],
+          "identity": true
+        },
+        "activation": "#careers"
+      }
+    },
+    {
+      "width": 320,
+      "height": 900,
+      "layout": "flex-nowrap",
+      "direction": "ltr",
+      "labels": "long",
+      "initial": {
+        "viewport": [
+          320,
+          900
+        ],
+        "widths": [
+          320,
+          320
+        ],
+        "count": 6,
+        "expanded": "false",
+        "active": "More",
+        "visible": true,
+        "focusVisible": true,
+        "panel": {
+          "rect": {
+            "x": 0,
+            "y": 0,
+            "width": 0,
+            "height": 0,
+            "top": 0,
+            "right": 0,
+            "bottom": 0,
+            "left": 0
+          },
+          "maxHeight": "317px",
+          "overflowY": "auto",
+          "scrollWidth": 0,
+          "clientWidth": 0
+        },
+        "placement": "bottom-end",
+        "trigger": {
+          "x": 177.484375,
+          "y": 428,
+          "width": 83.734375,
+          "height": 44,
+          "top": 428,
+          "right": 261.21875,
+          "bottom": 472,
+          "left": 177.484375
+        },
+        "order": [
+          "#articles",
+          "#books",
+          "#events",
+          "#membership",
+          "#newsletter",
+          "#about",
+          "#careers"
+        ],
+        "identity": true
+      },
+      "keys": {
+        "home": true,
+        "end": {
+          "viewport": [
+            320,
+            900
+          ],
+          "widths": [
+            320,
+            320
+          ],
+          "count": 6,
+          "expanded": "true",
+          "active": "Career opportunities",
+          "visible": true,
+          "focusVisible": true,
+          "panel": {
+            "rect": {
+              "x": 73.40625,
+              "y": 479.984375,
+              "width": 208,
+              "height": 316.25,
+              "top": 479.984375,
+              "right": 281.40625,
+              "bottom": 796.234375,
+              "left": 73.40625
+            },
+            "maxHeight": "317px",
+            "overflowY": "auto",
+            "scrollWidth": 206,
+            "clientWidth": 206
+          },
+          "placement": "bottom-end",
+          "trigger": {
+            "x": 177.484375,
+            "y": 428,
+            "width": 83.734375,
+            "height": 44,
+            "top": 428,
+            "right": 261.21875,
+            "bottom": 472,
+            "left": 177.484375
+          },
+          "order": [
+            "#articles",
+            "#books",
+            "#events",
+            "#membership",
+            "#newsletter",
+            "#about",
+            "#careers"
+          ],
+          "identity": true
+        },
+        "activation": "#careers"
+      }
+    },
+    {
+      "width": 320,
+      "height": 900,
+      "layout": "flex-nowrap",
+      "direction": "ltr",
+      "labels": "de",
+      "initial": {
+        "viewport": [
+          320,
+          900
+        ],
+        "widths": [
+          320,
+          320
+        ],
+        "count": 6,
+        "expanded": "false",
+        "active": "Mehr",
+        "visible": true,
+        "focusVisible": true,
+        "panel": {
+          "rect": {
+            "x": 0,
+            "y": 0,
+            "width": 0,
+            "height": 0,
+            "top": 0,
+            "right": 0,
+            "bottom": 0,
+            "left": 0
+          },
+          "maxHeight": "317px",
+          "overflowY": "auto",
+          "scrollWidth": 0,
+          "clientWidth": 0
+        },
+        "placement": "bottom-end",
+        "trigger": {
+          "x": 118.65625,
+          "y": 428,
+          "width": 84.09375,
+          "height": 44,
+          "top": 428,
+          "right": 202.75,
+          "bottom": 472,
+          "left": 118.65625
+        },
+        "order": [
+          "#articles",
+          "#books",
+          "#events",
+          "#membership",
+          "#newsletter",
+          "#about",
+          "#careers"
+        ],
+        "identity": true
+      },
+      "keys": {
+        "home": true,
+        "end": {
+          "viewport": [
+            320,
+            900
+          ],
+          "widths": [
+            320,
+            320
+          ],
+          "count": 6,
+          "expanded": "true",
+          "active": "Karrieremöglichkeiten",
+          "visible": true,
+          "focusVisible": true,
+          "panel": {
+            "rect": {
+              "x": 73.40625,
+              "y": 479.984375,
+              "width": 208,
+              "height": 316.25,
+              "top": 479.984375,
+              "right": 281.40625,
+              "bottom": 796.234375,
+              "left": 73.40625
+            },
+            "maxHeight": "317px",
+            "overflowY": "auto",
+            "scrollWidth": 206,
+            "clientWidth": 206
+          },
+          "placement": "bottom-end",
+          "trigger": {
+            "x": 118.65625,
+            "y": 428,
+            "width": 84.09375,
+            "height": 44,
+            "top": 428,
+            "right": 202.75,
+            "bottom": 472,
+            "left": 118.65625
+          },
+          "order": [
+            "#articles",
+            "#books",
+            "#events",
+            "#membership",
+            "#newsletter",
+            "#about",
+            "#careers"
+          ],
+          "identity": true
+        },
+        "activation": "#careers"
+      }
+    },
+    {
+      "width": 320,
+      "height": 900,
+      "layout": "flex-nowrap",
+      "direction": "ltr",
+      "labels": "el",
+      "initial": {
+        "viewport": [
+          320,
+          900
+        ],
+        "widths": [
+          320,
+          320
+        ],
+        "count": 6,
+        "expanded": "false",
+        "active": "Περισσότερα",
+        "visible": true,
+        "focusVisible": true,
+        "panel": {
+          "rect": {
+            "x": 0,
+            "y": 0,
+            "width": 0,
+            "height": 0,
+            "top": 0,
+            "right": 0,
+            "bottom": 0,
+            "left": 0
+          },
+          "maxHeight": "317px",
+          "overflowY": "auto",
+          "scrollWidth": 0,
+          "clientWidth": 0
+        },
+        "placement": "bottom-end",
+        "trigger": {
+          "x": 118.34375,
+          "y": 428,
+          "width": 146.109375,
+          "height": 44,
+          "top": 428,
+          "right": 264.453125,
+          "bottom": 472,
+          "left": 118.34375
+        },
+        "order": [
+          "#articles",
+          "#books",
+          "#events",
+          "#membership",
+          "#newsletter",
+          "#about",
+          "#careers"
+        ],
+        "identity": true
+      },
+      "keys": {
+        "home": true,
+        "end": {
+          "viewport": [
+            320,
+            900
+          ],
+          "widths": [
+            320,
+            320
+          ],
+          "count": 6,
+          "expanded": "true",
+          "active": "Ευκαιρίες καριέρας",
+          "visible": true,
+          "focusVisible": true,
+          "panel": {
+            "rect": {
+              "x": 73.40625,
+              "y": 479.984375,
+              "width": 208,
+              "height": 316.25,
+              "top": 479.984375,
+              "right": 281.40625,
+              "bottom": 796.234375,
+              "left": 73.40625
+            },
+            "maxHeight": "317px",
+            "overflowY": "auto",
+            "scrollWidth": 206,
+            "clientWidth": 206
+          },
+          "placement": "bottom-end",
+          "trigger": {
+            "x": 118.34375,
+            "y": 428,
+            "width": 146.109375,
+            "height": 44,
+            "top": 428,
+            "right": 264.453125,
+            "bottom": 472,
+            "left": 118.34375
+          },
+          "order": [
+            "#articles",
+            "#books",
+            "#events",
+            "#membership",
+            "#newsletter",
+            "#about",
+            "#careers"
+          ],
+          "identity": true
+        },
+        "activation": "#careers"
+      }
+    },
+    {
+      "width": 320,
+      "height": 900,
+      "layout": "flex-nowrap",
+      "direction": "rtl",
+      "labels": "short",
+      "initial": {
+        "viewport": [
+          320,
+          900
+        ],
+        "widths": [
+          320,
+          320
+        ],
+        "count": 6,
+        "expanded": "false",
+        "active": "More",
+        "visible": true,
+        "focusVisible": true,
+        "panel": {
+          "rect": {
+            "x": 0,
+            "y": 0,
+            "width": 0,
+            "height": 0,
+            "top": 0,
+            "right": 0,
+            "bottom": 0,
+            "left": 0
+          },
+          "maxHeight": "317px",
+          "overflowY": "auto",
+          "scrollWidth": 0,
+          "clientWidth": 0
+        },
+        "placement": "bottom-end",
+        "trigger": {
+          "x": 108.625,
+          "y": 428,
+          "width": 83.734375,
+          "height": 44,
+          "top": 428,
+          "right": 192.359375,
+          "bottom": 472,
+          "left": 108.625
+        },
+        "order": [
+          "#articles",
+          "#books",
+          "#events",
+          "#membership",
+          "#newsletter",
+          "#about",
+          "#careers"
+        ],
+        "identity": true
+      },
+      "keys": {
+        "home": true,
+        "end": {
+          "viewport": [
+            320,
+            900
+          ],
+          "widths": [
+            320,
+            320
+          ],
+          "count": 6,
+          "expanded": "true",
+          "active": "Careers",
+          "visible": true,
+          "focusVisible": true,
+          "panel": {
+            "rect": {
+              "x": 38.59375,
+              "y": 479.984375,
+              "width": 208,
+              "height": 316.25,
+              "top": 479.984375,
+              "right": 246.59375,
+              "bottom": 796.234375,
+              "left": 38.59375
+            },
+            "maxHeight": "317px",
+            "overflowY": "auto",
+            "scrollWidth": 206,
+            "clientWidth": 206
+          },
+          "placement": "bottom-end",
+          "trigger": {
+            "x": 108.625,
+            "y": 428,
+            "width": 83.734375,
+            "height": 44,
+            "top": 428,
+            "right": 192.359375,
+            "bottom": 472,
+            "left": 108.625
+          },
+          "order": [
+            "#articles",
+            "#books",
+            "#events",
+            "#membership",
+            "#newsletter",
+            "#about",
+            "#careers"
+          ],
+          "identity": true
+        },
+        "activation": "#careers"
+      }
+    },
+    {
+      "width": 320,
+      "height": 900,
+      "layout": "flex-nowrap",
+      "direction": "rtl",
+      "labels": "long",
+      "initial": {
+        "viewport": [
+          320,
+          900
+        ],
+        "widths": [
+          320,
+          320
+        ],
+        "count": 6,
+        "expanded": "false",
+        "active": "More",
+        "visible": true,
+        "focusVisible": true,
+        "panel": {
+          "rect": {
+            "x": 0,
+            "y": 0,
+            "width": 0,
+            "height": 0,
+            "top": 0,
+            "right": 0,
+            "bottom": 0,
+            "left": 0
+          },
+          "maxHeight": "317px",
+          "overflowY": "auto",
+          "scrollWidth": 0,
+          "clientWidth": 0
+        },
+        "placement": "bottom-end",
+        "trigger": {
+          "x": 58.78125,
+          "y": 428,
+          "width": 83.734375,
+          "height": 44,
+          "top": 428,
+          "right": 142.515625,
+          "bottom": 472,
+          "left": 58.78125
+        },
+        "order": [
+          "#articles",
+          "#books",
+          "#events",
+          "#membership",
+          "#newsletter",
+          "#about",
+          "#careers"
+        ],
+        "identity": true
+      },
+      "keys": {
+        "home": true,
+        "end": {
+          "viewport": [
+            320,
+            900
+          ],
+          "widths": [
+            320,
+            320
+          ],
+          "count": 6,
+          "expanded": "true",
+          "active": "Career opportunities",
+          "visible": true,
+          "focusVisible": true,
+          "panel": {
+            "rect": {
+              "x": 38.59375,
+              "y": 479.984375,
+              "width": 208,
+              "height": 316.25,
+              "top": 479.984375,
+              "right": 246.59375,
+              "bottom": 796.234375,
+              "left": 38.59375
+            },
+            "maxHeight": "317px",
+            "overflowY": "auto",
+            "scrollWidth": 206,
+            "clientWidth": 206
+          },
+          "placement": "bottom-end",
+          "trigger": {
+            "x": 58.78125,
+            "y": 428,
+            "width": 83.734375,
+            "height": 44,
+            "top": 428,
+            "right": 142.515625,
+            "bottom": 472,
+            "left": 58.78125
+          },
+          "order": [
+            "#articles",
+            "#books",
+            "#events",
+            "#membership",
+            "#newsletter",
+            "#about",
+            "#careers"
+          ],
+          "identity": true
+        },
+        "activation": "#careers"
+      }
+    },
+    {
+      "width": 320,
+      "height": 900,
+      "layout": "flex-nowrap",
+      "direction": "rtl",
+      "labels": "de",
+      "initial": {
+        "viewport": [
+          320,
+          900
+        ],
+        "widths": [
+          320,
+          320
+        ],
+        "count": 6,
+        "expanded": "false",
+        "active": "Mehr",
+        "visible": true,
+        "focusVisible": true,
+        "panel": {
+          "rect": {
+            "x": 0,
+            "y": 0,
+            "width": 0,
+            "height": 0,
+            "top": 0,
+            "right": 0,
+            "bottom": 0,
+            "left": 0
+          },
+          "maxHeight": "317px",
+          "overflowY": "auto",
+          "scrollWidth": 0,
+          "clientWidth": 0
+        },
+        "placement": "bottom-end",
+        "trigger": {
+          "x": 117.25,
+          "y": 428,
+          "width": 84.09375,
+          "height": 44,
+          "top": 428,
+          "right": 201.34375,
+          "bottom": 472,
+          "left": 117.25
+        },
+        "order": [
+          "#articles",
+          "#books",
+          "#events",
+          "#membership",
+          "#newsletter",
+          "#about",
+          "#careers"
+        ],
+        "identity": true
+      },
+      "keys": {
+        "home": true,
+        "end": {
+          "viewport": [
+            320,
+            900
+          ],
+          "widths": [
+            320,
+            320
+          ],
+          "count": 6,
+          "expanded": "true",
+          "active": "Karrieremöglichkeiten",
+          "visible": true,
+          "focusVisible": true,
+          "panel": {
+            "rect": {
+              "x": 38.59375,
+              "y": 479.984375,
+              "width": 208,
+              "height": 316.25,
+              "top": 479.984375,
+              "right": 246.59375,
+              "bottom": 796.234375,
+              "left": 38.59375
+            },
+            "maxHeight": "317px",
+            "overflowY": "auto",
+            "scrollWidth": 206,
+            "clientWidth": 206
+          },
+          "placement": "bottom-end",
+          "trigger": {
+            "x": 117.25,
+            "y": 428,
+            "width": 84.09375,
+            "height": 44,
+            "top": 428,
+            "right": 201.34375,
+            "bottom": 472,
+            "left": 117.25
+          },
+          "order": [
+            "#articles",
+            "#books",
+            "#events",
+            "#membership",
+            "#newsletter",
+            "#about",
+            "#careers"
+          ],
+          "identity": true
+        },
+        "activation": "#careers"
+      }
+    },
+    {
+      "width": 320,
+      "height": 900,
+      "layout": "flex-nowrap",
+      "direction": "rtl",
+      "labels": "el",
+      "initial": {
+        "viewport": [
+          320,
+          900
+        ],
+        "widths": [
+          320,
+          320
+        ],
+        "count": 6,
+        "expanded": "false",
+        "active": "Περισσότερα",
+        "visible": true,
+        "focusVisible": true,
+        "panel": {
+          "rect": {
+            "x": 0,
+            "y": 0,
+            "width": 0,
+            "height": 0,
+            "top": 0,
+            "right": 0,
+            "bottom": 0,
+            "left": 0
+          },
+          "maxHeight": "317px",
+          "overflowY": "auto",
+          "scrollWidth": 0,
+          "clientWidth": 0
+        },
+        "placement": "bottom-end",
+        "trigger": {
+          "x": 55.546875,
+          "y": 428,
+          "width": 146.109375,
+          "height": 44,
+          "top": 428,
+          "right": 201.65625,
+          "bottom": 472,
+          "left": 55.546875
+        },
+        "order": [
+          "#articles",
+          "#books",
+          "#events",
+          "#membership",
+          "#newsletter",
+          "#about",
+          "#careers"
+        ],
+        "identity": true
+      },
+      "keys": {
+        "home": true,
+        "end": {
+          "viewport": [
+            320,
+            900
+          ],
+          "widths": [
+            320,
+            320
+          ],
+          "count": 6,
+          "expanded": "true",
+          "active": "Ευκαιρίες καριέρας",
+          "visible": true,
+          "focusVisible": true,
+          "panel": {
+            "rect": {
+              "x": 38.59375,
+              "y": 479.984375,
+              "width": 208,
+              "height": 316.25,
+              "top": 479.984375,
+              "right": 246.59375,
+              "bottom": 796.234375,
+              "left": 38.59375
+            },
+            "maxHeight": "317px",
+            "overflowY": "auto",
+            "scrollWidth": 206,
+            "clientWidth": 206
+          },
+          "placement": "bottom-end",
+          "trigger": {
+            "x": 55.546875,
+            "y": 428,
+            "width": 146.109375,
+            "height": 44,
+            "top": 428,
+            "right": 201.65625,
+            "bottom": 472,
+            "left": 55.546875
+          },
+          "order": [
+            "#articles",
+            "#books",
+            "#events",
+            "#membership",
+            "#newsletter",
+            "#about",
+            "#careers"
+          ],
+          "identity": true
+        },
+        "activation": "#careers"
+      }
+    },
+    {
+      "width": 320,
+      "height": 900,
+      "layout": "flex-wrap",
+      "direction": "ltr",
+      "labels": "short",
+      "initial": {
+        "viewport": [
+          320,
+          900
+        ],
+        "widths": [
+          320,
+          320
+        ],
+        "count": 6,
+        "expanded": "false",
+        "active": "More",
+        "visible": true,
+        "focusVisible": true,
+        "panel": {
+          "rect": {
+            "x": 0,
+            "y": 0,
+            "width": 0,
+            "height": 0,
+            "top": 0,
+            "right": 0,
+            "bottom": 0,
+            "left": 0
+          },
+          "maxHeight": "317px",
+          "overflowY": "auto",
+          "scrollWidth": 0,
+          "clientWidth": 0
+        },
+        "placement": "bottom-end",
+        "trigger": {
+          "x": 127.640625,
+          "y": 428,
+          "width": 83.734375,
+          "height": 44,
+          "top": 428,
+          "right": 211.375,
+          "bottom": 472,
+          "left": 127.640625
+        },
+        "order": [
+          "#articles",
+          "#books",
+          "#events",
+          "#membership",
+          "#newsletter",
+          "#about",
+          "#careers"
+        ],
+        "identity": true
+      },
+      "keys": {
+        "home": true,
+        "end": {
+          "viewport": [
+            320,
+            900
+          ],
+          "widths": [
+            320,
+            320
+          ],
+          "count": 6,
+          "expanded": "true",
+          "active": "Careers",
+          "visible": true,
+          "focusVisible": true,
+          "panel": {
+            "rect": {
+              "x": 73.40625,
+              "y": 479.984375,
+              "width": 208,
+              "height": 316.25,
+              "top": 479.984375,
+              "right": 281.40625,
+              "bottom": 796.234375,
+              "left": 73.40625
+            },
+            "maxHeight": "317px",
+            "overflowY": "auto",
+            "scrollWidth": 206,
+            "clientWidth": 206
+          },
+          "placement": "bottom-end",
+          "trigger": {
+            "x": 127.640625,
+            "y": 428,
+            "width": 83.734375,
+            "height": 44,
+            "top": 428,
+            "right": 211.375,
+            "bottom": 472,
+            "left": 127.640625
+          },
+          "order": [
+            "#articles",
+            "#books",
+            "#events",
+            "#membership",
+            "#newsletter",
+            "#about",
+            "#careers"
+          ],
+          "identity": true
+        },
+        "activation": "#careers"
+      }
+    },
+    {
+      "width": 320,
+      "height": 900,
+      "layout": "flex-wrap",
+      "direction": "ltr",
+      "labels": "long",
+      "initial": {
+        "viewport": [
+          320,
+          900
+        ],
+        "widths": [
+          320,
+          320
+        ],
+        "count": 6,
+        "expanded": "false",
+        "active": "More",
+        "visible": true,
+        "focusVisible": true,
+        "panel": {
+          "rect": {
+            "x": 0,
+            "y": 0,
+            "width": 0,
+            "height": 0,
+            "top": 0,
+            "right": 0,
+            "bottom": 0,
+            "left": 0
+          },
+          "maxHeight": "317px",
+          "overflowY": "auto",
+          "scrollWidth": 0,
+          "clientWidth": 0
+        },
+        "placement": "bottom-end",
+        "trigger": {
+          "x": 177.484375,
+          "y": 428,
+          "width": 83.734375,
+          "height": 44,
+          "top": 428,
+          "right": 261.21875,
+          "bottom": 472,
+          "left": 177.484375
+        },
+        "order": [
+          "#articles",
+          "#books",
+          "#events",
+          "#membership",
+          "#newsletter",
+          "#about",
+          "#careers"
+        ],
+        "identity": true
+      },
+      "keys": {
+        "home": true,
+        "end": {
+          "viewport": [
+            320,
+            900
+          ],
+          "widths": [
+            320,
+            320
+          ],
+          "count": 6,
+          "expanded": "true",
+          "active": "Career opportunities",
+          "visible": true,
+          "focusVisible": true,
+          "panel": {
+            "rect": {
+              "x": 73.40625,
+              "y": 479.984375,
+              "width": 208,
+              "height": 316.25,
+              "top": 479.984375,
+              "right": 281.40625,
+              "bottom": 796.234375,
+              "left": 73.40625
+            },
+            "maxHeight": "317px",
+            "overflowY": "auto",
+            "scrollWidth": 206,
+            "clientWidth": 206
+          },
+          "placement": "bottom-end",
+          "trigger": {
+            "x": 177.484375,
+            "y": 428,
+            "width": 83.734375,
+            "height": 44,
+            "top": 428,
+            "right": 261.21875,
+            "bottom": 472,
+            "left": 177.484375
+          },
+          "order": [
+            "#articles",
+            "#books",
+            "#events",
+            "#membership",
+            "#newsletter",
+            "#about",
+            "#careers"
+          ],
+          "identity": true
+        },
+        "activation": "#careers"
+      }
+    },
+    {
+      "width": 320,
+      "height": 900,
+      "layout": "flex-wrap",
+      "direction": "ltr",
+      "labels": "de",
+      "initial": {
+        "viewport": [
+          320,
+          900
+        ],
+        "widths": [
+          320,
+          320
+        ],
+        "count": 6,
+        "expanded": "false",
+        "active": "Mehr",
+        "visible": true,
+        "focusVisible": true,
+        "panel": {
+          "rect": {
+            "x": 0,
+            "y": 0,
+            "width": 0,
+            "height": 0,
+            "top": 0,
+            "right": 0,
+            "bottom": 0,
+            "left": 0
+          },
+          "maxHeight": "317px",
+          "overflowY": "auto",
+          "scrollWidth": 0,
+          "clientWidth": 0
+        },
+        "placement": "bottom-end",
+        "trigger": {
+          "x": 118.65625,
+          "y": 428,
+          "width": 84.09375,
+          "height": 44,
+          "top": 428,
+          "right": 202.75,
+          "bottom": 472,
+          "left": 118.65625
+        },
+        "order": [
+          "#articles",
+          "#books",
+          "#events",
+          "#membership",
+          "#newsletter",
+          "#about",
+          "#careers"
+        ],
+        "identity": true
+      },
+      "keys": {
+        "home": true,
+        "end": {
+          "viewport": [
+            320,
+            900
+          ],
+          "widths": [
+            320,
+            320
+          ],
+          "count": 6,
+          "expanded": "true",
+          "active": "Karrieremöglichkeiten",
+          "visible": true,
+          "focusVisible": true,
+          "panel": {
+            "rect": {
+              "x": 73.40625,
+              "y": 479.984375,
+              "width": 208,
+              "height": 316.25,
+              "top": 479.984375,
+              "right": 281.40625,
+              "bottom": 796.234375,
+              "left": 73.40625
+            },
+            "maxHeight": "317px",
+            "overflowY": "auto",
+            "scrollWidth": 206,
+            "clientWidth": 206
+          },
+          "placement": "bottom-end",
+          "trigger": {
+            "x": 118.65625,
+            "y": 428,
+            "width": 84.09375,
+            "height": 44,
+            "top": 428,
+            "right": 202.75,
+            "bottom": 472,
+            "left": 118.65625
+          },
+          "order": [
+            "#articles",
+            "#books",
+            "#events",
+            "#membership",
+            "#newsletter",
+            "#about",
+            "#careers"
+          ],
+          "identity": true
+        },
+        "activation": "#careers"
+      }
+    },
+    {
+      "width": 320,
+      "height": 900,
+      "layout": "flex-wrap",
+      "direction": "ltr",
+      "labels": "el",
+      "initial": {
+        "viewport": [
+          320,
+          900
+        ],
+        "widths": [
+          320,
+          320
+        ],
+        "count": 6,
+        "expanded": "false",
+        "active": "Περισσότερα",
+        "visible": true,
+        "focusVisible": true,
+        "panel": {
+          "rect": {
+            "x": 0,
+            "y": 0,
+            "width": 0,
+            "height": 0,
+            "top": 0,
+            "right": 0,
+            "bottom": 0,
+            "left": 0
+          },
+          "maxHeight": "317px",
+          "overflowY": "auto",
+          "scrollWidth": 0,
+          "clientWidth": 0
+        },
+        "placement": "bottom-end",
+        "trigger": {
+          "x": 118.34375,
+          "y": 428,
+          "width": 146.109375,
+          "height": 44,
+          "top": 428,
+          "right": 264.453125,
+          "bottom": 472,
+          "left": 118.34375
+        },
+        "order": [
+          "#articles",
+          "#books",
+          "#events",
+          "#membership",
+          "#newsletter",
+          "#about",
+          "#careers"
+        ],
+        "identity": true
+      },
+      "keys": {
+        "home": true,
+        "end": {
+          "viewport": [
+            320,
+            900
+          ],
+          "widths": [
+            320,
+            320
+          ],
+          "count": 6,
+          "expanded": "true",
+          "active": "Ευκαιρίες καριέρας",
+          "visible": true,
+          "focusVisible": true,
+          "panel": {
+            "rect": {
+              "x": 73.40625,
+              "y": 479.984375,
+              "width": 208,
+              "height": 316.25,
+              "top": 479.984375,
+              "right": 281.40625,
+              "bottom": 796.234375,
+              "left": 73.40625
+            },
+            "maxHeight": "317px",
+            "overflowY": "auto",
+            "scrollWidth": 206,
+            "clientWidth": 206
+          },
+          "placement": "bottom-end",
+          "trigger": {
+            "x": 118.34375,
+            "y": 428,
+            "width": 146.109375,
+            "height": 44,
+            "top": 428,
+            "right": 264.453125,
+            "bottom": 472,
+            "left": 118.34375
+          },
+          "order": [
+            "#articles",
+            "#books",
+            "#events",
+            "#membership",
+            "#newsletter",
+            "#about",
+            "#careers"
+          ],
+          "identity": true
+        },
+        "activation": "#careers"
+      }
+    },
+    {
+      "width": 320,
+      "height": 900,
+      "layout": "flex-wrap",
+      "direction": "rtl",
+      "labels": "short",
+      "initial": {
+        "viewport": [
+          320,
+          900
+        ],
+        "widths": [
+          320,
+          320
+        ],
+        "count": 6,
+        "expanded": "false",
+        "active": "More",
+        "visible": true,
+        "focusVisible": true,
+        "panel": {
+          "rect": {
+            "x": 0,
+            "y": 0,
+            "width": 0,
+            "height": 0,
+            "top": 0,
+            "right": 0,
+            "bottom": 0,
+            "left": 0
+          },
+          "maxHeight": "317px",
+          "overflowY": "auto",
+          "scrollWidth": 0,
+          "clientWidth": 0
+        },
+        "placement": "bottom-end",
+        "trigger": {
+          "x": 108.625,
+          "y": 428,
+          "width": 83.734375,
+          "height": 44,
+          "top": 428,
+          "right": 192.359375,
+          "bottom": 472,
+          "left": 108.625
+        },
+        "order": [
+          "#articles",
+          "#books",
+          "#events",
+          "#membership",
+          "#newsletter",
+          "#about",
+          "#careers"
+        ],
+        "identity": true
+      },
+      "keys": {
+        "home": true,
+        "end": {
+          "viewport": [
+            320,
+            900
+          ],
+          "widths": [
+            320,
+            320
+          ],
+          "count": 6,
+          "expanded": "true",
+          "active": "Careers",
+          "visible": true,
+          "focusVisible": true,
+          "panel": {
+            "rect": {
+              "x": 38.59375,
+              "y": 479.984375,
+              "width": 208,
+              "height": 316.25,
+              "top": 479.984375,
+              "right": 246.59375,
+              "bottom": 796.234375,
+              "left": 38.59375
+            },
+            "maxHeight": "317px",
+            "overflowY": "auto",
+            "scrollWidth": 206,
+            "clientWidth": 206
+          },
+          "placement": "bottom-end",
+          "trigger": {
+            "x": 108.625,
+            "y": 428,
+            "width": 83.734375,
+            "height": 44,
+            "top": 428,
+            "right": 192.359375,
+            "bottom": 472,
+            "left": 108.625
+          },
+          "order": [
+            "#articles",
+            "#books",
+            "#events",
+            "#membership",
+            "#newsletter",
+            "#about",
+            "#careers"
+          ],
+          "identity": true
+        },
+        "activation": "#careers"
+      }
+    },
+    {
+      "width": 320,
+      "height": 900,
+      "layout": "flex-wrap",
+      "direction": "rtl",
+      "labels": "long",
+      "initial": {
+        "viewport": [
+          320,
+          900
+        ],
+        "widths": [
+          320,
+          320
+        ],
+        "count": 6,
+        "expanded": "false",
+        "active": "More",
+        "visible": true,
+        "focusVisible": true,
+        "panel": {
+          "rect": {
+            "x": 0,
+            "y": 0,
+            "width": 0,
+            "height": 0,
+            "top": 0,
+            "right": 0,
+            "bottom": 0,
+            "left": 0
+          },
+          "maxHeight": "317px",
+          "overflowY": "auto",
+          "scrollWidth": 0,
+          "clientWidth": 0
+        },
+        "placement": "bottom-end",
+        "trigger": {
+          "x": 58.78125,
+          "y": 428,
+          "width": 83.734375,
+          "height": 44,
+          "top": 428,
+          "right": 142.515625,
+          "bottom": 472,
+          "left": 58.78125
+        },
+        "order": [
+          "#articles",
+          "#books",
+          "#events",
+          "#membership",
+          "#newsletter",
+          "#about",
+          "#careers"
+        ],
+        "identity": true
+      },
+      "keys": {
+        "home": true,
+        "end": {
+          "viewport": [
+            320,
+            900
+          ],
+          "widths": [
+            320,
+            320
+          ],
+          "count": 6,
+          "expanded": "true",
+          "active": "Career opportunities",
+          "visible": true,
+          "focusVisible": true,
+          "panel": {
+            "rect": {
+              "x": 38.59375,
+              "y": 479.984375,
+              "width": 208,
+              "height": 316.25,
+              "top": 479.984375,
+              "right": 246.59375,
+              "bottom": 796.234375,
+              "left": 38.59375
+            },
+            "maxHeight": "317px",
+            "overflowY": "auto",
+            "scrollWidth": 206,
+            "clientWidth": 206
+          },
+          "placement": "bottom-end",
+          "trigger": {
+            "x": 58.78125,
+            "y": 428,
+            "width": 83.734375,
+            "height": 44,
+            "top": 428,
+            "right": 142.515625,
+            "bottom": 472,
+            "left": 58.78125
+          },
+          "order": [
+            "#articles",
+            "#books",
+            "#events",
+            "#membership",
+            "#newsletter",
+            "#about",
+            "#careers"
+          ],
+          "identity": true
+        },
+        "activation": "#careers"
+      }
+    },
+    {
+      "width": 320,
+      "height": 900,
+      "layout": "flex-wrap",
+      "direction": "rtl",
+      "labels": "de",
+      "initial": {
+        "viewport": [
+          320,
+          900
+        ],
+        "widths": [
+          320,
+          320
+        ],
+        "count": 6,
+        "expanded": "false",
+        "active": "Mehr",
+        "visible": true,
+        "focusVisible": true,
+        "panel": {
+          "rect": {
+            "x": 0,
+            "y": 0,
+            "width": 0,
+            "height": 0,
+            "top": 0,
+            "right": 0,
+            "bottom": 0,
+            "left": 0
+          },
+          "maxHeight": "317px",
+          "overflowY": "auto",
+          "scrollWidth": 0,
+          "clientWidth": 0
+        },
+        "placement": "bottom-end",
+        "trigger": {
+          "x": 117.25,
+          "y": 428,
+          "width": 84.09375,
+          "height": 44,
+          "top": 428,
+          "right": 201.34375,
+          "bottom": 472,
+          "left": 117.25
+        },
+        "order": [
+          "#articles",
+          "#books",
+          "#events",
+          "#membership",
+          "#newsletter",
+          "#about",
+          "#careers"
+        ],
+        "identity": true
+      },
+      "keys": {
+        "home": true,
+        "end": {
+          "viewport": [
+            320,
+            900
+          ],
+          "widths": [
+            320,
+            320
+          ],
+          "count": 6,
+          "expanded": "true",
+          "active": "Karrieremöglichkeiten",
+          "visible": true,
+          "focusVisible": true,
+          "panel": {
+            "rect": {
+              "x": 38.59375,
+              "y": 479.984375,
+              "width": 208,
+              "height": 316.25,
+              "top": 479.984375,
+              "right": 246.59375,
+              "bottom": 796.234375,
+              "left": 38.59375
+            },
+            "maxHeight": "317px",
+            "overflowY": "auto",
+            "scrollWidth": 206,
+            "clientWidth": 206
+          },
+          "placement": "bottom-end",
+          "trigger": {
+            "x": 117.25,
+            "y": 428,
+            "width": 84.09375,
+            "height": 44,
+            "top": 428,
+            "right": 201.34375,
+            "bottom": 472,
+            "left": 117.25
+          },
+          "order": [
+            "#articles",
+            "#books",
+            "#events",
+            "#membership",
+            "#newsletter",
+            "#about",
+            "#careers"
+          ],
+          "identity": true
+        },
+        "activation": "#careers"
+      }
+    },
+    {
+      "width": 320,
+      "height": 900,
+      "layout": "flex-wrap",
+      "direction": "rtl",
+      "labels": "el",
+      "initial": {
+        "viewport": [
+          320,
+          900
+        ],
+        "widths": [
+          320,
+          320
+        ],
+        "count": 6,
+        "expanded": "false",
+        "active": "Περισσότερα",
+        "visible": true,
+        "focusVisible": true,
+        "panel": {
+          "rect": {
+            "x": 0,
+            "y": 0,
+            "width": 0,
+            "height": 0,
+            "top": 0,
+            "right": 0,
+            "bottom": 0,
+            "left": 0
+          },
+          "maxHeight": "317px",
+          "overflowY": "auto",
+          "scrollWidth": 0,
+          "clientWidth": 0
+        },
+        "placement": "bottom-end",
+        "trigger": {
+          "x": 55.546875,
+          "y": 428,
+          "width": 146.109375,
+          "height": 44,
+          "top": 428,
+          "right": 201.65625,
+          "bottom": 472,
+          "left": 55.546875
+        },
+        "order": [
+          "#articles",
+          "#books",
+          "#events",
+          "#membership",
+          "#newsletter",
+          "#about",
+          "#careers"
+        ],
+        "identity": true
+      },
+      "keys": {
+        "home": true,
+        "end": {
+          "viewport": [
+            320,
+            900
+          ],
+          "widths": [
+            320,
+            320
+          ],
+          "count": 6,
+          "expanded": "true",
+          "active": "Ευκαιρίες καριέρας",
+          "visible": true,
+          "focusVisible": true,
+          "panel": {
+            "rect": {
+              "x": 38.59375,
+              "y": 479.984375,
+              "width": 208,
+              "height": 316.25,
+              "top": 479.984375,
+              "right": 246.59375,
+              "bottom": 796.234375,
+              "left": 38.59375
+            },
+            "maxHeight": "317px",
+            "overflowY": "auto",
+            "scrollWidth": 206,
+            "clientWidth": 206
+          },
+          "placement": "bottom-end",
+          "trigger": {
+            "x": 55.546875,
+            "y": 428,
+            "width": 146.109375,
+            "height": 44,
+            "top": 428,
+            "right": 201.65625,
+            "bottom": 472,
+            "left": 55.546875
+          },
+          "order": [
+            "#articles",
+            "#books",
+            "#events",
+            "#membership",
+            "#newsletter",
+            "#about",
+            "#careers"
+          ],
+          "identity": true
+        },
+        "activation": "#careers"
+      }
+    },
+    {
+      "width": 320,
+      "height": 900,
+      "layout": "grid",
+      "direction": "ltr",
+      "labels": "short",
+      "initial": {
+        "viewport": [
+          320,
+          900
+        ],
+        "widths": [
+          320,
+          320
+        ],
+        "count": 6,
+        "expanded": "false",
+        "active": "More",
+        "visible": true,
+        "focusVisible": true,
+        "panel": {
+          "rect": {
+            "x": 0,
+            "y": 0,
+            "width": 0,
+            "height": 0,
+            "top": 0,
+            "right": 0,
+            "bottom": 0,
+            "left": 0
+          },
+          "maxHeight": "317px",
+          "overflowY": "auto",
+          "scrollWidth": 0,
+          "clientWidth": 0
+        },
+        "placement": "bottom-end",
+        "trigger": {
+          "x": 127.640625,
+          "y": 428,
+          "width": 83.734375,
+          "height": 44,
+          "top": 428,
+          "right": 211.375,
+          "bottom": 472,
+          "left": 127.640625
+        },
+        "order": [
+          "#articles",
+          "#books",
+          "#events",
+          "#membership",
+          "#newsletter",
+          "#about",
+          "#careers"
+        ],
+        "identity": true
+      },
+      "keys": {
+        "home": true,
+        "end": {
+          "viewport": [
+            320,
+            900
+          ],
+          "widths": [
+            320,
+            320
+          ],
+          "count": 6,
+          "expanded": "true",
+          "active": "Careers",
+          "visible": true,
+          "focusVisible": true,
+          "panel": {
+            "rect": {
+              "x": 73.40625,
+              "y": 479.984375,
+              "width": 208,
+              "height": 316.25,
+              "top": 479.984375,
+              "right": 281.40625,
+              "bottom": 796.234375,
+              "left": 73.40625
+            },
+            "maxHeight": "317px",
+            "overflowY": "auto",
+            "scrollWidth": 206,
+            "clientWidth": 206
+          },
+          "placement": "bottom-end",
+          "trigger": {
+            "x": 127.640625,
+            "y": 428,
+            "width": 83.734375,
+            "height": 44,
+            "top": 428,
+            "right": 211.375,
+            "bottom": 472,
+            "left": 127.640625
+          },
+          "order": [
+            "#articles",
+            "#books",
+            "#events",
+            "#membership",
+            "#newsletter",
+            "#about",
+            "#careers"
+          ],
+          "identity": true
+        },
+        "activation": "#careers"
+      }
+    },
+    {
+      "width": 320,
+      "height": 900,
+      "layout": "grid",
+      "direction": "ltr",
+      "labels": "long",
+      "initial": {
+        "viewport": [
+          320,
+          900
+        ],
+        "widths": [
+          320,
+          320
+        ],
+        "count": 6,
+        "expanded": "false",
+        "active": "More",
+        "visible": true,
+        "focusVisible": true,
+        "panel": {
+          "rect": {
+            "x": 0,
+            "y": 0,
+            "width": 0,
+            "height": 0,
+            "top": 0,
+            "right": 0,
+            "bottom": 0,
+            "left": 0
+          },
+          "maxHeight": "317px",
+          "overflowY": "auto",
+          "scrollWidth": 0,
+          "clientWidth": 0
+        },
+        "placement": "bottom-end",
+        "trigger": {
+          "x": 177.484375,
+          "y": 428,
+          "width": 83.734375,
+          "height": 44,
+          "top": 428,
+          "right": 261.21875,
+          "bottom": 472,
+          "left": 177.484375
+        },
+        "order": [
+          "#articles",
+          "#books",
+          "#events",
+          "#membership",
+          "#newsletter",
+          "#about",
+          "#careers"
+        ],
+        "identity": true
+      },
+      "keys": {
+        "home": true,
+        "end": {
+          "viewport": [
+            320,
+            900
+          ],
+          "widths": [
+            320,
+            320
+          ],
+          "count": 6,
+          "expanded": "true",
+          "active": "Career opportunities",
+          "visible": true,
+          "focusVisible": true,
+          "panel": {
+            "rect": {
+              "x": 73.40625,
+              "y": 479.984375,
+              "width": 208,
+              "height": 316.25,
+              "top": 479.984375,
+              "right": 281.40625,
+              "bottom": 796.234375,
+              "left": 73.40625
+            },
+            "maxHeight": "317px",
+            "overflowY": "auto",
+            "scrollWidth": 206,
+            "clientWidth": 206
+          },
+          "placement": "bottom-end",
+          "trigger": {
+            "x": 177.484375,
+            "y": 428,
+            "width": 83.734375,
+            "height": 44,
+            "top": 428,
+            "right": 261.21875,
+            "bottom": 472,
+            "left": 177.484375
+          },
+          "order": [
+            "#articles",
+            "#books",
+            "#events",
+            "#membership",
+            "#newsletter",
+            "#about",
+            "#careers"
+          ],
+          "identity": true
+        },
+        "activation": "#careers"
+      }
+    },
+    {
+      "width": 320,
+      "height": 900,
+      "layout": "grid",
+      "direction": "ltr",
+      "labels": "de",
+      "initial": {
+        "viewport": [
+          320,
+          900
+        ],
+        "widths": [
+          320,
+          320
+        ],
+        "count": 6,
+        "expanded": "false",
+        "active": "Mehr",
+        "visible": true,
+        "focusVisible": true,
+        "panel": {
+          "rect": {
+            "x": 0,
+            "y": 0,
+            "width": 0,
+            "height": 0,
+            "top": 0,
+            "right": 0,
+            "bottom": 0,
+            "left": 0
+          },
+          "maxHeight": "317px",
+          "overflowY": "auto",
+          "scrollWidth": 0,
+          "clientWidth": 0
+        },
+        "placement": "bottom-end",
+        "trigger": {
+          "x": 118.65625,
+          "y": 428,
+          "width": 84.09375,
+          "height": 44,
+          "top": 428,
+          "right": 202.75,
+          "bottom": 472,
+          "left": 118.65625
+        },
+        "order": [
+          "#articles",
+          "#books",
+          "#events",
+          "#membership",
+          "#newsletter",
+          "#about",
+          "#careers"
+        ],
+        "identity": true
+      },
+      "keys": {
+        "home": true,
+        "end": {
+          "viewport": [
+            320,
+            900
+          ],
+          "widths": [
+            320,
+            320
+          ],
+          "count": 6,
+          "expanded": "true",
+          "active": "Karrieremöglichkeiten",
+          "visible": true,
+          "focusVisible": true,
+          "panel": {
+            "rect": {
+              "x": 73.40625,
+              "y": 479.984375,
+              "width": 208,
+              "height": 316.25,
+              "top": 479.984375,
+              "right": 281.40625,
+              "bottom": 796.234375,
+              "left": 73.40625
+            },
+            "maxHeight": "317px",
+            "overflowY": "auto",
+            "scrollWidth": 206,
+            "clientWidth": 206
+          },
+          "placement": "bottom-end",
+          "trigger": {
+            "x": 118.65625,
+            "y": 428,
+            "width": 84.09375,
+            "height": 44,
+            "top": 428,
+            "right": 202.75,
+            "bottom": 472,
+            "left": 118.65625
+          },
+          "order": [
+            "#articles",
+            "#books",
+            "#events",
+            "#membership",
+            "#newsletter",
+            "#about",
+            "#careers"
+          ],
+          "identity": true
+        },
+        "activation": "#careers"
+      }
+    },
+    {
+      "width": 320,
+      "height": 900,
+      "layout": "grid",
+      "direction": "ltr",
+      "labels": "el",
+      "initial": {
+        "viewport": [
+          320,
+          900
+        ],
+        "widths": [
+          320,
+          320
+        ],
+        "count": 6,
+        "expanded": "false",
+        "active": "Περισσότερα",
+        "visible": true,
+        "focusVisible": true,
+        "panel": {
+          "rect": {
+            "x": 0,
+            "y": 0,
+            "width": 0,
+            "height": 0,
+            "top": 0,
+            "right": 0,
+            "bottom": 0,
+            "left": 0
+          },
+          "maxHeight": "317px",
+          "overflowY": "auto",
+          "scrollWidth": 0,
+          "clientWidth": 0
+        },
+        "placement": "bottom-end",
+        "trigger": {
+          "x": 118.34375,
+          "y": 428,
+          "width": 146.109375,
+          "height": 44,
+          "top": 428,
+          "right": 264.453125,
+          "bottom": 472,
+          "left": 118.34375
+        },
+        "order": [
+          "#articles",
+          "#books",
+          "#events",
+          "#membership",
+          "#newsletter",
+          "#about",
+          "#careers"
+        ],
+        "identity": true
+      },
+      "keys": {
+        "home": true,
+        "end": {
+          "viewport": [
+            320,
+            900
+          ],
+          "widths": [
+            320,
+            320
+          ],
+          "count": 6,
+          "expanded": "true",
+          "active": "Ευκαιρίες καριέρας",
+          "visible": true,
+          "focusVisible": true,
+          "panel": {
+            "rect": {
+              "x": 73.40625,
+              "y": 479.984375,
+              "width": 208,
+              "height": 316.25,
+              "top": 479.984375,
+              "right": 281.40625,
+              "bottom": 796.234375,
+              "left": 73.40625
+            },
+            "maxHeight": "317px",
+            "overflowY": "auto",
+            "scrollWidth": 206,
+            "clientWidth": 206
+          },
+          "placement": "bottom-end",
+          "trigger": {
+            "x": 118.34375,
+            "y": 428,
+            "width": 146.109375,
+            "height": 44,
+            "top": 428,
+            "right": 264.453125,
+            "bottom": 472,
+            "left": 118.34375
+          },
+          "order": [
+            "#articles",
+            "#books",
+            "#events",
+            "#membership",
+            "#newsletter",
+            "#about",
+            "#careers"
+          ],
+          "identity": true
+        },
+        "activation": "#careers"
+      }
+    },
+    {
+      "width": 320,
+      "height": 900,
+      "layout": "grid",
+      "direction": "rtl",
+      "labels": "short",
+      "initial": {
+        "viewport": [
+          320,
+          900
+        ],
+        "widths": [
+          320,
+          320
+        ],
+        "count": 6,
+        "expanded": "false",
+        "active": "More",
+        "visible": true,
+        "focusVisible": true,
+        "panel": {
+          "rect": {
+            "x": 0,
+            "y": 0,
+            "width": 0,
+            "height": 0,
+            "top": 0,
+            "right": 0,
+            "bottom": 0,
+            "left": 0
+          },
+          "maxHeight": "317px",
+          "overflowY": "auto",
+          "scrollWidth": 0,
+          "clientWidth": 0
+        },
+        "placement": "bottom-end",
+        "trigger": {
+          "x": 108.625,
+          "y": 428,
+          "width": 83.734375,
+          "height": 44,
+          "top": 428,
+          "right": 192.359375,
+          "bottom": 472,
+          "left": 108.625
+        },
+        "order": [
+          "#articles",
+          "#books",
+          "#events",
+          "#membership",
+          "#newsletter",
+          "#about",
+          "#careers"
+        ],
+        "identity": true
+      },
+      "keys": {
+        "home": true,
+        "end": {
+          "viewport": [
+            320,
+            900
+          ],
+          "widths": [
+            320,
+            320
+          ],
+          "count": 6,
+          "expanded": "true",
+          "active": "Careers",
+          "visible": true,
+          "focusVisible": true,
+          "panel": {
+            "rect": {
+              "x": 38.59375,
+              "y": 479.984375,
+              "width": 208,
+              "height": 316.25,
+              "top": 479.984375,
+              "right": 246.59375,
+              "bottom": 796.234375,
+              "left": 38.59375
+            },
+            "maxHeight": "317px",
+            "overflowY": "auto",
+            "scrollWidth": 206,
+            "clientWidth": 206
+          },
+          "placement": "bottom-end",
+          "trigger": {
+            "x": 108.625,
+            "y": 428,
+            "width": 83.734375,
+            "height": 44,
+            "top": 428,
+            "right": 192.359375,
+            "bottom": 472,
+            "left": 108.625
+          },
+          "order": [
+            "#articles",
+            "#books",
+            "#events",
+            "#membership",
+            "#newsletter",
+            "#about",
+            "#careers"
+          ],
+          "identity": true
+        },
+        "activation": "#careers"
+      }
+    },
+    {
+      "width": 320,
+      "height": 900,
+      "layout": "grid",
+      "direction": "rtl",
+      "labels": "long",
+      "initial": {
+        "viewport": [
+          320,
+          900
+        ],
+        "widths": [
+          320,
+          320
+        ],
+        "count": 6,
+        "expanded": "false",
+        "active": "More",
+        "visible": true,
+        "focusVisible": true,
+        "panel": {
+          "rect": {
+            "x": 0,
+            "y": 0,
+            "width": 0,
+            "height": 0,
+            "top": 0,
+            "right": 0,
+            "bottom": 0,
+            "left": 0
+          },
+          "maxHeight": "317px",
+          "overflowY": "auto",
+          "scrollWidth": 0,
+          "clientWidth": 0
+        },
+        "placement": "bottom-end",
+        "trigger": {
+          "x": 58.78125,
+          "y": 428,
+          "width": 83.734375,
+          "height": 44,
+          "top": 428,
+          "right": 142.515625,
+          "bottom": 472,
+          "left": 58.78125
+        },
+        "order": [
+          "#articles",
+          "#books",
+          "#events",
+          "#membership",
+          "#newsletter",
+          "#about",
+          "#careers"
+        ],
+        "identity": true
+      },
+      "keys": {
+        "home": true,
+        "end": {
+          "viewport": [
+            320,
+            900
+          ],
+          "widths": [
+            320,
+            320
+          ],
+          "count": 6,
+          "expanded": "true",
+          "active": "Career opportunities",
+          "visible": true,
+          "focusVisible": true,
+          "panel": {
+            "rect": {
+              "x": 38.59375,
+              "y": 479.984375,
+              "width": 208,
+              "height": 316.25,
+              "top": 479.984375,
+              "right": 246.59375,
+              "bottom": 796.234375,
+              "left": 38.59375
+            },
+            "maxHeight": "317px",
+            "overflowY": "auto",
+            "scrollWidth": 206,
+            "clientWidth": 206
+          },
+          "placement": "bottom-end",
+          "trigger": {
+            "x": 58.78125,
+            "y": 428,
+            "width": 83.734375,
+            "height": 44,
+            "top": 428,
+            "right": 142.515625,
+            "bottom": 472,
+            "left": 58.78125
+          },
+          "order": [
+            "#articles",
+            "#books",
+            "#events",
+            "#membership",
+            "#newsletter",
+            "#about",
+            "#careers"
+          ],
+          "identity": true
+        },
+        "activation": "#careers"
+      }
+    },
+    {
+      "width": 320,
+      "height": 900,
+      "layout": "grid",
+      "direction": "rtl",
+      "labels": "de",
+      "initial": {
+        "viewport": [
+          320,
+          900
+        ],
+        "widths": [
+          320,
+          320
+        ],
+        "count": 6,
+        "expanded": "false",
+        "active": "Mehr",
+        "visible": true,
+        "focusVisible": true,
+        "panel": {
+          "rect": {
+            "x": 0,
+            "y": 0,
+            "width": 0,
+            "height": 0,
+            "top": 0,
+            "right": 0,
+            "bottom": 0,
+            "left": 0
+          },
+          "maxHeight": "317px",
+          "overflowY": "auto",
+          "scrollWidth": 0,
+          "clientWidth": 0
+        },
+        "placement": "bottom-end",
+        "trigger": {
+          "x": 117.25,
+          "y": 428,
+          "width": 84.09375,
+          "height": 44,
+          "top": 428,
+          "right": 201.34375,
+          "bottom": 472,
+          "left": 117.25
+        },
+        "order": [
+          "#articles",
+          "#books",
+          "#events",
+          "#membership",
+          "#newsletter",
+          "#about",
+          "#careers"
+        ],
+        "identity": true
+      },
+      "keys": {
+        "home": true,
+        "end": {
+          "viewport": [
+            320,
+            900
+          ],
+          "widths": [
+            320,
+            320
+          ],
+          "count": 6,
+          "expanded": "true",
+          "active": "Karrieremöglichkeiten",
+          "visible": true,
+          "focusVisible": true,
+          "panel": {
+            "rect": {
+              "x": 38.59375,
+              "y": 479.984375,
+              "width": 208,
+              "height": 316.25,
+              "top": 479.984375,
+              "right": 246.59375,
+              "bottom": 796.234375,
+              "left": 38.59375
+            },
+            "maxHeight": "317px",
+            "overflowY": "auto",
+            "scrollWidth": 206,
+            "clientWidth": 206
+          },
+          "placement": "bottom-end",
+          "trigger": {
+            "x": 117.25,
+            "y": 428,
+            "width": 84.09375,
+            "height": 44,
+            "top": 428,
+            "right": 201.34375,
+            "bottom": 472,
+            "left": 117.25
+          },
+          "order": [
+            "#articles",
+            "#books",
+            "#events",
+            "#membership",
+            "#newsletter",
+            "#about",
+            "#careers"
+          ],
+          "identity": true
+        },
+        "activation": "#careers"
+      }
+    },
+    {
+      "width": 320,
+      "height": 900,
+      "layout": "grid",
+      "direction": "rtl",
+      "labels": "el",
+      "initial": {
+        "viewport": [
+          320,
+          900
+        ],
+        "widths": [
+          320,
+          320
+        ],
+        "count": 6,
+        "expanded": "false",
+        "active": "Περισσότερα",
+        "visible": true,
+        "focusVisible": true,
+        "panel": {
+          "rect": {
+            "x": 0,
+            "y": 0,
+            "width": 0,
+            "height": 0,
+            "top": 0,
+            "right": 0,
+            "bottom": 0,
+            "left": 0
+          },
+          "maxHeight": "317px",
+          "overflowY": "auto",
+          "scrollWidth": 0,
+          "clientWidth": 0
+        },
+        "placement": "bottom-end",
+        "trigger": {
+          "x": 55.546875,
+          "y": 428,
+          "width": 146.109375,
+          "height": 44,
+          "top": 428,
+          "right": 201.65625,
+          "bottom": 472,
+          "left": 55.546875
+        },
+        "order": [
+          "#articles",
+          "#books",
+          "#events",
+          "#membership",
+          "#newsletter",
+          "#about",
+          "#careers"
+        ],
+        "identity": true
+      },
+      "keys": {
+        "home": true,
+        "end": {
+          "viewport": [
+            320,
+            900
+          ],
+          "widths": [
+            320,
+            320
+          ],
+          "count": 6,
+          "expanded": "true",
+          "active": "Ευκαιρίες καριέρας",
+          "visible": true,
+          "focusVisible": true,
+          "panel": {
+            "rect": {
+              "x": 38.59375,
+              "y": 479.984375,
+              "width": 208,
+              "height": 316.25,
+              "top": 479.984375,
+              "right": 246.59375,
+              "bottom": 796.234375,
+              "left": 38.59375
+            },
+            "maxHeight": "317px",
+            "overflowY": "auto",
+            "scrollWidth": 206,
+            "clientWidth": 206
+          },
+          "placement": "bottom-end",
+          "trigger": {
+            "x": 55.546875,
+            "y": 428,
+            "width": 146.109375,
+            "height": 44,
+            "top": 428,
+            "right": 201.65625,
+            "bottom": 472,
+            "left": 55.546875
+          },
+          "order": [
+            "#articles",
+            "#books",
+            "#events",
+            "#membership",
+            "#newsletter",
+            "#about",
+            "#careers"
+          ],
+          "identity": true
+        },
+        "activation": "#careers"
+      }
+    }
+  ],
+  "failures": [],
+  "focusedRegression": {
+    "scenario": "Many overflow, 260px container, settled open before End",
+    "result": {
+      "home": true,
+      "end": {
+        "viewport": [
+          406,
+          228
+        ],
+        "widths": [
+          406,
+          406
+        ],
+        "count": 6,
+        "expanded": "true",
+        "active": "Careers",
+        "visible": true,
+        "focusVisible": true,
+        "panel": {
+          "rect": {
+            "x": 45.40625,
+            "y": 143.625,
+            "width": 208,
+            "height": 84.359375,
+            "top": 143.625,
+            "right": 253.40625,
+            "bottom": 227.984375,
+            "left": 45.40625
+          },
+          "maxHeight": "84.3594px",
+          "overflowY": "auto",
+          "scrollWidth": 206,
+          "clientWidth": 206
+        },
+        "placement": "bottom-end",
+        "trigger": {
+          "x": 127.640625,
+          "y": 91.640625,
+          "width": 83.734375,
+          "height": 44,
+          "top": 91.640625,
+          "right": 211.375,
+          "bottom": 135.640625,
+          "left": 127.640625
+        },
+        "order": [
+          "#articles",
+          "#books",
+          "#events",
+          "#membership",
+          "#newsletter",
+          "#about",
+          "#careers"
+        ],
+        "identity": true
+      },
+      "activation": "#careers"
+    }
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "changesets": [
+    {
+      "releases": [
+        {
+          "name": "a11y-overflow-nav",
+          "type": "patch"
+        }
+      ],
+      "summary": "Fix focus continuity, lifecycle cleanup, and option normalization without changing the public API or runtime dependencies.\n\n- Preserve the active destination through refresh and responsive redistribution. Move focus to More when the destination ends in a closed overflow panel, restore a destination when More disappears, and preserve focus outside the navigation.\n- Restore canonical item order during refresh and destruction even when the navigation is detached. Support reattachment and reinitialization while leaving removed or externally reparented items untouched.\n- Stop initialization, refresh, and reflow when a synchronous callback destroys the instance, preventing later observation, scheduled work, state writes, or completion events.\n- Validate complete finite, nonnegative tolerance values; reject blank, malformed, negative, and infinite values while preserving programmatic option precedence.\n- Improve demo language metadata, wrapping fallbacks, stress-control serialization, and failure recovery. Keep selected measurement layouts limited to the enhanced state.\n- Fix demo disclosure width and available-height handling, including stress-menu End-key focus at 200% text size and wrapping long German lab labels without horizontal scrolling. Regenerate the static Pages examples with the updated styles and package runtime.",
+      "id": "fix-overflow-nav-lifecycle-and-demos"
+    }
+  ],
+  "releases": [
+    {
+      "name": "a11y-overflow-nav",
+      "type": "patch",
+      "oldVersion": "0.1.0",
+      "changesets": [
+        "fix-overflow-nav-lifecycle-and-demos"
+      ],
+      "newVersion": "0.1.1"
+    }
+  ]
+}

@@ -1,0 +1,1341 @@
+{
+  "environment": {
+    "browser": "156.0.8078.48",
+    "platform": "macOS",
+    "method": "Playwright CLI, temporary probes"
+  },
+  "rows": [
+    {
+      "name": "lab",
+      "mode": "320 CSS-pixel reflow (not native zoom)",
+      "initial": {
+        "viewport": [
+          320,
+          900
+        ],
+        "pageWidths": [
+          320,
+          709
+        ],
+        "overflow": 0,
+        "order": [
+          "Articles",
+          "Books",
+          "Events",
+          "Membership",
+          "Newsletter",
+          "About",
+          "Careers"
+        ],
+        "expanded": "false",
+        "active": "BODY:Interactive scenario lab\n      A11y Overflow Nav\n      \n    ",
+        "focusVisible": false,
+        "activeHitVisible": false,
+        "outline": {
+          "style": "none",
+          "width": "3px",
+          "color": "rgb(23, 34, 53)"
+        },
+        "panel": {
+          "color": "rgb(23, 34, 53)",
+          "background": "rgb(255, 255, 255)",
+          "border": "rgb(203, 211, 223)",
+          "overflowY": "visible",
+          "maxHeight": "none"
+        },
+        "rootFont": "16px",
+        "linkFont": "16px",
+        "forcedColors": false
+      },
+      "keys": {
+        "skipped": "No overflow at this size"
+      }
+    },
+    {
+      "name": "lab",
+      "mode": "200% computed-font override; root remains 16px; not native text-only zoom",
+      "before": {
+        "viewport": [
+          1280,
+          900
+        ],
+        "pageWidths": [
+          1280,
+          1280
+        ],
+        "overflow": 0,
+        "order": [
+          "Articles",
+          "Books",
+          "Events",
+          "Membership",
+          "Newsletter",
+          "About",
+          "Careers"
+        ],
+        "expanded": "false",
+        "active": "BODY:Interactive scenario lab\n      A11y Overflow Nav\n      \n    ",
+        "focusVisible": false,
+        "activeHitVisible": false,
+        "outline": {
+          "style": "none",
+          "width": "3px",
+          "color": "rgb(23, 34, 53)"
+        },
+        "panel": {
+          "color": "rgb(23, 34, 53)",
+          "background": "rgb(255, 255, 255)",
+          "border": "rgb(203, 211, 223)",
+          "overflowY": "visible",
+          "maxHeight": "none"
+        },
+        "rootFont": "16px",
+        "linkFont": "16px",
+        "forcedColors": false
+      },
+      "enlarged": {
+        "viewport": [
+          1280,
+          900
+        ],
+        "pageWidths": [
+          1280,
+          1280
+        ],
+        "overflow": 4,
+        "order": [
+          "Articles",
+          "Books",
+          "Events",
+          "Membership",
+          "Newsletter",
+          "About",
+          "Careers"
+        ],
+        "expanded": "false",
+        "active": "BODY:Interactive scenario lab\n      A11y Overflow Nav\n      \n    ",
+        "focusVisible": false,
+        "activeHitVisible": false,
+        "outline": {
+          "style": "none",
+          "width": "3px",
+          "color": "rgb(23, 34, 53)"
+        },
+        "panel": {
+          "color": "rgb(23, 34, 53)",
+          "background": "rgb(255, 255, 255)",
+          "border": "rgb(203, 211, 223)",
+          "overflowY": "visible",
+          "maxHeight": "none"
+        },
+        "rootFont": "16px",
+        "linkFont": "32px",
+        "forcedColors": false
+      },
+      "keys": {
+        "end": {
+          "viewport": [
+            1280,
+            900
+          ],
+          "pageWidths": [
+            1280,
+            1280
+          ],
+          "overflow": 4,
+          "order": [
+            "Articles",
+            "Books",
+            "Events",
+            "Membership",
+            "Newsletter",
+            "About",
+            "Careers"
+          ],
+          "expanded": "true",
+          "active": "A:Careers",
+          "focusVisible": true,
+          "activeHitVisible": true,
+          "outline": {
+            "style": "solid",
+            "width": "3px",
+            "color": "rgb(49, 88, 213)"
+          },
+          "panel": {
+            "color": "rgb(23, 34, 53)",
+            "background": "rgb(255, 255, 255)",
+            "border": "rgb(203, 211, 223)",
+            "overflowY": "visible",
+            "maxHeight": "none"
+          },
+          "rootFont": "16px",
+          "linkFont": "32px",
+          "forcedColors": false
+        },
+        "escaped": true
+      }
+    },
+    {
+      "name": "lab",
+      "mode": "forced-colors emulation/light",
+      "initial": {
+        "viewport": [
+          1280,
+          900
+        ],
+        "pageWidths": [
+          1280,
+          1280
+        ],
+        "overflow": 4,
+        "order": [
+          "Articles",
+          "Books",
+          "Events",
+          "Membership",
+          "Newsletter",
+          "About",
+          "Careers"
+        ],
+        "expanded": "false",
+        "active": "BUTTON:Many overflow",
+        "focusVisible": false,
+        "activeHitVisible": true,
+        "outline": {
+          "style": "none",
+          "width": "3px",
+          "color": "rgb(0, 0, 0)"
+        },
+        "panel": {
+          "color": "rgb(0, 0, 0)",
+          "background": "rgb(255, 255, 255)",
+          "border": "rgb(0, 0, 0)",
+          "overflowY": "visible",
+          "maxHeight": "none"
+        },
+        "rootFont": "16px",
+        "linkFont": "16px",
+        "forcedColors": true
+      },
+      "keys": {
+        "end": {
+          "viewport": [
+            1280,
+            900
+          ],
+          "pageWidths": [
+            1280,
+            1280
+          ],
+          "overflow": 5,
+          "order": [
+            "Articles",
+            "Books",
+            "Events",
+            "Membership",
+            "Newsletter",
+            "About",
+            "Careers"
+          ],
+          "expanded": "true",
+          "active": "A:Careers",
+          "focusVisible": true,
+          "activeHitVisible": true,
+          "outline": {
+            "style": "solid",
+            "width": "3px",
+            "color": "rgba(5, 0, 73, 0.8)"
+          },
+          "panel": {
+            "color": "rgb(0, 0, 0)",
+            "background": "rgb(255, 255, 255)",
+            "border": "rgb(0, 0, 0)",
+            "overflowY": "visible",
+            "maxHeight": "none"
+          },
+          "rootFont": "16px",
+          "linkFont": "16px",
+          "forcedColors": true
+        },
+        "escaped": true
+      }
+    },
+    {
+      "name": "lab",
+      "mode": "forced-colors emulation/dark",
+      "initial": {
+        "viewport": [
+          1280,
+          900
+        ],
+        "pageWidths": [
+          1280,
+          1280
+        ],
+        "overflow": 4,
+        "order": [
+          "Articles",
+          "Books",
+          "Events",
+          "Membership",
+          "Newsletter",
+          "About",
+          "Careers"
+        ],
+        "expanded": "false",
+        "active": "BUTTON:Many overflow",
+        "focusVisible": false,
+        "activeHitVisible": true,
+        "outline": {
+          "style": "none",
+          "width": "3px",
+          "color": "rgb(255, 255, 255)"
+        },
+        "panel": {
+          "color": "rgb(255, 255, 255)",
+          "background": "rgb(0, 0, 0)",
+          "border": "rgb(255, 255, 255)",
+          "overflowY": "visible",
+          "maxHeight": "none"
+        },
+        "rootFont": "16px",
+        "linkFont": "16px",
+        "forcedColors": true
+      },
+      "keys": {
+        "end": {
+          "viewport": [
+            1280,
+            900
+          ],
+          "pageWidths": [
+            1280,
+            1280
+          ],
+          "overflow": 5,
+          "order": [
+            "Articles",
+            "Books",
+            "Events",
+            "Membership",
+            "Newsletter",
+            "About",
+            "Careers"
+          ],
+          "expanded": "true",
+          "active": "A:Careers",
+          "focusVisible": true,
+          "activeHitVisible": true,
+          "outline": {
+            "style": "solid",
+            "width": "3px",
+            "color": "rgba(26, 235, 255, 0.8)"
+          },
+          "panel": {
+            "color": "rgb(255, 255, 255)",
+            "background": "rgb(0, 0, 0)",
+            "border": "rgb(255, 255, 255)",
+            "overflowY": "visible",
+            "maxHeight": "none"
+          },
+          "rootFont": "16px",
+          "linkFont": "16px",
+          "forcedColors": true
+        },
+        "escaped": true
+      }
+    },
+    {
+      "name": "basic",
+      "mode": "320 CSS-pixel reflow (not native zoom)",
+      "initial": {
+        "viewport": [
+          320,
+          900
+        ],
+        "pageWidths": [
+          320,
+          320
+        ],
+        "overflow": 5,
+        "order": [
+          "Articles",
+          "Books",
+          "Events",
+          "Membership",
+          "Newsletter",
+          "Podcasts",
+          "About us"
+        ],
+        "expanded": "false",
+        "active": "BODY:Basic example\n      Navigation that adapts without losing it",
+        "focusVisible": false,
+        "activeHitVisible": false,
+        "outline": {
+          "style": "none",
+          "width": "3px",
+          "color": "rgb(23, 34, 53)"
+        },
+        "panel": {
+          "color": "rgb(23, 34, 53)",
+          "background": "rgb(255, 255, 255)",
+          "border": "rgb(203, 211, 223)",
+          "overflowY": "visible",
+          "maxHeight": "none"
+        },
+        "rootFont": "16px",
+        "linkFont": "16px",
+        "forcedColors": false
+      },
+      "keys": {
+        "end": {
+          "viewport": [
+            320,
+            900
+          ],
+          "pageWidths": [
+            320,
+            320
+          ],
+          "overflow": 5,
+          "order": [
+            "Articles",
+            "Books",
+            "Events",
+            "Membership",
+            "Newsletter",
+            "Podcasts",
+            "About us"
+          ],
+          "expanded": "true",
+          "active": "A:About us",
+          "focusVisible": true,
+          "activeHitVisible": true,
+          "outline": {
+            "style": "solid",
+            "width": "3px",
+            "color": "rgb(49, 88, 213)"
+          },
+          "panel": {
+            "color": "rgb(23, 34, 53)",
+            "background": "rgb(255, 255, 255)",
+            "border": "rgb(203, 211, 223)",
+            "overflowY": "visible",
+            "maxHeight": "none"
+          },
+          "rootFont": "16px",
+          "linkFont": "16px",
+          "forcedColors": false
+        },
+        "escaped": true
+      }
+    },
+    {
+      "name": "basic",
+      "mode": "200% computed-font override; root remains 16px; not native text-only zoom",
+      "before": {
+        "viewport": [
+          1280,
+          900
+        ],
+        "pageWidths": [
+          1280,
+          1280
+        ],
+        "overflow": 0,
+        "order": [
+          "Articles",
+          "Books",
+          "Events",
+          "Membership",
+          "Newsletter",
+          "Podcasts",
+          "About us"
+        ],
+        "expanded": "false",
+        "active": "BODY:Basic example\n      Navigation that adapts without losing it",
+        "focusVisible": false,
+        "activeHitVisible": false,
+        "outline": {
+          "style": "none",
+          "width": "3px",
+          "color": "rgb(23, 34, 53)"
+        },
+        "panel": {
+          "color": "rgb(23, 34, 53)",
+          "background": "rgb(255, 255, 255)",
+          "border": "rgb(203, 211, 223)",
+          "overflowY": "visible",
+          "maxHeight": "none"
+        },
+        "rootFont": "16px",
+        "linkFont": "16px",
+        "forcedColors": false
+      },
+      "enlarged": {
+        "viewport": [
+          1280,
+          900
+        ],
+        "pageWidths": [
+          1280,
+          1280
+        ],
+        "overflow": 2,
+        "order": [
+          "Articles",
+          "Books",
+          "Events",
+          "Membership",
+          "Newsletter",
+          "Podcasts",
+          "About us"
+        ],
+        "expanded": "false",
+        "active": "BODY:Basic example\n      Navigation that adapts without losing it",
+        "focusVisible": false,
+        "activeHitVisible": false,
+        "outline": {
+          "style": "none",
+          "width": "3px",
+          "color": "rgb(23, 34, 53)"
+        },
+        "panel": {
+          "color": "rgb(23, 34, 53)",
+          "background": "rgb(255, 255, 255)",
+          "border": "rgb(203, 211, 223)",
+          "overflowY": "visible",
+          "maxHeight": "none"
+        },
+        "rootFont": "16px",
+        "linkFont": "32px",
+        "forcedColors": false
+      },
+      "keys": {
+        "end": {
+          "viewport": [
+            1280,
+            900
+          ],
+          "pageWidths": [
+            1280,
+            1280
+          ],
+          "overflow": 2,
+          "order": [
+            "Articles",
+            "Books",
+            "Events",
+            "Membership",
+            "Newsletter",
+            "Podcasts",
+            "About us"
+          ],
+          "expanded": "true",
+          "active": "A:About us",
+          "focusVisible": true,
+          "activeHitVisible": true,
+          "outline": {
+            "style": "solid",
+            "width": "3px",
+            "color": "rgb(49, 88, 213)"
+          },
+          "panel": {
+            "color": "rgb(23, 34, 53)",
+            "background": "rgb(255, 255, 255)",
+            "border": "rgb(203, 211, 223)",
+            "overflowY": "visible",
+            "maxHeight": "none"
+          },
+          "rootFont": "16px",
+          "linkFont": "32px",
+          "forcedColors": false
+        },
+        "escaped": true
+      }
+    },
+    {
+      "name": "basic",
+      "mode": "forced-colors emulation/light",
+      "initial": {
+        "viewport": [
+          1280,
+          900
+        ],
+        "pageWidths": [
+          1280,
+          1280
+        ],
+        "overflow": 4,
+        "order": [
+          "Articles",
+          "Books",
+          "Events",
+          "Membership",
+          "Newsletter",
+          "Podcasts",
+          "About us"
+        ],
+        "expanded": "false",
+        "active": "BUTTON:Narrow preview",
+        "focusVisible": false,
+        "activeHitVisible": true,
+        "outline": {
+          "style": "none",
+          "width": "3px",
+          "color": "rgb(0, 0, 0)"
+        },
+        "panel": {
+          "color": "rgb(0, 0, 0)",
+          "background": "rgb(255, 255, 255)",
+          "border": "rgb(0, 0, 0)",
+          "overflowY": "visible",
+          "maxHeight": "none"
+        },
+        "rootFont": "16px",
+        "linkFont": "16px",
+        "forcedColors": true
+      },
+      "keys": {
+        "end": {
+          "viewport": [
+            1280,
+            900
+          ],
+          "pageWidths": [
+            1280,
+            1280
+          ],
+          "overflow": 4,
+          "order": [
+            "Articles",
+            "Books",
+            "Events",
+            "Membership",
+            "Newsletter",
+            "Podcasts",
+            "About us"
+          ],
+          "expanded": "true",
+          "active": "A:About us",
+          "focusVisible": true,
+          "activeHitVisible": true,
+          "outline": {
+            "style": "solid",
+            "width": "3px",
+            "color": "rgba(5, 0, 73, 0.8)"
+          },
+          "panel": {
+            "color": "rgb(0, 0, 0)",
+            "background": "rgb(255, 255, 255)",
+            "border": "rgb(0, 0, 0)",
+            "overflowY": "visible",
+            "maxHeight": "none"
+          },
+          "rootFont": "16px",
+          "linkFont": "16px",
+          "forcedColors": true
+        },
+        "escaped": true
+      }
+    },
+    {
+      "name": "basic",
+      "mode": "forced-colors emulation/dark",
+      "initial": {
+        "viewport": [
+          1280,
+          900
+        ],
+        "pageWidths": [
+          1280,
+          1280
+        ],
+        "overflow": 4,
+        "order": [
+          "Articles",
+          "Books",
+          "Events",
+          "Membership",
+          "Newsletter",
+          "Podcasts",
+          "About us"
+        ],
+        "expanded": "false",
+        "active": "BUTTON:Narrow preview",
+        "focusVisible": false,
+        "activeHitVisible": true,
+        "outline": {
+          "style": "none",
+          "width": "3px",
+          "color": "rgb(255, 255, 255)"
+        },
+        "panel": {
+          "color": "rgb(255, 255, 255)",
+          "background": "rgb(0, 0, 0)",
+          "border": "rgb(255, 255, 255)",
+          "overflowY": "visible",
+          "maxHeight": "none"
+        },
+        "rootFont": "16px",
+        "linkFont": "16px",
+        "forcedColors": true
+      },
+      "keys": {
+        "end": {
+          "viewport": [
+            1280,
+            900
+          ],
+          "pageWidths": [
+            1280,
+            1280
+          ],
+          "overflow": 4,
+          "order": [
+            "Articles",
+            "Books",
+            "Events",
+            "Membership",
+            "Newsletter",
+            "Podcasts",
+            "About us"
+          ],
+          "expanded": "true",
+          "active": "A:About us",
+          "focusVisible": true,
+          "activeHitVisible": true,
+          "outline": {
+            "style": "solid",
+            "width": "3px",
+            "color": "rgba(26, 235, 255, 0.8)"
+          },
+          "panel": {
+            "color": "rgb(255, 255, 255)",
+            "background": "rgb(0, 0, 0)",
+            "border": "rgb(255, 255, 255)",
+            "overflowY": "visible",
+            "maxHeight": "none"
+          },
+          "rootFont": "16px",
+          "linkFont": "16px",
+          "forcedColors": true
+        },
+        "escaped": true
+      }
+    },
+    {
+      "name": "stress",
+      "mode": "320 CSS-pixel reflow (not native zoom)",
+      "initial": {
+        "viewport": [
+          320,
+          900
+        ],
+        "pageWidths": [
+          320,
+          320
+        ],
+        "overflow": 22,
+        "order": [
+          "Dashboard",
+          "Articles",
+          "Books",
+          "Events",
+          "Membership",
+          "Newsletter",
+          "Community",
+          "Resources",
+          "Tutorials",
+          "Accessibility",
+          "Performance",
+          "Design Systems",
+          "Components",
+          "Documentation",
+          "Case Studies",
+          "Releases",
+          "Changelog",
+          "Integrations",
+          "Partners",
+          "Careers",
+          "About",
+          "Contact",
+          "Support",
+          "Account"
+        ],
+        "expanded": "false",
+        "active": "BODY:A11y Overflow Nav performance stress fixture\n    \n      This",
+        "focusVisible": false,
+        "activeHitVisible": true,
+        "outline": {
+          "style": "none",
+          "width": "3px",
+          "color": "rgb(0, 0, 0)"
+        },
+        "panel": {
+          "color": "rgb(0, 0, 0)",
+          "background": "rgb(255, 255, 255)",
+          "border": "rgb(0, 0, 0)",
+          "overflowY": "auto",
+          "maxHeight": "540px"
+        },
+        "rootFont": "16px",
+        "linkFont": "16px",
+        "forcedColors": false
+      },
+      "keys": {
+        "end": {
+          "viewport": [
+            320,
+            900
+          ],
+          "pageWidths": [
+            320,
+            320
+          ],
+          "overflow": 22,
+          "order": [
+            "Dashboard",
+            "Articles",
+            "Books",
+            "Events",
+            "Membership",
+            "Newsletter",
+            "Community",
+            "Resources",
+            "Tutorials",
+            "Accessibility",
+            "Performance",
+            "Design Systems",
+            "Components",
+            "Documentation",
+            "Case Studies",
+            "Releases",
+            "Changelog",
+            "Integrations",
+            "Partners",
+            "Careers",
+            "About",
+            "Contact",
+            "Support",
+            "Account"
+          ],
+          "expanded": "true",
+          "active": "A:Account",
+          "focusVisible": true,
+          "activeHitVisible": true,
+          "outline": {
+            "style": "solid",
+            "width": "3px",
+            "color": "rgb(0, 0, 238)"
+          },
+          "panel": {
+            "color": "rgb(0, 0, 0)",
+            "background": "rgb(255, 255, 255)",
+            "border": "rgb(0, 0, 0)",
+            "overflowY": "auto",
+            "maxHeight": "540px"
+          },
+          "rootFont": "16px",
+          "linkFont": "16px",
+          "forcedColors": false
+        },
+        "escaped": true
+      }
+    },
+    {
+      "name": "stress",
+      "mode": "200% computed-font override; root remains 16px; not native text-only zoom",
+      "before": {
+        "viewport": [
+          1280,
+          900
+        ],
+        "pageWidths": [
+          1280,
+          1280
+        ],
+        "overflow": 16,
+        "order": [
+          "Dashboard",
+          "Articles",
+          "Books",
+          "Events",
+          "Membership",
+          "Newsletter",
+          "Community",
+          "Resources",
+          "Tutorials",
+          "Accessibility",
+          "Performance",
+          "Design Systems",
+          "Components",
+          "Documentation",
+          "Case Studies",
+          "Releases",
+          "Changelog",
+          "Integrations",
+          "Partners",
+          "Careers",
+          "About",
+          "Contact",
+          "Support",
+          "Account"
+        ],
+        "expanded": "false",
+        "active": "BODY:A11y Overflow Nav performance stress fixture\n    \n      This",
+        "focusVisible": false,
+        "activeHitVisible": true,
+        "outline": {
+          "style": "none",
+          "width": "3px",
+          "color": "rgb(0, 0, 0)"
+        },
+        "panel": {
+          "color": "rgb(0, 0, 0)",
+          "background": "rgb(255, 255, 255)",
+          "border": "rgb(0, 0, 0)",
+          "overflowY": "auto",
+          "maxHeight": "540px"
+        },
+        "rootFont": "16px",
+        "linkFont": "16px",
+        "forcedColors": false
+      },
+      "enlarged": {
+        "viewport": [
+          1280,
+          900
+        ],
+        "pageWidths": [
+          1280,
+          1280
+        ],
+        "overflow": 19,
+        "order": [
+          "Dashboard",
+          "Articles",
+          "Books",
+          "Events",
+          "Membership",
+          "Newsletter",
+          "Community",
+          "Resources",
+          "Tutorials",
+          "Accessibility",
+          "Performance",
+          "Design Systems",
+          "Components",
+          "Documentation",
+          "Case Studies",
+          "Releases",
+          "Changelog",
+          "Integrations",
+          "Partners",
+          "Careers",
+          "About",
+          "Contact",
+          "Support",
+          "Account"
+        ],
+        "expanded": "false",
+        "active": "BODY:A11y Overflow Nav performance stress fixture\n    \n      This",
+        "focusVisible": false,
+        "activeHitVisible": true,
+        "outline": {
+          "style": "none",
+          "width": "3px",
+          "color": "rgb(0, 0, 0)"
+        },
+        "panel": {
+          "color": "rgb(0, 0, 0)",
+          "background": "rgb(255, 255, 255)",
+          "border": "rgb(0, 0, 0)",
+          "overflowY": "auto",
+          "maxHeight": "540px"
+        },
+        "rootFont": "16px",
+        "linkFont": "32px",
+        "forcedColors": false
+      },
+      "keys": {
+        "end": {
+          "viewport": [
+            1280,
+            900
+          ],
+          "pageWidths": [
+            1280,
+            1280
+          ],
+          "overflow": 19,
+          "order": [
+            "Dashboard",
+            "Articles",
+            "Books",
+            "Events",
+            "Membership",
+            "Newsletter",
+            "Community",
+            "Resources",
+            "Tutorials",
+            "Accessibility",
+            "Performance",
+            "Design Systems",
+            "Components",
+            "Documentation",
+            "Case Studies",
+            "Releases",
+            "Changelog",
+            "Integrations",
+            "Partners",
+            "Careers",
+            "About",
+            "Contact",
+            "Support",
+            "Account"
+          ],
+          "expanded": "true",
+          "active": "A:Account",
+          "focusVisible": true,
+          "activeHitVisible": true,
+          "outline": {
+            "style": "solid",
+            "width": "3px",
+            "color": "rgb(0, 0, 238)"
+          },
+          "panel": {
+            "color": "rgb(0, 0, 0)",
+            "background": "rgb(255, 255, 255)",
+            "border": "rgb(0, 0, 0)",
+            "overflowY": "auto",
+            "maxHeight": "540px"
+          },
+          "rootFont": "16px",
+          "linkFont": "32px",
+          "forcedColors": false
+        },
+        "escaped": true
+      }
+    },
+    {
+      "name": "stress",
+      "mode": "forced-colors emulation/light",
+      "initial": {
+        "viewport": [
+          1280,
+          900
+        ],
+        "pageWidths": [
+          1280,
+          1280
+        ],
+        "overflow": 16,
+        "order": [
+          "Dashboard",
+          "Articles",
+          "Books",
+          "Events",
+          "Membership",
+          "Newsletter",
+          "Community",
+          "Resources",
+          "Tutorials",
+          "Accessibility",
+          "Performance",
+          "Design Systems",
+          "Components",
+          "Documentation",
+          "Case Studies",
+          "Releases",
+          "Changelog",
+          "Integrations",
+          "Partners",
+          "Careers",
+          "About",
+          "Contact",
+          "Support",
+          "Account"
+        ],
+        "expanded": "false",
+        "active": "BODY:A11y Overflow Nav performance stress fixture\n    \n      This",
+        "focusVisible": false,
+        "activeHitVisible": true,
+        "outline": {
+          "style": "none",
+          "width": "3px",
+          "color": "rgb(0, 0, 0)"
+        },
+        "panel": {
+          "color": "rgb(0, 0, 0)",
+          "background": "rgb(255, 255, 255)",
+          "border": "rgb(0, 0, 0)",
+          "overflowY": "auto",
+          "maxHeight": "540px"
+        },
+        "rootFont": "16px",
+        "linkFont": "16px",
+        "forcedColors": true
+      },
+      "keys": {
+        "end": {
+          "viewport": [
+            1280,
+            900
+          ],
+          "pageWidths": [
+            1280,
+            1280
+          ],
+          "overflow": 16,
+          "order": [
+            "Dashboard",
+            "Articles",
+            "Books",
+            "Events",
+            "Membership",
+            "Newsletter",
+            "Community",
+            "Resources",
+            "Tutorials",
+            "Accessibility",
+            "Performance",
+            "Design Systems",
+            "Components",
+            "Documentation",
+            "Case Studies",
+            "Releases",
+            "Changelog",
+            "Integrations",
+            "Partners",
+            "Careers",
+            "About",
+            "Contact",
+            "Support",
+            "Account"
+          ],
+          "expanded": "true",
+          "active": "A:Account",
+          "focusVisible": true,
+          "activeHitVisible": true,
+          "outline": {
+            "style": "solid",
+            "width": "3px",
+            "color": "rgba(5, 0, 73, 0.8)"
+          },
+          "panel": {
+            "color": "rgb(0, 0, 0)",
+            "background": "rgb(255, 255, 255)",
+            "border": "rgb(0, 0, 0)",
+            "overflowY": "auto",
+            "maxHeight": "540px"
+          },
+          "rootFont": "16px",
+          "linkFont": "16px",
+          "forcedColors": true
+        },
+        "escaped": true
+      }
+    },
+    {
+      "name": "stress",
+      "mode": "forced-colors emulation/dark",
+      "initial": {
+        "viewport": [
+          1280,
+          900
+        ],
+        "pageWidths": [
+          1280,
+          1280
+        ],
+        "overflow": 16,
+        "order": [
+          "Dashboard",
+          "Articles",
+          "Books",
+          "Events",
+          "Membership",
+          "Newsletter",
+          "Community",
+          "Resources",
+          "Tutorials",
+          "Accessibility",
+          "Performance",
+          "Design Systems",
+          "Components",
+          "Documentation",
+          "Case Studies",
+          "Releases",
+          "Changelog",
+          "Integrations",
+          "Partners",
+          "Careers",
+          "About",
+          "Contact",
+          "Support",
+          "Account"
+        ],
+        "expanded": "false",
+        "active": "BODY:A11y Overflow Nav performance stress fixture\n    \n      This",
+        "focusVisible": false,
+        "activeHitVisible": true,
+        "outline": {
+          "style": "none",
+          "width": "3px",
+          "color": "rgb(255, 255, 255)"
+        },
+        "panel": {
+          "color": "rgb(255, 255, 255)",
+          "background": "rgb(0, 0, 0)",
+          "border": "rgb(255, 255, 255)",
+          "overflowY": "auto",
+          "maxHeight": "540px"
+        },
+        "rootFont": "16px",
+        "linkFont": "16px",
+        "forcedColors": true
+      },
+      "keys": {
+        "end": {
+          "viewport": [
+            1280,
+            900
+          ],
+          "pageWidths": [
+            1280,
+            1280
+          ],
+          "overflow": 16,
+          "order": [
+            "Dashboard",
+            "Articles",
+            "Books",
+            "Events",
+            "Membership",
+            "Newsletter",
+            "Community",
+            "Resources",
+            "Tutorials",
+            "Accessibility",
+            "Performance",
+            "Design Systems",
+            "Components",
+            "Documentation",
+            "Case Studies",
+            "Releases",
+            "Changelog",
+            "Integrations",
+            "Partners",
+            "Careers",
+            "About",
+            "Contact",
+            "Support",
+            "Account"
+          ],
+          "expanded": "true",
+          "active": "A:Account",
+          "focusVisible": true,
+          "activeHitVisible": true,
+          "outline": {
+            "style": "solid",
+            "width": "3px",
+            "color": "rgba(26, 235, 255, 0.8)"
+          },
+          "panel": {
+            "color": "rgb(255, 255, 255)",
+            "background": "rgb(0, 0, 0)",
+            "border": "rgb(255, 255, 255)",
+            "overflowY": "auto",
+            "maxHeight": "540px"
+          },
+          "rootFont": "16px",
+          "linkFont": "16px",
+          "forcedColors": true
+        },
+        "escaped": true
+      }
+    },
+    {
+      "name": "lab",
+      "mode": "406x228 native-zoom geometry reproduction, keyboard End",
+      "keys": {
+        "end": {
+          "viewport": [
+            406,
+            228
+          ],
+          "pageWidths": [
+            406,
+            406
+          ],
+          "overflow": 5,
+          "order": [
+            "Articles",
+            "Books",
+            "Events",
+            "Membership",
+            "Newsletter",
+            "About",
+            "Careers"
+          ],
+          "expanded": "false",
+          "active": "BODY:Interactive scenario lab\n      A11y Overflow Nav\n      \n    ",
+          "focusVisible": false,
+          "activeHitVisible": false,
+          "outline": {
+            "style": "none",
+            "width": "3px",
+            "color": "rgb(23, 34, 53)"
+          },
+          "panel": {
+            "color": "rgb(23, 34, 53)",
+            "background": "rgb(255, 255, 255)",
+            "border": "rgb(203, 211, 223)",
+            "overflowY": "visible",
+            "maxHeight": "none"
+          },
+          "rootFont": "16px",
+          "linkFont": "16px",
+          "forcedColors": false
+        },
+        "escaped": false
+      }
+    }
+  ],
+  "causalValidation": {
+    "note": "Temporary stylesheet overrides for causal validation only; no repository CSS changed.",
+    "reflowBefore": {
+      "viewport": 320,
+      "client": 320,
+      "scroll": 709,
+      "overflow": "0"
+    },
+    "reflowAfter": {
+      "viewport": 320,
+      "client": 320,
+      "scroll": 320,
+      "overflow": "6"
+    },
+    "panelBefore": {
+      "expanded": "false",
+      "active": "BODY:Interactive scenario lab\n     ",
+      "lastEvent": "6. Menu Button event: menu-button:close — reason: visibility-change"
+    },
+    "panelAfter": {
+      "expanded": "true",
+      "active": "A:Careers",
+      "lastEvent": "7. Menu Button event: menu-button:open — reason: keyboard"
+    },
+    "panelScenario": "Many overflow, then container width 260px; 406x228 CSS viewport; settle after opening before End"
+  },
+  "date": "2026-10-27",
+  "sourceSha256": {
+    "src/A11yOverflowNav.ts": "6c89642a131a825a80670a05aedc2952de36978529539f590f5e717809e5b111",
+    "demo.css": "92f363bc47d2961aef2643be7f5c728f911844be84dadae212505f8219a3ac67",
+    "index.html": "ab729e9ae2b797ab6866038961010c73058b173d18e9ea76516f9bbd938ccc32",
+    "examples/basic/styles.css": "ba0e2e9c5cef8124ae89b9403902b01cfc4a5e7aa3734de7e8ae4427f0d3cf9e",
+    "examples/stress/index.html": "7e5582383cf5eee483daede5f3265f10268cde19cb1aa89713eaea5d66c9ac86",
+    "dist/index.js": "cd1badd6b50d16e379c56a2382db288d7e4b938e147b067b1b569635710e0c92"
+  }
+}

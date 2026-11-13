@@ -54,15 +54,19 @@ export const docs = {
   usage: `import {
   createOverflowNav,
   OVERFLOW_NAV_EVENTS,
+  type OverflowNavEventDetail,
 } from 'a11y-overflow-nav';
 
 const root = document.querySelector('[data-a11y-overflow-nav]');
 
 if (root instanceof HTMLElement) {
+  const onLifecycle = (event: Event) => {
+    const { detail } = event as CustomEvent<OverflowNavEventDetail>;
+    console.log(event.type, detail.reason, detail.overflowCount);
+  };
+
   for (const eventName of Object.values(OVERFLOW_NAV_EVENTS)) {
-    root.addEventListener(eventName, (event) => {
-      console.log(event.type, event.detail.reason, event.detail.overflowCount);
-    });
+    root.addEventListener(eventName, onLifecycle);
   }
 
   const instance = createOverflowNav(root, {
@@ -73,8 +77,11 @@ if (root instanceof HTMLElement) {
 
   // Call after application-driven item or label changes.
   instance.refresh();
-  // Call during application teardown.
+  // During application teardown, destroy the instance and remove your listeners:
   // instance.destroy();
+  // for (const eventName of Object.values(OVERFLOW_NAV_EVENTS)) {
+  //   root.removeEventListener(eventName, onLifecycle);
+  // }
 }`,
   selectors: [
     '[data-a11y-overflow-nav]',
@@ -99,7 +106,7 @@ if (root instanceof HTMLElement) {
       default: '1',
       attribute: 'data-fit-tolerance',
       description:
-        'Sets the nonnegative pixel tolerance used by geometry comparisons.',
+        'Sets the finite, nonnegative pixel tolerance used by geometry comparisons. Dataset values must be complete numbers; blank or invalid values use the default.',
     },
     {
       name: 'menuButtonOptions',
@@ -173,13 +180,13 @@ if (root instanceof HTMLElement) {
       name: 'refresh()',
       type: '() => void',
       description:
-        'Reconciles supported item changes, re-observes layout, reflows, preserves focus, and emits refresh.',
+        'Reconciles supported item changes, re-observes layout, reflows, resolves focus against the final distribution, and emits refresh unless a callback destroys the instance.',
     },
     {
       name: 'destroy()',
       type: '() => void',
       description:
-        'Emits destroy, disconnects observers, cancels scheduled work, restores source order and authored state, and releases the instance.',
+        'Emits destroy, disconnects observers, cancels scheduled work, restores managed items and authored state even on a detached root, and releases the instance. Externally removed or reparented items are left alone.',
     },
     {
       name: 'OVERFLOW_NAV_EVENTS',
@@ -187,8 +194,13 @@ if (root instanceof HTMLElement) {
       description: 'Provides the four public lifecycle event names.',
     },
     {
+      name: 'OverflowNavEventMap',
+      type: 'Record<OverflowNavEventName, OverflowNavEventDetail>',
+      description: 'Maps each public lifecycle event name to its detail contract.',
+    },
+    {
       name: 'Public types',
-      type: 'A11yOverflowNavInstance | A11yOverflowNavOptions | OverflowNavEventDetail | OverflowNavEventName | OverflowNavReason',
+      type: 'A11yOverflowNavInstance | A11yOverflowNavOptions | OverflowNavEventDetail | OverflowNavEventMap | OverflowNavEventName | OverflowNavReason',
       description: 'TypeScript contracts exported from the package root.',
     },
   ],
@@ -234,12 +246,12 @@ if (root instanceof HTMLElement) {
     {
       stage: 'initialize',
       description:
-        'Validate authored structure, initialize Menu Button, perform the first reflow, observe layout, and emit init. Attach event listeners first.',
+        'Validate authored structure, initialize Menu Button, perform the first reflow, observe layout, and emit init. Attach event listeners first. Synchronous destruction stops the active operation and suppresses its completion event.',
     },
     {
       stage: 'redistribute',
       description:
-        'Coalesce resize work in requestAnimationFrame and emit change only when item membership changes.',
+        'Coalesce resize work in requestAnimationFrame and emit change only when the visible or overflow node sequence changes.',
     },
     {
       stage: 'refresh',
@@ -265,7 +277,7 @@ if (root instanceof HTMLElement) {
     {
       topic: 'Focus',
       description:
-        'Focus moves to More before a focused item enters a closed panel and is restored to a suitable connected destination when items return or the control disappears.',
+        'Focus moves to More when the active destination ends in the closed panel, including during explicit refresh. Visible destinations retain focus; a disappearing More falls back to a restored destination. Focus outside the navigation is preserved.',
     },
     {
       topic: 'Keyboard and ARIA',
@@ -286,12 +298,13 @@ if (root instanceof HTMLElement) {
   examples: [
     {
       name: 'Basic',
-      description: 'Minimal semantic Priority+ navigation.',
+      description:
+        'Copy-friendly navigation with consumer-owned Flex layout, disclosure styles, and a width toggle.',
       path: 'examples/basic',
     },
     {
       name: 'Scenario lab',
-      description: 'Interactive layout and lifecycle scenarios.',
+      description: 'Interactive Flex/Grid, localization, focus, and lifecycle scenarios.',
       path: 'index.html',
     },
     {

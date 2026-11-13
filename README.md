@@ -26,9 +26,9 @@ All managed destinations begin in the primary list. The overflow list starts emp
 ~~~html
 <nav data-a11y-overflow-nav aria-label="Primary">
   <ul data-overflow-nav-list>
-    <li data-overflow-nav-item><a href="/articles">Articles</a></li>
-    <li data-overflow-nav-item><a href="/books">Books</a></li>
-    <li data-overflow-nav-item><a href="/events">Events</a></li>
+    <li data-overflow-nav-item><a href="/trails">Trails</a></li>
+    <li data-overflow-nav-item><a href="/habitats">Habitats</a></li>
+    <li data-overflow-nav-item><a href="/wildlife">Wildlife</a></li>
     <li data-overflow-nav-control hidden>
       <div data-overflow-nav-menu>
         <button type="button" aria-controls="overflow-panel">More</button>
@@ -93,7 +93,7 @@ Calling `createOverflowNav()` again for the same live root returns the existing 
 | `fitTolerance` | `number` | `1` | `data-fit-tolerance="number"` | Nonnegative pixel tolerance used by geometry comparisons. |
 | `menuButtonOptions` | `A11yMenuButtonOptions` | `{}` | None | Passed to `a11y-menu-button/core`. |
 
-Programmatic values take precedence over dataset values. Invalid dataset values fall back to defaults.
+Programmatic values take precedence over dataset values. Invalid values fall back to defaults. A dataset tolerance must contain a complete finite, nonnegative number; surrounding whitespace is accepted, but blank values and strings such as `2px` or `2garbage` use the default.
 
 ## Public API
 
@@ -114,14 +114,14 @@ Programmatic values take precedence over dataset values. Invalid dataset values 
 
 ### Exported types
 
-`A11yOverflowNavInstance`, `A11yOverflowNavOptions`, `OverflowNavEventDetail`, `OverflowNavEventName`, and `OverflowNavReason` are exported from the package root.
+`A11yOverflowNavInstance`, `A11yOverflowNavOptions`, `OverflowNavEventDetail`, `OverflowNavEventMap`, `OverflowNavEventName`, and `OverflowNavReason` are exported from the package root. `OverflowNavEventMap` maps each name in `OVERFLOW_NAV_EVENTS` to the shared detail type; it does not augment the global DOM event map.
 
 ## Lifecycle
 
 1. **Initialize:** validates authored structure, creates the Menu Button instance, marks the root ready, performs the first reflow, starts resize observation, and emits `overflow-nav:init`.
-2. **Redistribute:** resize work is coalesced through `requestAnimationFrame`; `overflow-nav:change` fires only when visible or overflow membership changes.
+2. **Redistribute:** resize work is coalesced through `requestAnimationFrame`; `overflow-nav:change` fires only when the visible or overflow node sequence changes.
 3. **Refresh:** call `refresh()` after adding, removing, or relabeling managed items. Add new items to the primary list. Replacing structural list/control/menu nodes or inserting a new managed item directly into overflow is rejected.
-4. **Destroy:** emits `overflow-nav:destroy` before restoration, then restores canonical item order, original runtime attributes, control visibility, observers, scheduled work, and Menu Button state. Repeated calls are safe no-ops.
+4. **Destroy:** emits `overflow-nav:destroy` before restoration, then restores canonical item order, original runtime attributes, control visibility, observers, scheduled work, and Menu Button state. Restoration also works after detaching the navigation root. Items removed or reparented outside the managed lists are left alone. Repeated calls are safe no-ops.
 5. **Reinitialize:** after destruction, `createOverflowNav()` creates a fresh instance.
 
 ## Events
@@ -147,7 +147,9 @@ interface OverflowNavEventDetail {
 }
 ~~~
 
-An initial redistribution can emit `change` with reason `init` before `init`. A refresh that changes distribution emits `change` with reason `refresh` before the unconditional `refresh` event. Destroy detail describes the pre-restoration distribution. A11y Menu Button emits its own `menu-button:*` events separately.
+An initial redistribution can emit `change` with reason `init` before `init`. A refresh that changes distribution emits `change` with reason `refresh` before its completion event; successful refreshes emit `refresh` even when distribution stays the same. Destroy detail describes the pre-restoration distribution. A11y Menu Button emits its own `menu-button:*` events separately.
+
+If a synchronous callback destroys the instance during initialization or refresh, that operation stops and emits no subsequent `init` or `refresh` event.
 
 ## Selectors and state attributes
 
@@ -174,27 +176,50 @@ The plugin reads rendered geometry rather than calculating Flex or Grid tracks. 
 
 For `A B C D E`, every stable state is an ordered primary prefix plus an ordered overflow suffix. Do not use CSS `order` to contradict source order, and avoid `display: contents` on managed top-level items because they need measurable boxes.
 
+For an integration starting point, adapt the [basic example's stylesheet](examples/basic/styles.css): it provides consumer-owned Flex layout, a wrapping fallback, and disclosure sizing. The [scenario lab stylesheet](demo.css) demonstrates Flex and Grid layouts. Both are demo styles, not package CSS imports.
+
 ## Accessibility and keyboard behavior
 
 - Author a named `nav`, semantic lists, links, and a native More button.
 - The plugin moves original nodes rather than cloning destinations, preserving identity and source order.
 - If a focused item moves into a closed overflow panel, focus moves to More. When items return or the control disappears, focus is restored to a suitable connected destination where possible.
-- `refresh()` preserves the active connected element where possible; destroying while focus is within the overflow control moves focus to the final restored destination.
+- `refresh()` restores the active destination when it remains visible. If it ends inside the closed overflow panel, focus moves to More; if More disappears, focus moves to a restored destination. Focus outside the navigation is preserved. Destroying while focus is within the overflow control moves focus to the final restored destination.
 - Tab order remains native. More activation and menu navigation are delegated to A11y Menu Button, including its supported arrow-key, Home/End, Escape, and typeahead behavior.
 - The core plugin does not create live announcements. Any status announcement in the examples is consumer-authored.
 - With JavaScript disabled, all destinations remain in the primary list and More remains hidden. Consumer CSS should provide a readable wrapping fallback.
 
 The package is designed to support accessible navigation, but integration details still require testing with target browsers and assistive technologies.
 
+For the 1.0.0 preparation, the project owner reported AT and native browser zoom/text checks as passing on 2026-11-13. The AT/browser combinations and versions were not recorded. Consumers own the integration CSS and its contrast/focus styling, including Windows contrast-theme behavior.
+
 ## Examples
 
-The root `index.html` is a scenario lab for layout, direction, text scaling, focus, and lifecycle events. A smaller copy-friendly example is in [`examples/basic/`](examples/basic/). A developer-only performance fixture is in [`examples/stress/`](examples/stress/) and performs a 24-item width sweep while recording browser ResizeObserver signals, distribution changes, estimated item moves, and elapsed time.
+- [Basic example](examples/basic/index.html) — copy-friendly markup, consumer-owned styles, and a width toggle. See its [setup guide](examples/basic/README.md).
+- [Scenario lab](index.html) — layout, direction, text scaling, focus, and lifecycle controls.
+- [Performance fixture (developer)](examples/stress/index.html) — a 24-item width sweep recording observer signals, distribution changes, estimated item moves, and elapsed time. See its [measurement guide](examples/stress/README.md).
 
 ~~~bash
 npm install
 npm run build
 npx serve .
 ~~~
+
+## GitHub Pages
+
+The committed `docs/` folder is the static Pages site. `npm run build` builds the
+package into root `dist/` and regenerates `docs/` with the scenario lab, basic
+example, stress fixture, their styles, and the browser modules they need. Root
+`dist/` is package output; `docs/dist/` is the copy used by Pages. Package
+packing rebuilds only root `dist/`.
+
+After changing the demos or package, run `npm run pages:build` and commit the
+updated `docs/` files. In GitHub, set **Settings → Pages → Build and deployment**
+to **Deploy from a branch**, branch **main**, folder **/docs**. The site URL is
+`https://vmitsaras.github.io/A11y-Overflow-Nav/`.
+
+To preview the published folder locally, serve `docs/` and open its root page.
+The Pages site uses relative asset paths so it also works under the repository
+subpath.
 
 ## Structured docs metadata
 
