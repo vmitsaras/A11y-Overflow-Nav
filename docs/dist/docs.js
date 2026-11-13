@@ -1,4 +1,4 @@
-//#region src/docs.ts
+// src/docs.ts
 const eventDetail = "{ instance, visibleItems, overflowItems, overflowCount, reason }";
 const docs = {
 	slug: "a11y-overflow-nav",
@@ -263,7 +263,6 @@ if (root instanceof HTMLElement) {
 		"The package ships no runtime layout CSS or animation."
 	]
 };
-//#endregion
 export { docs };
 
 //# sourceMappingURL=docs.js.map

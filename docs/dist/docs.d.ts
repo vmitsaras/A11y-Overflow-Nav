@@ -1,4 +1,3 @@
-//#region src/docs.d.ts
 interface PluginDocs {
   slug: string;
   name: string;
@@ -121,6 +120,5 @@ declare const docs: {
   }[];
   limitations: string[];
 };
-//#endregion
 export { PluginDocs, docs };
 //# sourceMappingURL=docs.d.ts.map

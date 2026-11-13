@@ -1,5 +1,4 @@
 import { A11yMenuButtonOptions } from "a11y-menu-button/core";
-//#region src/A11yOverflowNav.d.ts
 type OverflowNavReason = 'init' | 'resize' | 'refresh' | 'programmatic';
 interface A11yOverflowNavOptions {
   observeResize?: boolean;
@@ -90,6 +89,5 @@ declare class A11yOverflowNav implements A11yOverflowNavInstance {
 }
 declare function createOverflowNav(root: HTMLElement, options?: A11yOverflowNavOptions): A11yOverflowNav;
 declare function initOverflowNavs(root?: ParentNode, options?: A11yOverflowNavOptions): A11yOverflowNav[];
-//#endregion
 export { A11yOverflowNav, type A11yOverflowNavInstance, type A11yOverflowNavOptions, OVERFLOW_NAV_EVENTS, type OverflowNavEventDetail, type OverflowNavEventMap, type OverflowNavEventName, type OverflowNavReason, createOverflowNav, initOverflowNavs };
 //# sourceMappingURL=index.d.ts.map

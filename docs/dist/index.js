@@ -1,5 +1,5 @@
 import { createMenuButton } from "a11y-menu-button/core";
-//#region src/A11yOverflowNav.ts
+// src/A11yOverflowNav.ts
 const DEFAULT_OPTIONS = Object.freeze({
 	observeResize: true,
 	fitTolerance: 1
@@ -418,7 +418,6 @@ function initOverflowNavs(root = document, options = {}) {
 	const descendants = Array.from(root.querySelectorAll(SELECTORS.root)).filter((element) => element instanceof HTMLElement);
 	return [...matchesRoot, ...descendants].map((element) => createOverflowNav(element, options));
 }
-//#endregion
 export { A11yOverflowNav, OVERFLOW_NAV_EVENTS, createOverflowNav, initOverflowNavs };
 
 //# sourceMappingURL=index.js.map
