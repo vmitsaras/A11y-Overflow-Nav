@@ -1,6 +1,6 @@
 # Release audit — v0.3
 
-Status: 1.0.0 prepared locally on 2026-11-13; owner-reported AT/native zoom/text checks accepted; Git delivery, current-tree CI, and deployment/publication verification remain open
+Status: 1.0.0 published on 2026-11-13; release tag, GitHub release, release-commit CI, npm metadata/checksum, and live Pages verified
 
 Historical local audit date: 2026-10-27
 
@@ -14,7 +14,7 @@ On **2026-11-13**, the owner reported **AT testing works** and **native browser 
 
 The [acceptance/version record](VERIFICATION.md#v1-owner-acceptance-and-version-preparation--2026-11-13) supersedes earlier open-gate summaries. The [November implementation/browser records](VERIFICATION.md#recorded-november-verification) and October audit below retain their dated targets and limits; their old sizes and fingerprints are not current 1.0.0 artifact measurements.
 
-**Remaining release work:** deliberately deliver the release commit, including generated Pages and its generator; obtain current-tree CI; and verify deployment/publication when authorized. [Evidence and generated Pages remain local/untracked](VERIFICATION.md#evidence-delivery). The 2026-11-12 remote review confirmed correct main /docs settings but missing remote docs and a live 404; deployment has not been rechecked by this version-preparation pass.
+**Release delivery complete:** `a11y-overflow-nav@1.0.0` is published under `latest`; the annotated `v1.0.0` tag and GitHub release are public. Release-commit CI and Pages deployment pass, and all three live examples initialize. The npm checksum matches the verified tarball. [Evidence and generated Pages are now Git-delivered](VERIFICATION.md#evidence-delivery). The earlier missing remote docs/live 404 state is resolved. See the [publication record](VERIFICATION.md#100-publication--2026-11-13) for exact targets and results.
 
 The audit and follow-up timeline below preserve the original findings, fixes, measurements, and limits. In particular, statements about open AT/Windows/version gates inside those dated sections describe their historical state.
 
@@ -95,14 +95,14 @@ Current public runtime surface remains intentionally small:
 
 The v0.3 performance work adds no runtime API and no runtime dependency.
 
-## Remaining release work
+## Release delivery verification
 
-- release commit and deliberate delivery of the intended source, generator, generated Pages, and selected evidence;
-- passing CI for the actual release commit;
-- verification of Pages deployment and npm publication when authorized.
+- Complete: source, generator, generated Pages, and selected evidence delivered in Git.
+- Pass: CI and Pages deployment for release commit `21b4767e6f0431729e07af1aee60113632105879`.
+- Pass: npm `latest` resolves to 1.0.0, its checksum matches the candidate, the annotated tag is pushed, and the GitHub release is published.
 
 AT and native browser zoom/text checks are accepted by the owner for this release; Windows contrast-theme testing is retired as a package gate. Additional browser/AT matrices, including specific NVDA combinations not identified in the report, remain optional integration qualification. See the [2026-11-13 acceptance record](VERIFICATION.md#v1-owner-acceptance-and-version-preparation--2026-11-13) for the exact evidence limits.
 
 ## Release decision
 
-Local version/changelog preparation is complete at **1.0.0**. The owner-reported manual gates are accepted and the Windows styling gate is retired. Full release delivery remains in progress until the release commit, its CI, and the authorized deployment/publication have been verified. This version-preparation pass does not itself publish or deploy.
+**1.0.0 release complete.** The owner-reported manual gates are accepted and the Windows styling gate is retired. Automated package checks, locked dependency audit, release-commit CI, Git delivery, npm publication, GitHub release, and live Pages verification pass. Further integration matrices remain optional work with their own evidence scope.

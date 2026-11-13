@@ -1,6 +1,6 @@
 # Verification — A11y Overflow Nav
 
-Updated on **2026-11-13**. Stable **1.0.0** is applied through Changesets, superseding the pending 0.1.1 patch plan. The owner reports AT and native browser zoom/text checks as passed; combinations/versions were not supplied, and the agent did not perform those manual checks. Native Windows contrast-theme testing is retired as a package release gate because styling is consumer-owned. See the [owner acceptance and version record](#v1-owner-acceptance-and-version-preparation--2026-11-13). Git delivery, current-tree CI, and deployment/publication verification remain open. Earlier audit/browser results retain their dated targets and limits.
+Updated on **2026-11-13**. Stable **1.0.0** is published to npm under `latest`, with a pushed annotated Git tag and a published GitHub release. Release-commit CI and Pages deployment pass, and the live examples initialize successfully. See the [publication record](#100-publication--2026-11-13). The owner reports AT and native browser zoom/text checks as passed; combinations/versions were not supplied, and the agent did not perform those manual checks. Native Windows contrast-theme testing is retired as a package release gate because styling is consumer-owned. Earlier audit/browser results retain their dated targets and limits.
 
 ## Recorded November verification
 
@@ -15,9 +15,9 @@ These are prior-run results with the targets and limitations recorded in each en
 
 ## Evidence delivery
 
-As inspected on **2026-11-13**, `output/` and `docs/` contain no Git-tracked files; the prepared Pages generator is also untracked. The earlier pending Changeset was consumed when applying 1.0.0; its notes are retained in the changelog. Links to `output/` artifacts in this record and the release audit are **local-only evidence references**. Their existence does not establish that they are available from GitHub, npm, or the deployed Pages site.
+The earlier local-only state was superseded by Git delivery on **2026-11-13**. The generated `docs/` tree, `scripts/build-pages.mjs`, and selected `output/` artifacts are committed and available in the source repository and `v1.0.0` tag. The earlier pending Changeset was consumed when applying 1.0.0; its notes are retained in the changelog. Historical links to `output/` now resolve within the repository, while each artifact retains its original target, date, and evidence limits.
 
-For a release handoff, deliberately select any evidence to retain with the documentation and recheck its links/tracking; otherwise keep it labelled local-only. Do not bulk-add the evidence directory merely to satisfy link checks. The npm allowlist and Pages generator do not include `output/`; builds do not publish evidence or configure GitHub Pages. The intended Pages source remains **main → /docs**, pending repository delivery/settings verification.
+The npm allowlist and Pages generator exclude `output/`; repository evidence is not part of the npm tarball or deployed site. GitHub Pages is configured for **main → /docs**, and its successful deployment and live initialization were verified during publication. No additional historical evidence artifacts were added by the release execution.
 
 ## Historical September baseline
 
@@ -493,3 +493,27 @@ The remaining release work is Git delivery of the intended release files and sel
 Fresh automated verification for 1.0.0 passes: **48 tests**, typecheck, full package/Pages build, package dry-run (**12 files**), 76 local Markdown link/anchor checks, generated JSON-LD version parity, accumulated release-note preservation, and diff whitespace checks. Baseline fingerprints confirm all unrelated working-tree files, runtime/declaration bytes, demo scripts, and historical artifact bytes are preserved. A bounded independent review found no actionable issue in the reviewed version/docs delta; README and architecture wording were inspected but their full before/after copies were not supplied to that reviewer.
 
 **Changesets status: exits 1**, reporting changed packages with no pending Changesets after the version command consumed the plan. The release working tree is still uncommitted. No empty or additional release Changeset was added to hide that state; recheck the workflow status as part of Git delivery. The successful version command, package version, generated changelog, and retained notes establish that 1.0.0 was applied locally. No agent-run manual AT/native-zoom/Windows test is claimed by the automated results.
+
+## 1.0.0 publication — 2026-11-13
+
+Published **[a11y-overflow-nav@1.0.0](https://www.npmjs.com/package/a11y-overflow-nav/v/1.0.0)** publicly under npm's `latest` dist tag. The annotated **[v1.0.0 tag](https://github.com/vmitsaras/A11y-Overflow-Nav/tree/v1.0.0)** points to verified release commit `21b4767e6f0431729e07af1aee60113632105879`; the **[GitHub release](https://github.com/vmitsaras/A11y-Overflow-Nav/releases/tag/v1.0.0)** is published as a stable, non-draft release. GitHub supplies the source ZIP and tar archives; no custom archive assets were requested or uploaded.
+
+The owner committed and pushed `package-lock.json` and the development-only `happy-dom` 21.0.4 update in `27c5b31`. A fresh `npm ci` installed the locked graph; CI now uses `npm ci` too. Rebuilding with locked Rolldown 1.2.19 changed generated region comments and declaration maps; the generated JavaScript logic and public declarations are unchanged. Runtime dependency `a11y-menu-button` remains 1.0.1, declared as `^1.0.1`.
+
+| Check | Result |
+| --- | --- |
+| Locked installation and dependency audit | Pass: `npm ci`; explicit full `npm audit --json` reports zero vulnerabilities |
+| Package gates | Pass: 48 tests, typecheck, full package/Pages build, pack dry-run, and diff whitespace checks |
+| Published artifact | Pass: 12 files; 27,379 bytes compressed / 101,753 bytes unpacked; SHA-1 `336fd3f1cd41bc48a70d4054252988407e2eee01` |
+| Package contents | Pass: all export targets, MIT license, 1.0.0 changelog and metadata present; every packed file matches its source; generated distribution matches Pages |
+| Credential-pattern scan | No high-confidence npm/GitHub/AWS token or private-key matches in the tracked files or tarball; this is a bounded pattern scan |
+| Isolated consumer | Pass: install the candidate tarball with Menu Button 1.0.1 and scripts disabled; DOM-free root, `/docs`, `/package.json` imports pass; strict TypeScript NodeNext consumer passes without `skipLibCheck` |
+| Changesets | Pass after committing the prepared release: no pending version bumps; no extra Changeset created |
+| Release-commit hosted checks | Pass: [CI run 43429597806](https://github.com/vmitsaras/A11y-Overflow-Nav/actions/runs/43429597806) and [Pages run 43429596514](https://github.com/vmitsaras/A11y-Overflow-Nav/actions/runs/43429596514), both for `21b4767` |
+| npm read-back | Pass: version and `latest` resolve to 1.0.0; registry SHA-1 and integrity match the exact verified tarball that was published |
+| Git/GitHub read-back | Pass: annotated tag pushed; GitHub release is public, non-draft, and non-prerelease |
+| Live Pages browser smoke | Pass: lab/basic/stress initialize with `data-overflow-nav-ready=true`, retain 7/7/24 destinations, and have document `scrollWidth === clientWidth === 1226`; no captured warnings/errors |
+
+Live examples: [scenario lab](https://vmitsaras.github.io/A11y-Overflow-Nav/), [basic example](https://vmitsaras.github.io/A11y-Overflow-Nav/examples/basic/), and [developer fixture](https://vmitsaras.github.io/A11y-Overflow-Nav/examples/stress/). GitHub Pages serves **main → /docs**, resolving the earlier remote missing-docs/404 state.
+
+This browser smoke verifies hosted delivery and initialization at the sampled viewport. It adds no new manual AT/native-zoom result or broader geometry matrix. The owner's earlier acceptance and the consumer-owned Windows contrast-theme scope remain as recorded above. Publication records are synchronized on `main` after tagging the verified release commit; the npm tarball and release tag remain fixed.

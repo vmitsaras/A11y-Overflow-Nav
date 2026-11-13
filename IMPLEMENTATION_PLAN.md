@@ -1,6 +1,6 @@
 # Implementation plan
 
-Status updated on **2026-11-13**. Stable **1.0.0** is applied and its notes are in [CHANGELOG.md](CHANGELOG.md). The owner reports AT and native browser zoom/text checks as passed; Windows contrast-theme testing is retired as a package gate and belongs to consumer CSS integration. Remaining work is Git delivery, current-tree CI, and deployment/publication verification. See [current verification](#current-verification) and the [roadmap](ROADMAP.md#current-status--2026-11-13).
+Status updated on **2026-11-13**. Stable **1.0.0** is published to npm and GitHub, its tag is pushed, and release-commit CI and live Pages verification pass. Notes are in [CHANGELOG.md](CHANGELOG.md), and exact release evidence is in the [publication record](VERIFICATION.md#100-publication--2026-11-13). The owner reports AT and native browser zoom/text checks as passed; Windows contrast-theme testing is retired as a package gate and belongs to consumer CSS integration. See [current verification](#current-verification) and the [roadmap](ROADMAP.md#current-status--2026-11-13).
 
 ## Slice 1 — Foundation and semantic contract
 
@@ -118,11 +118,11 @@ Historical stress-fixture measurement recorded on 2026-09-22 (not a baseline for
 - maximum overflow: 22;
 - final overflow: 18.
 
-Still required for release delivery:
+Completed for 1.0.0 release delivery:
 
-1. deliberately include the intended source, generator, generated Pages, version/changelog, and selected evidence in the release commit;
-2. obtain passing CI for that commit;
-3. verify the Pages deployment and npm publication when those actions are authorized.
+1. deliver source, generator, generated Pages, version/changelog, lockfile, and selected evidence in Git;
+2. pass CI and Pages deployment for the release commit;
+3. verify npm 1.0.0 under `latest`, the published checksum, annotated Git tag, GitHub release, and live Pages initialization.
 
 The owner accepted AT and native browser zoom/text checks on 2026-11-13. Specific combinations/versions were not supplied, so this is not a full browser/AT matrix claim. Windows contrast-theme checks are integration work, not a package release blocker. Further integration matrices and performance optimization require their own scope/evidence.
 
@@ -134,7 +134,7 @@ A Playwright geometry suite remains valuable for repeatable Chromium/Firefox/Web
 
 The latest recorded local implementation/docs checks are the [November verification entries](VERIFICATION.md#recorded-november-verification): demo controls and measurement changes on 2026-11-03; reserve content, disclosure/focus fixes, and example navigation on 2026-11-12. These entries record 48 tests, typecheck, build/Pages, package dry-run, parity, and bounded Chrome checks for their targets. Docs-plan Tasks 1–3 reconcile lifecycle usage, example discovery, and status/evidence summaries. [Performance measurements](PERFORMANCE_REVIEW.md) from the older fixture are not directly comparable to the revised sampling and labels.
 
-The **2026-10-27 final local release audit** and **RA-01 resolution** remain historical. Their tarball sizes, offline-consumer checks, and native/browser results apply to those recorded targets. The earlier 0.1.1 patch plan was superseded by the owner-requested stable 1.0.0 version on 2026-11-13. See the [owner acceptance/version record](VERIFICATION.md#v1-owner-acceptance-and-version-preparation--2026-11-13) and [current release status](RELEASE_AUDIT.md#current-status). Git/CI/deployment delivery remains open; evidence links retain their [local-only scope](VERIFICATION.md#evidence-delivery).
+The **2026-10-27 final local release audit** and **RA-01 resolution** remain historical. Their tarball sizes, offline-consumer checks, and native/browser results apply to those recorded targets. The earlier 0.1.1 patch plan was superseded by the owner-requested stable 1.0.0 version on 2026-11-13. Git delivery and npm/GitHub publication are now complete, with release-commit CI and live Pages verified. See the [publication record](VERIFICATION.md#100-publication--2026-11-13), [current release status](RELEASE_AUDIT.md#current-status), and [delivered evidence scope](VERIFICATION.md#evidence-delivery).
 
 The earlier **2026-10-26 focused improvement pass** verified refresh focus, detached ownership/restoration, synchronous destruction guards, complete numeric parsing, demo language/fallback behavior, and stress-fixture recovery against the working tree based on `6895d10`. Its independent review and bounded Chromium evidence remain historical; they do not replace current-tree CI or manual qualification.
 

@@ -4,7 +4,7 @@
 
 The v0.1, v0.2, and v0.3 headings below name **planning milestones**, not published npm versions. The owner requested stable **1.0.0** on 2026-11-13. That version has been applied through Changesets and its accumulated notes are in [CHANGELOG.md](CHANGELOG.md); the earlier 0.1.1 patch plan was superseded and consumed.
 
-The [November records](VERIFICATION.md#recorded-november-verification) retain their dated automated/browser evidence. The [2026-11-13 owner report and release-scope decision](VERIFICATION.md#v1-owner-acceptance-and-version-preparation--2026-11-13) accept AT and native browser zoom/text checks as passed; combinations and versions were not supplied. Windows contrast-theme testing is retired as a package release gate and remains consumer CSS integration work. The release-hardening milestone remains **in progress** for Git delivery, current-tree CI, and final deployment/publication verification. Evidence artifacts and the generated Pages tree remain [local/untracked](VERIFICATION.md#evidence-delivery).
+The [November records](VERIFICATION.md#recorded-november-verification) retain their dated automated/browser evidence. The [2026-11-13 owner report and release-scope decision](VERIFICATION.md#v1-owner-acceptance-and-version-preparation--2026-11-13) accept AT and native browser zoom/text checks as passed; combinations and versions were not supplied. Windows contrast-theme testing is retired as a package release gate and remains consumer CSS integration work. The release-hardening milestone is **complete for 1.0.0**: Git delivery, release-commit CI, npm publication, GitHub release, and live Pages verification pass. See the [publication record](VERIFICATION.md#100-publication--2026-11-13) and [delivered evidence scope](VERIFICATION.md#evidence-delivery).
 
 ## v0.1 — Core Priority+ engine
 
@@ -62,7 +62,7 @@ These are useful regression protections, but they are no longer blocking the man
 
 ## v0.3 — Release hardening
 
-In progress.
+Complete for the 1.0.0 release on 2026-11-13; additional integration matrices remain optional.
 
 - [x] OVN-1000 Add a developer-only 24-item performance stress fixture
 - [x] OVN-1010 Add ResizeObserver/requestAnimationFrame coalescing regression coverage (CI verified)
@@ -78,9 +78,9 @@ In progress.
 - [x] Create release-audit checklist and evidence boundary
 - [x] Final local code/package audit — 2026-10-27: tests/build/types, tarball consumer, and three-page browser smoke pass; no confirmed code/package-content blocker
 - [x] RA-01 Release version/notes — earlier patch plan superseded; stable 1.0.0 applied through Changesets on 2026-11-13, notes retained in the changelog
-- [ ] Full release delivery — release commit/current-tree CI and deployment/publication verification
+- [x] Full release delivery — release commit CI, npm publication, annotated tag/GitHub release, and live Pages verified on 2026-11-13
 - [x] Docs-plan Tasks 1–3: lifecycle/example guidance and dated status/evidence reconciliation — 2026-11-12; local scope only
-- [ ] Final release-artifact/repository synchronization — selected evidence delivery, tracked Pages output, and current-tree CI; local 1.0.0 version/changelog preparation is complete
+- [x] Final release-artifact/repository synchronization — locked dependencies, selected evidence, generated Pages, version/changelog, and release-commit CI verified
 
 ## Completed local quality pass — 2026-10-26
 
